@@ -175,16 +175,21 @@ function Band({
     ctx.drawImage(baseImg, 0, 0, W, H);
 
     // The source card.glb ships a "reactbits.dev" watermark baked into the
-    // atlas below the back face's UV region. Paint over that strip with the
-    // surrounding background tone so only the actual card art remains.
-    ctx.fillStyle = '#e0e0e0';
-    ctx.fillRect(BACK_UV_RECT.x * W, (BACK_UV_RECT.y + BACK_UV_RECT.h) * H, BACK_UV_RECT.w * W, H - (BACK_UV_RECT.y + BACK_UV_RECT.h) * H);
-
-    const drawFitted = (img, rect) => {
+    // atlas beneath the back face's own card art, inside the back UV rect.
+    // Our custom image's aspect ratio rarely matches the rect's exactly, so
+    // "contain" fit leaves a letterbox gap where that original artwork (and
+    // the watermark inside it) would otherwise bleed through — fill the
+    // whole rect with a flat color first so any gap shows clean color
+    // instead of the baked-in template.
+    const drawFitted = (img, rect, bg) => {
       const rx = rect.x * W;
       const ry = rect.y * H;
       const rw = rect.w * W;
       const rh = rect.h * H;
+      if (bg) {
+        ctx.fillStyle = bg;
+        ctx.fillRect(rx, ry, rw, rh);
+      }
       const pick = imageFit === 'contain' ? Math.min : Math.max;
       const scale = pick(rw / img.width, rh / img.height);
       const dw = img.width * scale;
@@ -199,8 +204,8 @@ function Band({
       ctx.restore();
     };
 
-    if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT);
-    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT);
+    if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT, '#0a0b0e');
+    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT, '#b6eb30');
 
     const composite = new THREE.CanvasTexture(canvas);
     composite.colorSpace = THREE.SRGBColorSpace;
