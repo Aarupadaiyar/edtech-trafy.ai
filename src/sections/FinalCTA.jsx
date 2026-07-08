@@ -4,7 +4,7 @@ import { cohortInfo } from '../data/cohort';
 
 export default function FinalCTA() {
   return (
-    <section id="final-cta" className="py-24 md:py-32 relative overflow-hidden border-b border-[var(--ink-line)]">
+    <section id="get-pricing" className="py-24 md:py-32 relative overflow-hidden border-b border-[var(--ink-line)]">
       <div className="absolute inset-0 bg-gradient-to-t from-[var(--amber)]/10 via-transparent to-transparent pointer-events-none" />
       <div className="container-x relative text-center">
         <div className="inline-flex items-center gap-x-3 gap-y-1 flex-wrap justify-center font-mono text-[11px] md:text-xs uppercase tracking-widest mb-6">

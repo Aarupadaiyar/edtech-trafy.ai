@@ -3,6 +3,7 @@ import GooeyNav from '../components/GooeyNav';
 const links = [
   { href: '#curriculum', label: 'Curriculum' },
   { href: '#projects', label: 'Projects' },
+  { href: '#pricing', label: 'Pricing' },
   { href: '#faq', label: 'FAQ' }
 ];
 

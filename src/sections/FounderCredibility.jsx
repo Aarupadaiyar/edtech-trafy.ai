@@ -1,11 +1,10 @@
-import founderPhoto from '../assets/founder-steven.jpg';
+import founderPhoto from '../assets/founder-steven.png';
 
 export default function FounderCredibility() {
   return (
     <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x grid lg:grid-cols-[auto_1fr] gap-10 md:gap-16 items-center">
         <div className="shrink-0">
-          {/* Placeholder photo checked in at src/assets/founder-steven.jpg. Drop the real photo in at the same path to replace it. */}
           <img
             src={founderPhoto}
             alt="Steven Bennett, Founder and CEO of Trafy AI"
@@ -13,7 +12,7 @@ export default function FounderCredibility() {
           />
         </div>
         <div>
-          <div className="eyebrow mb-4">Who's Teaching This</div>
+          <div className="eyebrow mb-4">Meet the Founder</div>
           <h2 className="font-display font-semibold text-3xl md:text-5xl leading-[1.1] mb-4">
             Steven Bennett<span className="text-[var(--mist)] font-normal">, Founder & CEO, Trafy AI</span>
           </h2>

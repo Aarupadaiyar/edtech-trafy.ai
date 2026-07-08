@@ -1,9 +1,8 @@
-import LeadForm from '../components/LeadForm';
 import { cohortInfo } from '../data/cohort';
 
 export default function GetPricing() {
   return (
-    <section id="get-pricing" className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
+    <section id="pricing" className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--amber)]/8 via-transparent to-transparent pointer-events-none" />
       <div className="container-x relative grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
@@ -20,17 +19,22 @@ export default function GetPricing() {
             <span>✓ Mentor review plus AI code review on every project you ship</span>
             <span>✓ Project certification and lifetime access to the builder community</span>
           </div>
-          <p className="mt-8 font-mono text-xs text-[var(--amber)] uppercase tracking-widest">
-            Get your personalized plan and pricing below.
+        </div>
+
+        <div className="max-w-md w-full mx-auto lg:mx-0 rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-10 text-center">
+          <p className="font-mono text-xs text-[var(--amber)] uppercase tracking-widest">
+            Get your personalized plan and pricing.
           </p>
-          <p className="mt-2 font-mono text-[11px] text-[var(--mist)]">
+          <p className="mt-3 font-mono text-[11px] text-[var(--mist)]">
             {cohortInfo.cohortLabel} starts {cohortInfo.startDate}. Only {cohortInfo.seatsRemaining} of{' '}
             {cohortInfo.seatsTotal} seats remain.
           </p>
-        </div>
-
-        <div className="max-w-md w-full mx-auto lg:mx-0">
-          <LeadForm source="get-pricing-section" />
+          <a
+            href="#get-pricing"
+            className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition"
+          >
+            Get Pricing & Seat Availability
+          </a>
         </div>
       </div>
     </section>

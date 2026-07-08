@@ -1,12 +1,3 @@
-import FlowingMenu from '../components/FlowingMenu';
-
-const items = [
-  { link: '#', text: 'Attend', image: 'https://images.unsplash.com/photo-1516534775068-ba3e7458af70?q=80&w=800&auto=format&fit=crop' },
-  { link: '#', text: 'Apply', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop' },
-  { link: '#', text: 'Ship', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop' },
-  { link: '#', text: 'Review', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop' }
-];
-
 const rhythm = [
   { day: 'Mon', label: 'Live Session' },
   { day: 'Tue', label: 'Live Session' },
@@ -30,11 +21,7 @@ export default function DailyBuildSystem() {
           major project and getting it reviewed.
         </p>
 
-        <div className="mt-14 h-[420px] md:h-[520px]">
-          <FlowingMenu items={items} speed={12} />
-        </div>
-
-        <div className="mt-16 grid grid-cols-7 gap-2 md:gap-3 font-mono text-center">
+        <div className="mt-14 grid grid-cols-7 gap-2 md:gap-3 font-mono text-center">
           {rhythm.map(r => (
             <div
               key={r.day}
