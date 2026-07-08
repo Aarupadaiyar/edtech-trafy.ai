@@ -1,5 +1,14 @@
 import { testimonials } from '../data/testimonials';
 
+// Generic, blurred stock photos, used purely as decorative avatars since we
+// don't have real headshots yet. Blurred so they don't misrepresent anyone's
+// actual likeness.
+const avatarPhotos = [
+  'https://i.pravatar.cc/150?img=12',
+  'https://i.pravatar.cc/150?img=33',
+  'https://i.pravatar.cc/150?img=47'
+];
+
 export default function TestimonialStrip() {
   return (
     <section className="py-16 md:py-20 border-b border-[var(--ink-line)]">
@@ -11,14 +20,18 @@ export default function TestimonialStrip() {
       </div>
 
       <div className="container-x flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory md:overflow-visible -mx-6 px-6 md:mx-0 md:px-0">
-        {testimonials.map(t => (
+        {testimonials.map((t, i) => (
           <div
             key={t.name}
             className="shrink-0 w-[85vw] sm:w-[360px] md:w-auto snap-start rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-6 md:p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-full bg-[var(--amber)] text-[var(--ink)] font-display font-semibold text-lg flex items-center justify-center shrink-0">
-                {t.name.charAt(0)}
+              <div className="w-11 h-11 rounded-full bg-[var(--amber)] overflow-hidden shrink-0">
+                <img
+                  src={avatarPhotos[i % avatarPhotos.length]}
+                  alt=""
+                  className="w-full h-full object-cover scale-110 blur-[2px]"
+                />
               </div>
               <div className="min-w-0">
                 <div className="font-display text-base truncate">{t.name}</div>
