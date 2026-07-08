@@ -101,12 +101,10 @@ export default function ApplyCohort() {
 
       <div className="container-x text-center relative z-10 -mt-4 md:-mt-10">
         <a
-          href="https://forms.gle/AJ2ujkYJBDRVKTug6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition"
+          href="#get-pricing"
+          className="inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition"
         >
-          Apply Now
+          Get Pricing & Seats
         </a>
       </div>
     </section>

@@ -153,7 +153,6 @@ const GooeyNav = ({
           {items.map((item, index) => (
             <li key={index} className={activeIndex === index ? 'active' : ''}>
               <a
-                className="cursor-target"
                 href={item.href}
                 onClick={e => handleClick(e, index)}
                 onKeyDown={e => handleKeyDown(e, index)}

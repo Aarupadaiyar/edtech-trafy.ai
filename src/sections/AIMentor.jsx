@@ -1,18 +1,24 @@
-const flow = ['AI Mentor', 'Instant Feedback', 'Code Review', 'Project Suggestions', 'Learning Path'];
+const flow = [
+  'Live Session With Your Mentor',
+  'Same Day Build',
+  'AI Reviews Every Commit',
+  'Flags Before You Ship',
+  'Next Live Session, Ahead'
+];
 
 export default function AIMentor() {
   return (
     <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x grid lg:grid-cols-[1fr_1.1fr] gap-16 items-center">
         <div>
-          <div className="eyebrow mb-4">Not Live Classes</div>
+          <div className="eyebrow mb-4">Live Mentor Sessions, Reviewed by AI</div>
           <h2 className="font-display font-semibold text-4xl md:text-5xl leading-[1.05]">
-            Your mentor is on call at 2am, not on a schedule.
+            A real mentor teaches you live, every day.
           </h2>
           <p className="mt-6 text-[var(--mist)] text-lg leading-relaxed max-w-md">
-            Live classes lock learning to a timetable. Trafy AI's mentor doesn't —
-            it reviews every commit, flags what a hiring engineer would flag, and
-            resequences your path the moment you fall behind or pull ahead.
+            Your mentor runs a live one hour session every weekday. Between sessions, an AI code
+            reviewer checks every commit you push and flags what a hiring engineer would flag, so
+            you get feedback in seconds instead of waiting for the next class.
           </p>
         </div>
 
@@ -22,12 +28,12 @@ export default function AIMentor() {
             {flow.map((step, i) => (
               <div key={step} className="flex items-start gap-4">
                 <div className="flex flex-col items-center pt-1">
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: i === 1 ? 'var(--amber)' : 'var(--circuit)' }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: i === 2 ? 'var(--amber)' : 'var(--circuit)' }} />
                   {i < flow.length - 1 && <span className="w-px flex-1 my-1 h-8" style={{ background: 'var(--ink-line)' }} />}
                 </div>
                 <div className="pb-6">
                   <div className="text-sm text-[var(--bone)]">{step}</div>
-                  {i === 1 && <div className="text-[11px] text-[var(--mist)] mt-1">response time: seconds, not office hours</div>}
+                  {i === 2 && <div className="text-[11px] text-[var(--mist)] mt-1">response time: seconds, not a full day</div>}
                 </div>
               </div>
             ))}

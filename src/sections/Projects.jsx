@@ -305,7 +305,7 @@ export default function Projects() {
           onItemSelect={setOpenIdx}
         />
         <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-[11px] text-[var(--mist)]">
-          {active.week} · {active.title} — click to open
+          {active.week} · {active.title} · click to open
         </div>
       </div>
 
@@ -315,7 +315,7 @@ export default function Projects() {
           onClick={() => setOpenIdx(null)}
         >
           <div
-            className="cursor-target w-full max-w-2xl rounded-2xl border border-[var(--amber)]/40 bg-[var(--ink-raised)] overflow-hidden"
+            className="w-full max-w-2xl rounded-2xl border border-[var(--amber)]/40 bg-[var(--ink-raised)] overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             <div className="h-28 md:h-32 w-full flex items-center px-7 md:px-9 border-b border-[var(--amber)]/30 bg-gradient-to-br from-[var(--amber)]/10 to-transparent">
@@ -326,7 +326,7 @@ export default function Projects() {
             <div className="p-7 md:p-9">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs text-[var(--amber)]">{opened.week} · {opened.difficulty}</span>
-                <button onClick={() => setOpenIdx(null)} className="cursor-target font-mono text-xs text-[var(--mist)] hover:text-[var(--bone)]">close ✕</button>
+                <button onClick={() => setOpenIdx(null)} className="font-mono text-xs text-[var(--mist)] hover:text-[var(--bone)]">close ✕</button>
               </div>
               <h3 className="font-display text-2xl md:text-3xl mb-3">{opened.title}</h3>
               <p className="text-[var(--mist)] text-sm leading-relaxed mb-6">{opened.description}</p>

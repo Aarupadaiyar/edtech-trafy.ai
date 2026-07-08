@@ -6,7 +6,7 @@ function Row({ week, isOpen, onToggle }) {
     <div className="border-b border-[var(--ink-line)]">
       <button
         onClick={onToggle}
-        className="cursor-target w-full flex items-center justify-between gap-4 py-6 text-left group"
+        className="w-full flex items-center justify-between gap-4 py-6 text-left group"
       >
         <div className="flex items-center gap-5 min-w-0">
           <span className="font-mono text-xs text-[var(--amber)] shrink-0">WK.{String(week.week).padStart(2, '0')}</span>
@@ -62,7 +62,7 @@ export default function Curriculum() {
         </div>
 
         <div className="mt-20 rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-10">
-          <div className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] mb-6">Final Deliverables — Graduation Day</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] mb-6">Final Deliverables for Graduation Day</div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {finalDeliverables.map(d => (
               <div key={d.label}>

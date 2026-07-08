@@ -27,7 +27,7 @@ export default function TechStack() {
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
           The exact stack production teams run.
         </h2>
-        <p className="mt-5 text-[var(--mist)] max-w-xl">Spins on its own — drag to take control.</p>
+        <p className="mt-5 text-[var(--mist)] max-w-xl">Spins on its own. Drag to take control.</p>
       </div>
 
       <div className="mt-14 h-[440px] md:h-[560px]">

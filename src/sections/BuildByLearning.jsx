@@ -1,11 +1,11 @@
-import { Hammer, BookOpen, TrendingUp, RefreshCw } from 'lucide-react';
+import { Video, Hammer, Rocket, ClipboardCheck } from 'lucide-react';
 import CardSwap, { Card } from '../components/CardSwap';
 
 const steps = [
-  { tag: '01', title: 'Build', icon: Hammer, body: 'Every day. Before any theory, there is a project brief open in your editor.' },
-  { tag: '02', title: 'Learn', icon: BookOpen, body: "Exactly what today's project requires — nothing ahead of need, nothing wasted." },
-  { tag: '03', title: 'Improve', icon: TrendingUp, body: 'Your AI mentor reviews the build — code quality, structure, and what a hiring engineer would flag.' },
-  { tag: '04', title: 'Repeat', icon: RefreshCw, body: 'Until building stops feeling like an event and starts feeling like a default.' }
+  { tag: '01', title: 'Live Session', icon: Video, body: 'A one hour live class with your mentor, every weekday. Real time, not a recording queue.' },
+  { tag: '02', title: 'Apply Same Day', icon: Hammer, body: 'What you learn in the session, you ship the same day, not weeks later in a separate module.' },
+  { tag: '03', title: 'Weekly Project', icon: Rocket, body: 'Five live sessions build toward one major project, due by the weekend.' },
+  { tag: '04', title: 'Mentor Review', icon: ClipboardCheck, body: 'Your mentor and AI code review flag what a hiring engineer would flag, before you move on.' }
 ];
 
 export default function BuildByLearning() {
@@ -14,14 +14,13 @@ export default function BuildByLearning() {
       <div className="container-x">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <div className="eyebrow mb-4">Our Philosophy</div>
+            <div className="eyebrow mb-4">How The Cohort Works</div>
             <h2 className="font-display font-semibold text-4xl md:text-5xl leading-[1.05]">
-              Build by Learning<span className="align-super text-lg">™</span>
+              Live sessions. Same day builds.
             </h2>
             <p className="mt-6 text-[var(--mist)] text-lg max-w-md leading-relaxed">
-              We flipped the classroom upside down. Theory doesn't come first —
-              it shows up exactly when a project demands it, then gets locked in
-              by shipping something real.
+              This isn't a self paced video library. Every weekday, you're live with a mentor, then
+              you immediately apply it, so the lesson turns into a shipped project before the day ends.
             </p>
             <div className="mt-10 hidden lg:flex flex-col gap-3 font-mono text-sm text-[var(--mist)]">
               {steps.map(s => (

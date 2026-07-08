@@ -2,7 +2,7 @@ const before = ['Resume', 'Certificate', 'One Chatbot'];
 const after = [
   '48 Mini Projects',
   '8 Major Projects',
-  'GitHub — 48 repositories',
+  'GitHub, 48 repositories',
   'Live Portfolio',
   '8 Live Deployments',
   'Weekly Technical Blog on Medium & other publications',
@@ -15,7 +15,7 @@ export default function PortfolioBeforeAfter() {
       <div className="container-x">
         <div className="eyebrow mb-4">The Difference</div>
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
-          What "I finished a course" looks like — before and after.
+          What "I finished a course" looks like, before and after.
         </h2>
       </div>
 
@@ -26,7 +26,7 @@ export default function PortfolioBeforeAfter() {
             <div className="flex flex-col gap-5">
               {before.map(item => (
                 <div key={item} className="flex items-center gap-4">
-                  <span className="font-mono text-lg text-[var(--ink-line)]">—</span>
+                  <span className="font-mono text-lg text-[var(--ink-line)]">✕</span>
                   <span className="font-display text-xl md:text-2xl text-[var(--mist)]">{item}</span>
                 </div>
               ))}

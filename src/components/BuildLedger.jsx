@@ -31,7 +31,7 @@ export default function BuildLedger({ items, orientation = 'vertical', renderDet
             <button
               key={item.key ?? i}
               onClick={() => setActive(i)}
-              className={`cursor-target group relative text-left ${isHorizontal ? 'shrink-0 w-44 snap-start px-3' : 'flex items-stretch gap-4 w-full pb-8'}`}
+              className={`group relative text-left ${isHorizontal ? 'shrink-0 w-44 snap-start px-3' : 'flex items-stretch gap-4 w-full pb-8'}`}
             >
               {!isHorizontal && (
                 <div className="flex flex-col items-center pt-1">

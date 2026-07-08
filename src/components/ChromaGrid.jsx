@@ -89,7 +89,7 @@ export const ChromaGrid = ({
       {data.map((c, i) => (
         <article
           key={i}
-          className="chroma-card cursor-target"
+          className="chroma-card"
           onMouseMove={handleCardMove}
           onClick={() => handleCardClick(c, i)}
           style={{

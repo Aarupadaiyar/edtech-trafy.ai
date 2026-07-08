@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import TargetCursor from './TargetCursor';
 import SplashCursor from './SplashCursor';
 
 export default function CursorManager() {
@@ -14,10 +13,5 @@ export default function CursorManager() {
     return () => window.removeEventListener('mouseover', handleOver);
   }, []);
 
-  return (
-    <>
-      <TargetCursor spinDuration={2.2} cursorColor="#b6eb30" cursorColorOnTarget="#eeeeee" hidden={splashActive} />
-      <SplashCursor active={splashActive} RAINBOW_MODE={false} COLOR="#b6eb30" />
-    </>
-  );
+  return <SplashCursor active={splashActive} RAINBOW_MODE={false} COLOR="#b6eb30" />;
 }

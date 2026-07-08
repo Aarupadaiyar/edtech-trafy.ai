@@ -1,4 +1,5 @@
 import LightPillar from '../components/LightPillar';
+import { cohortInfo } from '../data/cohort';
 
 export default function Hero() {
   return (
@@ -23,7 +24,7 @@ export default function Hero() {
       <div className="container-x relative z-10 pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="eyebrow mb-6 flex items-center gap-3">
           <span className="w-6 h-px bg-[var(--amber)]" />
-          COHORT 04 · APPLICATIONS OPEN
+          {cohortInfo.cohortLabel} · APPLICATIONS OPEN
         </div>
 
         <h1 className="font-display font-semibold text-[12vw] leading-[0.95] md:text-[6.2vw] md:leading-[0.98] tracking-tight max-w-5xl">
@@ -33,16 +34,17 @@ export default function Hero() {
         </h1>
 
         <p className="mt-8 max-w-xl text-lg text-[var(--mist)] leading-relaxed">
-          Build 48 real AI applications, complete 8 industry-grade projects, and graduate
-          with proof of what you can build — not just what you've studied.
+          In 8 weeks of daily live mentor led sessions, build 48 real AI applications and ship 8
+          industry grade projects, so you graduate with proof of what you can build, not just what
+          you've studied.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a href="https://forms.gle/AJ2ujkYJBDRVKTug6" target="_blank" rel="noopener noreferrer" className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
-            Join the Cohort
+        <div className="mt-10 flex flex-wrap items-center gap-5">
+          <a href="#get-pricing" className="inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
+            Get Cohort Details
           </a>
-          <a href="#curriculum" className="cursor-target inline-flex items-center gap-2 border border-[var(--ink-line)] text-[var(--bone)] font-mono text-sm px-7 py-4 rounded-full hover:border-[var(--amber)] hover:text-[var(--amber)] transition">
-            Checkout the Curriculum →
+          <a href="#curriculum" className="font-mono text-sm text-[var(--mist)] hover:text-[var(--amber)] transition underline underline-offset-4 decoration-[var(--ink-line)] hover:decoration-[var(--amber)]">
+            Checkout the curriculum →
           </a>
         </div>
 

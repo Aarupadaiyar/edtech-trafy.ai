@@ -38,7 +38,7 @@ export default function FAQ() {
               <div key={f.q} className="border-b border-[var(--ink-line)]">
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="cursor-target w-full flex items-center justify-between gap-4 py-6 text-left"
+                  className="w-full flex items-center justify-between gap-4 py-6 text-left"
                 >
                   <span className="font-display text-lg md:text-xl">{f.q}</span>
                   <span className={`font-mono text-lg shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[var(--amber)]' : 'text-[var(--mist)]'}`}>+</span>

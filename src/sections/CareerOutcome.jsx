@@ -15,8 +15,8 @@ export default function CareerOutcome() {
           We don't sell placement assistance. We build your Employability Index.
         </h2>
         <p className="mt-5 text-[var(--mist)] max-w-2xl">
-          Every mission you ship raises one number — a live, portfolio-backed score of what
-          you can actually build, visible to the companies looking for builders instead of certificates.
+          Every mission you ship raises one number, a live, portfolio backed score of what you can
+          actually build, visible to the companies looking for builders instead of certificates.
         </p>
       </div>
 
