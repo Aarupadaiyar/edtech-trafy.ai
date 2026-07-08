@@ -1,3 +1,5 @@
+import GooeyNav from '../components/GooeyNav';
+
 const links = [
   { href: '#curriculum', label: 'Curriculum' },
   { href: '#projects', label: 'Projects' },
@@ -11,12 +13,10 @@ export default function Navbar() {
         <a href="#top" className="cursor-target font-display font-semibold text-lg tracking-tight">
           Trafy<span className="text-[var(--amber)]">AI</span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-[var(--mist)]">
-          {links.map(l => (
-            <a key={l.href} href={l.href} className="cursor-target hover:text-[var(--amber)] transition-colors">{l.label}</a>
-          ))}
-        </nav>
-        <a href="#final-cta" className="cursor-target font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[var(--ink)] transition">
+        <div className="hidden md:block" style={{ height: '44px' }}>
+          <GooeyNav items={links} particleCount={12} particleDistances={[70, 8]} particleR={90} animationTime={500} timeVariance={250} />
+        </div>
+        <a href="https://forms.gle/AJ2ujkYJBDRVKTug6" target="_blank" rel="noopener noreferrer" className="cursor-target font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[var(--ink)] transition">
           Join Cohort
         </a>
       </div>

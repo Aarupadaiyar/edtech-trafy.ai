@@ -8,7 +8,7 @@ export default function FinalCTA() {
           Build Your First AI Product This Week.
         </h2>
         <div className="mt-10">
-          <a href="#top" className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition">
+          <a href="https://forms.gle/AJ2ujkYJBDRVKTug6" target="_blank" rel="noopener noreferrer" className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition">
             Join the Next Cohort
           </a>
         </div>

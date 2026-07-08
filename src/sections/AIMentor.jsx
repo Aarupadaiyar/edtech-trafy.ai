@@ -2,7 +2,7 @@ const flow = ['AI Mentor', 'Instant Feedback', 'Code Review', 'Project Suggestio
 
 export default function AIMentor() {
   return (
-    <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x grid lg:grid-cols-[1fr_1.1fr] gap-16 items-center">
         <div>
           <div className="eyebrow mb-4">Not Live Classes</div>

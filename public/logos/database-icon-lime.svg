@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <g fill="#b6eb30">
+    <g transform="translate(220,60)">
+      <ellipse cx="80" cy="20" rx="80" ry="26"/>
+      <path d="M0 20 L0 130 A80 26 0 0 0 160 130 L160 20 A80 26 0 0 1 0 20 Z"/>
+      <ellipse cx="80" cy="75" rx="80" ry="26" fill="none" stroke="#0a0b0e" stroke-width="6"/>
+      <ellipse cx="80" cy="130" rx="80" ry="26" fill="#b6eb30"/>
+      <circle cx="140" cy="45" r="7" fill="#0a0b0e"/>
+      <circle cx="140" cy="100" r="7" fill="#0a0b0e"/>
+    </g>
+    <rect x="290" y="220" width="20" height="90"/>
+    <rect x="130" y="300" width="340" height="20"/>
+
+    <g transform="translate(40,320)">
+      <ellipse cx="80" cy="20" rx="80" ry="26"/>
+      <path d="M0 20 L0 130 A80 26 0 0 0 160 130 L160 20 A80 26 0 0 1 0 20 Z"/>
+      <ellipse cx="80" cy="75" rx="80" ry="26" fill="none" stroke="#0a0b0e" stroke-width="6"/>
+      <ellipse cx="80" cy="130" rx="80" ry="26" fill="#b6eb30"/>
+      <circle cx="140" cy="45" r="7" fill="#0a0b0e"/>
+      <circle cx="140" cy="100" r="7" fill="#0a0b0e"/>
+    </g>
+
+    <g transform="translate(400,320)">
+      <ellipse cx="80" cy="20" rx="80" ry="26"/>
+      <path d="M0 20 L0 130 A80 26 0 0 0 160 130 L160 20 A80 26 0 0 1 0 20 Z"/>
+      <ellipse cx="80" cy="75" rx="80" ry="26" fill="none" stroke="#0a0b0e" stroke-width="6"/>
+      <ellipse cx="80" cy="130" rx="80" ry="26" fill="#b6eb30"/>
+      <circle cx="140" cy="45" r="7" fill="#0a0b0e"/>
+      <circle cx="140" cy="100" r="7" fill="#0a0b0e"/>
+    </g>
+  </g>
+</svg>

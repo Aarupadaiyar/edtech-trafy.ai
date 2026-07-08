@@ -1,17 +1,18 @@
+import { Hammer, BookOpen, TrendingUp, RefreshCw } from 'lucide-react';
 import CardSwap, { Card } from '../components/CardSwap';
 
 const steps = [
-  { tag: '01', title: 'Build', body: 'Every day. Before any theory, there is a project brief open in your editor.' },
-  { tag: '02', title: 'Learn', body: "Exactly what today's project requires — nothing ahead of need, nothing wasted." },
-  { tag: '03', title: 'Improve', body: 'Your AI mentor reviews the build — code quality, structure, and what a hiring engineer would flag.' },
-  { tag: '04', title: 'Repeat', body: 'Until building stops feeling like an event and starts feeling like a default.' }
+  { tag: '01', title: 'Build', icon: Hammer, body: 'Every day. Before any theory, there is a project brief open in your editor.' },
+  { tag: '02', title: 'Learn', icon: BookOpen, body: "Exactly what today's project requires — nothing ahead of need, nothing wasted." },
+  { tag: '03', title: 'Improve', icon: TrendingUp, body: 'Your AI mentor reviews the build — code quality, structure, and what a hiring engineer would flag.' },
+  { tag: '04', title: 'Repeat', icon: RefreshCw, body: 'Until building stops feeling like an event and starts feeling like a default.' }
 ];
 
 export default function BuildByLearning() {
   return (
-    <section className="py-24 md:py-32 border-b border-[var(--ink-line)] overflow-hidden">
+    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)] overflow-hidden">
       <div className="container-x">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="eyebrow mb-4">Our Philosophy</div>
             <h2 className="font-display font-semibold text-4xl md:text-5xl leading-[1.05]">
@@ -33,14 +34,17 @@ export default function BuildByLearning() {
             </div>
           </div>
 
-          <div className="relative h-[440px] md:h-[500px]">
-            <CardSwap cardDistance={50} verticalDistance={56} delay={4200} pauseOnHover width={380} height={280} skewAmount={4}>
+          <div className="relative h-[360px] md:h-[400px]">
+            <CardSwap cardDistance={50} verticalDistance={56} delay={1000} pauseOnHover width={380} height={280} skewAmount={4}>
               {steps.map(s => (
                 <Card key={s.tag}>
                   <div className="h-full w-full flex flex-col justify-between p-8">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs text-[var(--amber)]">{s.tag}</span>
                       <span className="w-2 h-2 rounded-full bg-[var(--shipped)]" />
+                    </div>
+                    <div className="w-14 h-14 rounded-xl bg-white/10 border border-white/25 flex items-center justify-center">
+                      <s.icon className="w-7 h-7 text-[#d7d9dd]" strokeWidth={1.75} />
                     </div>
                     <div>
                       <h3 className="font-display text-3xl mb-3">{s.title}</h3>

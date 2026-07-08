@@ -1,7 +1,8 @@
 import { Suspense, lazy } from 'react';
-import TargetCursor from './components/TargetCursor';
+import CursorManager from './components/CursorManager';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
+import OurLearnersWorkIn from './sections/OurLearnersWorkIn';
 import Problem from './sections/Problem';
 import BuildByLearning from './sections/BuildByLearning';
 import WeekJourney from './sections/WeekJourney';
@@ -22,10 +23,11 @@ const ApplyCohort = lazy(() => import('./sections/ApplyCohort'));
 function App() {
   return (
     <div id="top" className="grain bg-[var(--ink)] text-[var(--bone)]">
-      <TargetCursor spinDuration={2.2} cursorColor="#b6eb30" cursorColorOnTarget="#eeeeee" />
+      <CursorManager />
       <Navbar />
       <main>
         <Hero />
+        <OurLearnersWorkIn />
         <Problem />
         <BuildByLearning />
         <WeekJourney />

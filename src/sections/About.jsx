@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x max-w-4xl">
         <div className="eyebrow mb-6">Our Mission</div>
         <p className="font-display text-3xl md:text-5xl leading-[1.25] text-[var(--bone)]">

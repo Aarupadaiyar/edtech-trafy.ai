@@ -35,7 +35,8 @@ const TargetCursor = ({
   hoverDuration = 0.2,
   parallaxOn = true,
   cursorColor = '#b6eb30',
-  cursorColorOnTarget = '#eeeeee'
+  cursorColorOnTarget = '#eeeeee',
+  hidden = false
 }) => {
   const cursorRef = useRef(null);
   const cornersRef = useRef(null);
@@ -289,7 +290,11 @@ const TargetCursor = ({
   if (isMobile) return null;
 
   return (
-    <div ref={cursorRef} className="target-cursor-wrapper">
+    <div
+      ref={cursorRef}
+      className="target-cursor-wrapper"
+      style={{ opacity: hidden ? 0 : 1, transition: 'opacity 0.25s ease' }}
+    >
       <div ref={dotRef} className="target-cursor-dot" style={{ backgroundColor: cursorColor }} />
       <div className="target-cursor-corner corner-tl" style={{ borderColor: cursorColor }} />
       <div className="target-cursor-corner corner-tr" style={{ borderColor: cursorColor }} />

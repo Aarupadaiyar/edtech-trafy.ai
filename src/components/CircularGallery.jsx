@@ -214,6 +214,7 @@ class App {
     this.scroll.target = this.scroll.position + distance;
   }
   onTouchUp(e) {
+    if (!this.isDown) return;
     this.isDown = false;
     this.onCheck();
     if (!this.moved && this.onItemSelect) {

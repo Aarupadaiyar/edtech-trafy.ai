@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <rect width="400" height="400" fill="#0a0b0e"/>
-  <text x="200" y="215" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="56" fill="#eeeeee">Trafy<tspan fill="#b6eb30">AI</tspan></text>
+  <rect width="400" height="400" fill="#b6eb30"/>
+  <text x="200" y="222" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="60" fill="#0a0b0e">Trafy<tspan fill="#eeeeee">AI</tspan></text>
+  <text x="200" y="266" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="16" letter-spacing="3" fill="#0a0b0e">COHORT 04</text>
 </svg>

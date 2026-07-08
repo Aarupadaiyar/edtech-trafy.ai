@@ -31,7 +31,8 @@ main.sphere-main:active { cursor: grabbing; }
 .item__image {
   position: absolute; display: flex; align-items: center; justify-content: center; inset: 10px;
   border-radius: var(--tile-radius, 20px); background: var(--ink-raised, #121419);
-  border: 1px solid var(--ink-line, #23262e); overflow: hidden; backface-visibility: hidden;
+  border: 1px solid var(--amber, #b6eb30); box-shadow: 0 0 24px rgba(182, 235, 48, 0.25), inset 0 0 20px rgba(182, 235, 48, 0.06);
+  overflow: hidden; backface-visibility: hidden; transition: box-shadow 0.3s ease;
 }
 .item__image img { width: 62%; height: 62%; object-fit: contain; pointer-events: none; backface-visibility: hidden; filter: var(--image-filter, none); }
 .edge-fade { position: absolute; left: 0; right: 0; height: 120px; z-index: 5; pointer-events: none; background: linear-gradient(to bottom, transparent, var(--overlay-blur-color, #0a0b0e)); }

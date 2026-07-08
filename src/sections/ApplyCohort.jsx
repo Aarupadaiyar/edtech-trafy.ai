@@ -1,7 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Lanyard from '../components/Lanyard';
 
-function useBackCardImage() {
+function fitFont(ctx, text, weight, family, maxWidth, startSize) {
+  let size = startSize;
+  while (size > 20) {
+    ctx.font = `${weight} ${size}px ${family}`;
+    if (ctx.measureText(text).width <= maxWidth) break;
+    size -= 2;
+  }
+  return size;
+}
+
+function useFrontCardImage() {
   return useMemo(() => {
     const canvas = document.createElement('canvas');
     canvas.width = 800;
@@ -12,37 +22,39 @@ function useBackCardImage() {
     ctx.fillStyle = '#0a0b0e';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    const borderWidth = 14;
+    ctx.strokeStyle = '#b6eb30';
+    ctx.lineWidth = borderWidth;
+    ctx.strokeRect(borderWidth / 2, borderWidth / 2, canvas.width - borderWidth, canvas.height - borderWidth);
+
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#8b909b';
-    ctx.font = '600 32px "JetBrains Mono", monospace';
-    ctx.fillText('THIS COULD BE', canvas.width / 2, 340);
-
     ctx.fillStyle = '#eeeeee';
-    ctx.font = '700 76px "Space Grotesk", sans-serif';
-    ctx.fillText('YOU.', canvas.width / 2, 460);
+    ctx.font = '700 110px "Space Grotesk", sans-serif';
+    ctx.fillText('You.', canvas.width / 2, 460);
 
+    const line2 = 'Future AI Engineer @ FAANG.';
+    const size = fitFont(ctx, line2, '700', '"Space Grotesk", sans-serif', canvas.width - 140, 54);
     ctx.fillStyle = '#b6eb30';
-    ctx.font = '700 58px "Space Grotesk", sans-serif';
-    ctx.fillText('FAANG AI ENGINEER.', canvas.width / 2, 580);
-    ctx.fillText('MULTIMILLIONAIRE.', canvas.width / 2, 650);
+    ctx.font = `700 ${size}px "Space Grotesk", sans-serif`;
+    ctx.fillText(line2, canvas.width / 2, 580);
 
-    ctx.strokeStyle = '#23262e';
+    ctx.strokeStyle = 'rgba(182,235,48,0.35)';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(160, 720);
-    ctx.lineTo(canvas.width - 160, 720);
+    ctx.moveTo(160, 860);
+    ctx.lineTo(canvas.width - 160, 860);
     ctx.stroke();
 
-    ctx.fillStyle = '#8b909b';
-    ctx.font = '500 28px "JetBrains Mono", monospace';
-    ctx.fillText('TRAFY AI · COHORT 04', canvas.width / 2, 780);
+    ctx.fillStyle = '#b6eb30';
+    ctx.font = '600 26px "JetBrains Mono", monospace';
+    ctx.fillText('TRAFY AI · COHORT 04', canvas.width / 2, 910);
 
     return canvas.toDataURL('image/png');
   }, []);
 }
 
 export default function ApplyCohort() {
-  const backImage = useBackCardImage();
+  const frontImage = useFrontCardImage();
   const stageRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -70,25 +82,28 @@ export default function ApplyCohort() {
           Drag the card. Flip your future.
         </h2>
         <p className="mt-5 text-[var(--mist)] max-w-xl mx-auto">
-          One side is where you start. The other is where eight weeks of shipping takes you.
+          One side is where you start. The other is where eight weeks of shipping takes you. Click the card to flip it.
         </p>
       </div>
 
       <div ref={stageRef} className="mt-6 h-[520px] md:h-[650px] relative z-10">
-        {isInView && backImage && (
+        {isInView && frontImage && (
           <Lanyard
             position={[0, 0, 20]}
             gravity={[0, -40, 0]}
-            frontImage="/trafy-logo.svg"
-            backImage={backImage}
+            frontImage={frontImage}
+            backImage="/trafy-logo.svg"
             imageFit="contain"
+            lanyardWidth={0.15}
           />
         )}
       </div>
 
       <div className="container-x text-center relative z-10 -mt-4 md:-mt-10">
         <a
-          href="#final-cta"
+          href="https://forms.gle/AJ2ujkYJBDRVKTug6"
+          target="_blank"
+          rel="noopener noreferrer"
           className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition"
         >
           Apply Now

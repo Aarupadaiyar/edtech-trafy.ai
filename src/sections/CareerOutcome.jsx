@@ -8,7 +8,7 @@ const flow = [
 
 export default function CareerOutcome() {
   return (
-    <section className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
+    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
       <div className="container-x">
         <div className="eyebrow mb-4">Career Outcome</div>
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">

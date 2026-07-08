@@ -20,11 +20,12 @@ const BLANK_PIXEL =
 const FRONT_UV_RECT = { x: 0, y: 0, w: 0.5, h: 0.755 };
 const BACK_UV_RECT = { x: 0.5, y: 0, w: 0.5, h: 0.757 };
 
-// The 3D scene (physics + WebGL) can fail on weaker/virtualized GPUs — either
-// by throwing during setup (caught below) or by losing the WebGL context
-// after mount (caught via the canvas's own contextlost event, see FallbackCard
-// usage in Lanyard). Rather than leave a blank canvas, both paths fall back to
-// a static CSS card so the section never appears empty.
+// The React Bits source has no failure handling at all — a lost WebGL context
+// or an unsupported browser just renders a blank canvas. That's a worse
+// outcome than a static card, so this keeps exactly one safety net: catch a
+// render-time crash (Canvas3DBoundary) or a lost context (below) and swap to
+// FallbackCard. No pre-flight probing, no timers — the fewer moving parts
+// around the real component, the fewer places for this to break.
 class Canvas3DBoundary extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +63,7 @@ export default function Lanyard({
   lanyardWidth = 1
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
-  const [contextLost, setContextLost] = useState(false);
+  const [broken, setBroken] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -72,20 +73,20 @@ export default function Lanyard({
 
   const fallback = <FallbackCard frontImage={frontImage} backImage={backImage} />;
 
-  if (contextLost) return <div className="lanyard-wrapper">{fallback}</div>;
+  if (broken) return <div className="lanyard-wrapper">{fallback}</div>;
 
   return (
     <div className="lanyard-wrapper">
       <Canvas3DBoundary fallback={fallback}>
       <Canvas
         camera={{ position: position, fov: fov }}
-        dpr={[1, isMobile ? 1.5 : 2]}
-        gl={{ alpha: transparent }}
+        dpr={[1, 1.5]}
+        gl={{ alpha: transparent, antialias: false }}
         onCreated={({ gl }) => {
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
           gl.domElement.addEventListener('webglcontextlost', e => {
             e.preventDefault();
-            setContextLost(true);
+            setBroken(true);
           });
         }}
       >
@@ -100,7 +101,7 @@ export default function Lanyard({
             lanyardWidth={lanyardWidth}
           />
         </Physics>
-        <Environment blur={0.75}>
+        <Environment blur={0.75} resolution={32} frames={1}>
           <Lightformer
             intensity={2}
             color="white"
@@ -163,8 +164,6 @@ function Band({
 
   const cardMap = useMemo(() => {
     const baseMap = materials.base.map;
-    if (!frontImage && !backImage) return baseMap;
-
     const baseImg = baseMap.image;
     const W = baseImg.width;
     const H = baseImg.height;
@@ -174,6 +173,12 @@ function Band({
     const ctx = canvas.getContext('2d');
     if (!ctx) return baseMap;
     ctx.drawImage(baseImg, 0, 0, W, H);
+
+    // The source card.glb ships a "reactbits.dev" watermark baked into the
+    // atlas below the back face's UV region. Paint over that strip with the
+    // surrounding background tone so only the actual card art remains.
+    ctx.fillStyle = '#e0e0e0';
+    ctx.fillRect(BACK_UV_RECT.x * W, (BACK_UV_RECT.y + BACK_UV_RECT.h) * H, BACK_UV_RECT.w * W, H - (BACK_UV_RECT.y + BACK_UV_RECT.h) * H);
 
     const drawFitted = (img, rect) => {
       const rx = rect.x * W;
@@ -200,7 +205,7 @@ function Band({
     const composite = new THREE.CanvasTexture(canvas);
     composite.colorSpace = THREE.SRGBColorSpace;
     composite.flipY = baseMap.flipY;
-    composite.anisotropy = 16;
+    composite.anisotropy = 4;
     composite.needsUpdate = true;
     return composite;
   }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map]);
@@ -210,6 +215,10 @@ function Band({
   );
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
+  const flipGroup = useRef();
+  const flippedRef = useRef(false);
+  const flipAngleRef = useRef(0);
+  const downPosRef = useRef(null);
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
@@ -247,11 +256,21 @@ function Band({
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      const points = curve.getPoints(isMobile ? 16 : 32);
+      // Guard against NaN/Infinity leaking into the rope geometry — a single
+      // bad frame here (e.g. a physics spike) fed straight into the GPU buffer
+      // is a plausible trigger for the driver-level context loss some users see.
+      if (points.every(p => Number.isFinite(p.x) && Number.isFinite(p.y) && Number.isFinite(p.z))) {
+        band.current.geometry.setPoints(points);
+      }
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
-      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+      const twist = THREE.MathUtils.clamp(ang.y - rot.y * 0.25, -20, 20);
+      card.current.setAngvel({ x: ang.x, y: twist, z: ang.z });
     }
+    const targetFlip = flippedRef.current ? Math.PI : 0;
+    flipAngleRef.current += (targetFlip - flipAngleRef.current) * Math.min(1, delta * 6);
+    if (flipGroup.current) flipGroup.current.rotation.y = flipAngleRef.current;
   });
 
   curve.curveType = 'chordal';
@@ -277,24 +296,35 @@ function Band({
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
-            onPointerDown={e => (
-              e.target.setPointerCapture(e.pointerId),
-              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())))
-            )}
+            onPointerUp={e => {
+              e.target.releasePointerCapture(e.pointerId);
+              drag(false);
+              const start = downPosRef.current;
+              downPosRef.current = null;
+              if (start) {
+                const moved = Math.hypot(e.clientX - start.x, e.clientY - start.y);
+                if (moved < 6) flippedRef.current = !flippedRef.current;
+              }
+            }}
+            onPointerDown={e => {
+              e.target.setPointerCapture(e.pointerId);
+              downPosRef.current = { x: e.clientX, y: e.clientY };
+              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
+            }}
           >
-            <mesh geometry={nodes.card.geometry}>
-              <meshPhysicalMaterial
-                map={cardMap}
-                map-anisotropy={16}
-                clearcoat={isMobile ? 0 : 1}
-                clearcoatRoughness={0.15}
-                roughness={0.9}
-                metalness={0.8}
-              />
-            </mesh>
-            <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
-            <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
+            <group ref={flipGroup}>
+              <mesh geometry={nodes.card.geometry}>
+                <meshPhysicalMaterial
+                  map={cardMap}
+                  map-anisotropy={4}
+                  clearcoat={0}
+                  roughness={0.9}
+                  metalness={0.8}
+                />
+              </mesh>
+              <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
+              <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
+            </group>
           </group>
         </RigidBody>
       </group>

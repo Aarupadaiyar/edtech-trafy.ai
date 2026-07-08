@@ -44,7 +44,9 @@ export default function DomeGallery({
   segments = DEFAULTS.segments,
   dragDampening = 2,
   imageBorderRadius = '20px',
-  grayscale = false
+  grayscale = false,
+  autoRotate = true,
+  autoRotateSpeed = 6
 }) {
   const rootRef = useRef(null);
   const mainRef = useRef(null);
@@ -101,6 +103,33 @@ export default function DomeGallery({
   const stopInertia = useCallback(() => {
     if (inertiaRAF.current) { cancelAnimationFrame(inertiaRAF.current); inertiaRAF.current = null; }
   }, []);
+
+  const isVisibleRef = useRef(true);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const io = new IntersectionObserver(entries => { isVisibleRef.current = entries[0].isIntersecting; }, { threshold: 0 });
+    io.observe(root);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!autoRotate) return;
+    let raf = null;
+    let lastT = performance.now();
+    const tick = t => {
+      const dt = Math.min(t - lastT, 50);
+      lastT = t;
+      if (!draggingRef.current && !inertiaRAF.current && isVisibleRef.current) {
+        const nextY = wrapAngleSigned(rotationRef.current.y + autoRotateSpeed * (dt / 1000));
+        rotationRef.current = { x: rotationRef.current.x, y: nextY };
+        applyTransform(rotationRef.current.x, nextY);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => { if (raf) cancelAnimationFrame(raf); };
+  }, [autoRotate, autoRotateSpeed]);
 
   const startInertia = useCallback((vx, vy) => {
     const MAX_V = 1.4;

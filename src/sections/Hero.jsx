@@ -38,7 +38,7 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a href="#final-cta" className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
+          <a href="https://forms.gle/AJ2ujkYJBDRVKTug6" target="_blank" rel="noopener noreferrer" className="cursor-target inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
             Join the Cohort
           </a>
           <a href="#curriculum" className="cursor-target inline-flex items-center gap-2 border border-[var(--ink-line)] text-[var(--bone)] font-mono text-sm px-7 py-4 rounded-full hover:border-[var(--amber)] hover:text-[var(--amber)] transition">
