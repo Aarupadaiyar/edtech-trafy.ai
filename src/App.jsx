@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import TargetCursor from './components/TargetCursor';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
@@ -15,6 +16,8 @@ import FAQ from './sections/FAQ';
 import About from './sections/About';
 import FinalCTA from './sections/FinalCTA';
 import Footer from './sections/Footer';
+
+const ApplyCohort = lazy(() => import('./sections/ApplyCohort'));
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <FAQ />
         <About />
         <FinalCTA />
+        <Suspense fallback={<div className="py-24 md:py-32 border-b border-[var(--ink-line)]" />}>
+          <ApplyCohort />
+        </Suspense>
       </main>
       <Footer />
     </div>

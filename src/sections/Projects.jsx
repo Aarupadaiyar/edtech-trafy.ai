@@ -1,13 +1,18 @@
 import { useState } from 'react';
-import CircularGallery from '../components/CircularGallery';
+import ChromaGrid from '../components/ChromaGrid';
 import { projects } from '../data/projects';
 
-const galleryItems = projects.map(p => ({ image: p.image, text: p.text }));
+const gridItems = projects.map((p, i) => ({
+  image: p.image,
+  title: p.title,
+  subtitle: p.description,
+  handle: p.week,
+  borderColor: '#b6eb30',
+  gradient: `linear-gradient(${145 + i * 15}deg, #b6eb30, #0a0b0e)`
+}));
 
 export default function Projects() {
-  const [activeIdx, setActiveIdx] = useState(0);
   const [openIdx, setOpenIdx] = useState(null);
-  const active = projects[activeIdx];
   const opened = openIdx !== null ? projects[openIdx] : null;
 
   return (
@@ -18,22 +23,12 @@ export default function Projects() {
           Eight projects. Eight proofs you can build.
         </h2>
         <p className="mt-5 text-[var(--mist)] max-w-xl">
-          Drag to browse, click a project to open its details.
+          Click a project to open its details.
         </p>
       </div>
 
-      <div className="mt-14 h-[420px] md:h-[520px] relative">
-        <CircularGallery
-          items={galleryItems}
-          bend={2.4}
-          textColor="#eeeeee"
-          borderRadius={0.05}
-          onActiveChange={setActiveIdx}
-          onItemSelect={setOpenIdx}
-        />
-        <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-[11px] text-[var(--mist)]">
-          {active.week} · {active.title} — click to open
-        </div>
+      <div className="mt-14 container-x">
+        <ChromaGrid items={gridItems} radius={320} damping={0.45} fadeOut={0.6} ease="power3.out" onCardClick={(_, i) => setOpenIdx(i)} />
       </div>
 
       {opened && (

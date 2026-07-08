@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * BuildLedger — a git-log / commit-rail timeline.
@@ -13,7 +13,14 @@ import { useState } from 'react';
  */
 export default function BuildLedger({ items, orientation = 'vertical', renderDetail }) {
   const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(true);
   const isHorizontal = orientation === 'horizontal';
+
+  useEffect(() => {
+    setVisible(false);
+    const t = setTimeout(() => setVisible(true), 20);
+    return () => clearTimeout(t);
+  }, [active]);
 
   return (
     <div className={isHorizontal ? 'flex flex-col gap-10' : 'grid md:grid-cols-[280px_1fr] gap-10 md:gap-16'}>
@@ -24,7 +31,7 @@ export default function BuildLedger({ items, orientation = 'vertical', renderDet
             <button
               key={item.key ?? i}
               onClick={() => setActive(i)}
-              className={`cursor-target group relative text-left ${isHorizontal ? 'shrink-0 w-44 snap-start px-3' : 'flex items-start gap-4 w-full pb-8'}`}
+              className={`cursor-target group relative text-left ${isHorizontal ? 'shrink-0 w-44 snap-start px-3' : 'flex items-stretch gap-4 w-full pb-8'}`}
             >
               {!isHorizontal && (
                 <div className="flex flex-col items-center pt-1">
@@ -61,7 +68,11 @@ export default function BuildLedger({ items, orientation = 'vertical', renderDet
         })}
       </div>
 
-      <div className="min-h-[260px]">{renderDetail(items[active], active)}</div>
+      <div
+        className={`min-h-[260px] transition-all duration-300 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}
+      >
+        {renderDetail(items[active], active)}
+      </div>
     </div>
   );
 }

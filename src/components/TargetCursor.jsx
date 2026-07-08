@@ -47,6 +47,8 @@ const TargetCursor = ({
   const targetCornerPositionsRef = useRef(null);
   const tickerFnRef = useRef(null);
   const activeStrengthRef = useRef(0);
+  const quickXRef = useRef(null);
+  const quickYRef = useRef(null);
 
   const isMobile = useMemo(() => {
     if (typeof window === 'undefined') return false;
@@ -61,9 +63,10 @@ const TargetCursor = ({
   const constants = useMemo(() => ({ borderWidth: 3, cornerSize: 12 }), []);
 
   const moveCursor = useCallback((x, y) => {
-    if (!cursorRef.current) return;
+    if (!cursorRef.current || !quickXRef.current || !quickYRef.current) return;
     const { x: offsetX, y: offsetY } = getContainingBlockOffset(containingBlockRef.current);
-    gsap.to(cursorRef.current, { x: x - offsetX, y: y - offsetY, duration: 0.1, ease: 'power3.out' });
+    quickXRef.current(x - offsetX);
+    quickYRef.current(y - offsetY);
   }, []);
 
   useEffect(() => {
@@ -76,6 +79,9 @@ const TargetCursor = ({
     cornersRef.current = cursor.querySelectorAll('.target-cursor-corner');
     containingBlockRef.current = getContainingBlock(cursor);
     const getOffset = () => getContainingBlockOffset(containingBlockRef.current);
+
+    quickXRef.current = gsap.quickTo(cursor, 'x', { duration: 0.1, ease: 'power3.out' });
+    quickYRef.current = gsap.quickTo(cursor, 'y', { duration: 0.1, ease: 'power3.out' });
 
     let activeTarget = null;
     let currentLeaveHandler = null;

@@ -27,6 +27,7 @@ const LightPillar = ({
   const mouseRef = useRef(new THREE.Vector2(0, 0));
   const timeRef = useRef(0);
   const rotationSpeedRef = useRef(rotationSpeed);
+  const isVisibleRef = useRef(true);
   const [webGLSupported, setWebGLSupported] = useState(true);
 
   useEffect(() => {
@@ -233,6 +234,7 @@ const LightPillar = ({
 
     const animate = currentTime => {
       if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) return;
+      if (!isVisibleRef.current) { rafRef.current = null; return; }
       const deltaTime = currentTime - lastTime;
       if (deltaTime >= frameTime) {
         timeRef.current += 0.016 * rotationSpeedRef.current;
@@ -246,6 +248,19 @@ const LightPillar = ({
       rafRef.current = requestAnimationFrame(animate);
     };
     rafRef.current = requestAnimationFrame(animate);
+
+    const visibilityObserver = new IntersectionObserver(
+      entries => {
+        const wasVisible = isVisibleRef.current;
+        isVisibleRef.current = entries[0].isIntersecting;
+        if (isVisibleRef.current && !wasVisible && rafRef.current === null) {
+          lastTime = performance.now();
+          rafRef.current = requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(container);
 
     let resizeTimeout = null;
     const handleResize = () => {
@@ -263,6 +278,7 @@ const LightPillar = ({
     return () => {
       window.removeEventListener('resize', handleResize);
       if (interactive) container.removeEventListener('mousemove', handleMouseMove);
+      visibilityObserver.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       if (rendererRef.current) {
         rendererRef.current.dispose();
