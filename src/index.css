@@ -19,7 +19,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; background: var(--ink); }
+html { scroll-behavior: smooth; background: var(--ink); overflow-x: hidden; }
 
 body {
   margin: 0;

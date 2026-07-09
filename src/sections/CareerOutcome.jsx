@@ -8,7 +8,7 @@ const flow = [
 
 export default function CareerOutcome() {
   return (
-    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
+    <section className="py-24 md:py-32 border-b border-[var(--ink-line)] relative overflow-hidden">
       <div className="container-x">
         <div className="eyebrow mb-4">Career Outcome</div>
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
@@ -25,7 +25,7 @@ export default function CareerOutcome() {
           {flow.map((step, i) => (
             <div key={step.label} className="flex md:items-center flex-1">
               <div
-                className={`w-full rounded-2xl border p-6 md:p-7 ${step.hero ? 'border-[var(--amber)] bg-gradient-to-br from-[var(--amber)]/15 to-transparent' : 'border-[var(--ink-line)] bg-[var(--ink-raised)]'}`}
+                className={`w-full rounded-2xl border-2 border-[var(--amber)] p-6 md:p-7 ${step.hero ? 'bg-gradient-to-br from-[var(--amber)]/15 to-transparent' : 'bg-[var(--ink-raised)]'}`}
               >
                 <div className="font-mono text-[11px] text-[var(--mist)] mb-2">{String(i + 1).padStart(2, '0')}</div>
                 <div className={`font-display text-xl mb-1 ${step.hero ? 'text-[var(--amber)]' : 'text-[var(--bone)]'}`}>{step.label}</div>
@@ -38,7 +38,7 @@ export default function CareerOutcome() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-12 grid md:grid-cols-[auto_1fr] gap-8 md:gap-16 items-center">
+        <div className="mt-16 rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-12 grid md:grid-cols-[auto_1fr] gap-8 md:gap-16 items-center">
           <div>
             <div className="font-mono text-xs text-[var(--mist)] uppercase tracking-widest mb-2">Live Employability Index</div>
             <div className="font-display text-7xl md:text-8xl text-[var(--amber)] leading-none">87<span className="text-3xl text-[var(--mist)]">/100</span></div>

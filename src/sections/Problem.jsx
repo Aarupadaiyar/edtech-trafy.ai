@@ -33,7 +33,7 @@ function StepList({ steps, active }) {
 
 export default function Problem() {
   return (
-    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x">
         <div className="eyebrow mb-4">The Problem</div>
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
@@ -43,12 +43,12 @@ export default function Problem() {
         <div className="grid md:grid-cols-2 gap-6 mt-16">
           <div>
             <div className="font-mono text-xs uppercase tracking-widest text-[var(--mist)] mb-4">Traditional Courses</div>
-            <div className="relative rounded-2xl border border-[var(--ink-line)] bg-transparent p-8 md:p-10 h-full">
+            <div className="relative rounded-2xl border-2 border-[var(--amber)] bg-transparent p-8 md:p-10 h-full">
               <StepList steps={traditional} active={false} />
             </div>
           </div>
 
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full min-h-[420px]">
             <div className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] mb-4">Trafy AI</div>
             <BorderGlow
               glowColor="80 100 50"

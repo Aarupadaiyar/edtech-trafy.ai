@@ -8,7 +8,7 @@ const flow = [
 
 export default function AIMentor() {
   return (
-    <section data-splash-zone className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
       <div className="container-x grid lg:grid-cols-[1fr_1.1fr] gap-16 items-center">
         <div>
           <div className="eyebrow mb-4">Live Mentor Sessions, Reviewed by AI</div>
@@ -22,7 +22,7 @@ export default function AIMentor() {
           </p>
         </div>
 
-        <div className="relative rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-10 font-mono">
+        <div className="relative rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10 font-mono">
           <div className="text-[11px] text-[var(--mist)] mb-6">// mentor.log</div>
           <div className="flex flex-col">
             {flow.map((step, i) => (

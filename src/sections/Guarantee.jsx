@@ -4,7 +4,7 @@ export default function Guarantee() {
   return (
     <section className="py-16 md:py-20 border-b border-[var(--ink-line)]">
       <div className="container-x">
-        <div className="rounded-2xl border border-[var(--amber)]/40 bg-gradient-to-br from-[var(--amber)]/10 to-transparent p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div className="rounded-2xl border-2 border-[var(--amber)] bg-gradient-to-br from-[var(--amber)]/10 to-transparent p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
           <div className="shrink-0 w-12 h-12 rounded-full bg-[var(--amber)]/15 border border-[var(--amber)]/40 flex items-center justify-center font-display text-xl text-[var(--amber)]">
             ✓
           </div>

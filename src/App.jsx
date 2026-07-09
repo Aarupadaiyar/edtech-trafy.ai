@@ -1,5 +1,4 @@
 import { Suspense, lazy } from 'react';
-import CursorManager from './components/CursorManager';
 import CTAStrip from './components/CTAStrip';
 import StickyMobileCTA from './components/StickyMobileCTA';
 import Navbar from './sections/Navbar';
@@ -10,7 +9,6 @@ import Problem from './sections/Problem';
 import OurLearnersWorkIn from './sections/OurLearnersWorkIn';
 import BuildByLearning from './sections/BuildByLearning';
 import WhoThisIsFor from './sections/WhoThisIsFor';
-import WeekJourney from './sections/WeekJourney';
 import DailyBuildSystem from './sections/DailyBuildSystem';
 import Projects from './sections/Projects';
 import PortfolioBeforeAfter from './sections/PortfolioBeforeAfter';
@@ -31,7 +29,6 @@ const ApplyCohort = lazy(() => import('./sections/ApplyCohort'));
 function App() {
   return (
     <div id="top" className="grain bg-[var(--ink)] text-[var(--bone)]">
-      <CursorManager />
       <Navbar />
       <main>
         <Hero />
@@ -42,7 +39,6 @@ function App() {
         <OurLearnersWorkIn />
         <BuildByLearning />
         <WhoThisIsFor />
-        <WeekJourney />
         <DailyBuildSystem />
         <Projects />
         <PortfolioBeforeAfter />

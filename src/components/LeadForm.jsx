@@ -74,7 +74,7 @@ export default function LeadForm({ source = 'lead-form' }) {
 
   if (status === 'success') {
     return (
-      <div className="rounded-2xl border border-[var(--amber)]/40 bg-[var(--ink-raised)] p-8 md:p-10 text-center">
+      <div className="rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10 text-center">
         <div className="w-12 h-12 rounded-full bg-[var(--amber)]/15 border border-[var(--amber)]/40 flex items-center justify-center mx-auto mb-5">
           <span className="text-[var(--amber)] text-2xl">✓</span>
         </div>
@@ -99,7 +99,7 @@ export default function LeadForm({ source = 'lead-form' }) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-10"
+      className="rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10"
     >
       <div className="grid gap-5">
         <div>

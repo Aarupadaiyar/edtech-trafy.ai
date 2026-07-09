@@ -22,7 +22,7 @@ export default function WhoThisIsFor() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 mt-16">
-          <div className="rounded-2xl border border-[var(--amber)]/40 bg-[var(--ink-raised)] p-8 md:p-10">
+          <div className="rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10">
             <div className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] mb-6">This is for you if</div>
             <div className="flex flex-col gap-4">
               {forList.map(item => (
@@ -34,7 +34,7 @@ export default function WhoThisIsFor() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[var(--ink-line)] bg-transparent p-8 md:p-10">
+          <div className="rounded-2xl border-2 border-[var(--amber)] bg-transparent p-8 md:p-10">
             <div className="font-mono text-xs uppercase tracking-widest text-[var(--mist)] mb-6">Not for you if</div>
             <div className="flex flex-col gap-4">
               {notForList.map(item => (

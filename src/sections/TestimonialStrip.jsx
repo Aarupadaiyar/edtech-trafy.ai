@@ -12,7 +12,7 @@ const avatarPhotos = [
 export default function TestimonialStrip() {
   return (
     <section className="py-16 md:py-20 border-b border-[var(--ink-line)]">
-      <div className="container-x mb-8">
+      <div className="container-x mb-10 md:mb-14">
         <div className="eyebrow mb-4">Where Builders Land</div>
         <h2 className="font-display font-semibold text-3xl md:text-4xl max-w-2xl leading-[1.1]">
           Real people. Real offers.
@@ -23,7 +23,7 @@ export default function TestimonialStrip() {
         {testimonials.map((t, i) => (
           <div
             key={t.name}
-            className="shrink-0 w-[85vw] sm:w-[360px] md:w-auto snap-start rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-6 md:p-7 flex flex-col"
+            className="shrink-0 w-[85vw] sm:w-[360px] md:w-auto snap-start rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-6 md:p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-full bg-[var(--amber)] overflow-hidden shrink-0">

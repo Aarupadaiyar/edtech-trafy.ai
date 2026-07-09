@@ -21,7 +21,7 @@ export default function GetPricing() {
           </div>
         </div>
 
-        <div className="max-w-md w-full mx-auto lg:mx-0 rounded-2xl border border-[var(--ink-line)] bg-[var(--ink-raised)] p-8 md:p-10 text-center">
+        <div className="max-w-md w-full mx-auto lg:mx-0 rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10 text-center">
           <p className="font-mono text-xs text-[var(--amber)] uppercase tracking-widest">
             Get your personalized plan and pricing.
           </p>

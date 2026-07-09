@@ -8,7 +8,7 @@ export default function FounderCredibility() {
           <img
             src={founderPhoto}
             alt="Steven Bennett, Founder and CEO of Trafy AI"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover bg-[var(--ink-raised)] border border-[var(--ink-line)]"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover bg-[var(--ink-raised)] border-2 border-[var(--amber)]"
           />
         </div>
         <div>

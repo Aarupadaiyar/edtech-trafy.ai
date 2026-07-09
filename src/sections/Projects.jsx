@@ -315,7 +315,7 @@ export default function Projects() {
           onClick={() => setOpenIdx(null)}
         >
           <div
-            className="w-full max-w-2xl rounded-2xl border border-[var(--amber)]/40 bg-[var(--ink-raised)] overflow-hidden"
+            className="w-full max-w-2xl rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             <div className="h-28 md:h-32 w-full flex items-center px-7 md:px-9 border-b border-[var(--amber)]/30 bg-gradient-to-br from-[var(--amber)]/10 to-transparent">
