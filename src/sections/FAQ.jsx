@@ -40,7 +40,7 @@ export default function FAQ() {
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className="w-full flex items-center justify-between gap-4 py-6 text-left"
                 >
-                  <span className="font-display text-lg md:text-xl">{f.q}</span>
+                  <span className="font-display text-lg md:text-xl text-[var(--bone)]">{f.q}</span>
                   <span className={`font-mono text-lg shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[var(--amber)]' : 'text-[var(--mist)]'}`}>+</span>
                 </button>
                 <div className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'} overflow-hidden`}>

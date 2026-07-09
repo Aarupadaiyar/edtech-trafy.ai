@@ -74,6 +74,15 @@
   transform: scale(1);
 }
 
+/* This decorative blob/particle layer is a duplicate of the real active
+   pill (li.active below), built on a mix-blend-mode: lighten trick that
+   only behaves correctly against a dark backdrop. The real pill already
+   shows the active state correctly on its own in both themes, so this
+   flourish is simply turned off in light theme rather than reworked. */
+[data-theme='light'] .gooey-nav-container .effect {
+  display: none;
+}
+
 .gooey-nav-container .effect {
   position: absolute;
   left: 0;
@@ -96,8 +105,10 @@
   transition: color 0.3s ease;
 }
 
+/* This label sits on top of the always-lime gooey blob below, not on the
+   page surface, so its color stays fixed dark regardless of site theme. */
 .gooey-nav-container .effect.text.active {
-  color: var(--ink, #0a0b0e);
+  color: #0a0b0e;
 }
 
 .gooey-nav-container .effect.filter {
@@ -105,12 +116,16 @@
   mix-blend-mode: lighten;
 }
 
+/* Fixed dark backdrop for the blur/contrast "gooey" trick. mix-blend-mode:
+   lighten is a no-op against a dark backdrop (which is what this needs), but
+   turns destructive (paints over everything) against a light one, so this
+   must never follow the page theme. */
 .gooey-nav-container .effect.filter::before {
   content: '';
   position: absolute;
   inset: -75px;
   z-index: -2;
-  background: var(--ink, #0a0b0e);
+  background: #0a0b0e;
 }
 
 .gooey-nav-container .effect.filter::after {

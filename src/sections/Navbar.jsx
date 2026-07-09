@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-[var(--ink-line)] bg-[var(--ink)]/80 backdrop-blur-md overflow-hidden">
       <div className="container-x flex items-center justify-between h-16 md:h-18">
-        <a href="#top" className="font-display font-semibold text-lg tracking-tight">
+        <a href="#top" className="font-display font-semibold text-lg tracking-tight text-[var(--bone)]">
           Trafy<span className="text-[var(--amber)]">AI</span>
         </a>
         <div className="hidden md:block" style={{ height: '44px' }}>

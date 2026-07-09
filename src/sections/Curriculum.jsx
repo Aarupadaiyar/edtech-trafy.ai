@@ -10,7 +10,7 @@ function Row({ week, isOpen, onToggle }) {
       >
         <div className="flex items-center gap-5 min-w-0">
           <span className="font-mono text-xs text-[var(--amber)] shrink-0">WK.{String(week.week).padStart(2, '0')}</span>
-          <span className="font-display text-lg md:text-2xl truncate group-hover:text-[var(--amber)] transition-colors">{week.title}</span>
+          <span className="font-display text-lg md:text-2xl text-[var(--bone)] truncate group-hover:text-[var(--amber)] transition-colors">{week.title}</span>
         </div>
         <span className={`font-mono text-lg shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[var(--amber)]' : 'text-[var(--mist)]'}`}>+</span>
       </button>

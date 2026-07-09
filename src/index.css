@@ -15,9 +15,16 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Tell the browser this page is intentionally dark by default, so it
+     doesn't apply its own light-mode assumptions to native UI (form
+     controls, scrollbars) ahead of our own theme CSS taking effect. */
+  color-scheme: dark;
 }
 
 [data-theme='light'] {
+  /* When the user has explicitly switched to light, let native UI match it. */
+  color-scheme: light;
   /* --- Trafy AI token system (light) --- */
   --ink: #ffffff;
   --ink-raised: #f1f2ec;

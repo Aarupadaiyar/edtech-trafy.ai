@@ -328,7 +328,7 @@ export default function Projects() {
                 <span className="font-mono text-xs text-[var(--amber)]">{opened.week} · {opened.difficulty}</span>
                 <button onClick={() => setOpenIdx(null)} className="font-mono text-xs text-[var(--mist)] hover:text-[var(--bone)]">close ✕</button>
               </div>
-              <h3 className="font-display text-2xl md:text-3xl mb-3">{opened.title}</h3>
+              <h3 className="font-display text-2xl md:text-3xl mb-3 text-[var(--bone)]">{opened.title}</h3>
               <p className="text-[var(--mist)] text-sm leading-relaxed mb-6">{opened.description}</p>
 
               <div className="grid sm:grid-cols-3 gap-6 font-mono text-xs">
