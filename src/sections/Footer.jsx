@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="#curriculum" className="hover:text-[var(--amber)] transition-colors">Curriculum</a>
           <a href="#projects" className="hover:text-[var(--amber)] transition-colors">Projects</a>
           <a href="#faq" className="hover:text-[var(--amber)] transition-colors">FAQ</a>
-          <a href="https://trafyai.com" className="hover:text-[var(--amber)] transition-colors">trafyai.com ↗</a>
+          <a href="https://www.trafy.ai/" className="hover:text-[var(--amber)] transition-colors">trafyai.com ↗</a>
         </div>
       </div>
       <div className="container-x mt-10 pt-6 border-t border-[var(--ink-line)] flex flex-col sm:flex-row justify-between gap-3 font-mono text-[11px] text-[var(--mist)]">
