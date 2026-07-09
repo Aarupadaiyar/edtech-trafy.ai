@@ -1,61 +1,68 @@
-const flow = [
-  { label: 'Build', detail: '48 shipped projects, weekly' },
-  { label: 'Portfolio', detail: 'Live, deployed, documented' },
-  { label: 'Employability Index', detail: 'Your score, updated after every mission', hero: true },
-  { label: 'Company Visibility', detail: 'Surfaced to hiring partners actively scouting builders' },
-  { label: 'Interview', detail: 'Walk in with a demo, not a certificate' }
-];
-
 export default function CareerOutcome() {
   return (
     <section className="py-24 md:py-32 border-b border-[var(--line)] relative overflow-hidden bg-[var(--cream)]">
       <div className="container-x">
-        <div className="eyebrow mb-4 text-[var(--charcoal)]">Career Outcome</div>
+        <div className="eyebrow mb-4 text-[var(--ink)]">Career Outcome</div>
         <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05] text-[var(--ink)]">
-          Your Employability Index Hits 87/100 by Week 8.
+          Your Employability Index Hits 95+ by Week 8.
         </h2>
-        <p className="mt-5 text-[var(--charcoal)] max-w-2xl">
-          Every mission you ship raises one number, a live, portfolio backed score of what you can
-          actually build, visible to the companies looking for builders instead of certificates.
+        <p className="mt-5 text-[var(--ink)] max-w-2xl">
+          It is the one number every hiring partner sees. A live, portfolio backed score of what you
+          can actually build, updated after every shipped project. This is what replaces the certificate.
         </p>
       </div>
 
       <div className="mt-16 container-x">
-        <div className="flex flex-col md:flex-row items-stretch gap-3 md:gap-2">
-          {flow.map((step, i) => (
-            <div key={step.label} className="flex md:items-center flex-1">
-              <div
-                className={`w-full rounded-2xl border p-6 md:p-7 ${step.hero ? 'border-[var(--lime-deep)] bg-[var(--paper)]' : 'border-[var(--line)] bg-[var(--paper)]'}`}
-              >
-                <div className="font-mono text-[11px] text-[var(--mist)] mb-2">{String(i + 1).padStart(2, '0')}</div>
-                <div className={`font-display text-xl mb-1 ${step.hero ? 'text-[var(--lime-deep)]' : 'text-[var(--ink)]'}`}>{step.label}</div>
-                <div className="text-xs text-[var(--charcoal)] leading-relaxed">{step.detail}</div>
+        <div className="rounded-3xl border border-[var(--lime-deep)] bg-[var(--paper)] p-8 md:p-14">
+          <div className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-center">
+            <div>
+              <div className="font-mono text-xs text-[var(--ink)] uppercase tracking-widest mb-2">Live Employability Index</div>
+              <div className="font-display text-8xl md:text-9xl text-[var(--lime-deep)] leading-none">
+                95<span className="text-4xl align-top">+</span><span className="text-3xl text-[var(--ink)]">/100</span>
               </div>
-              {i < flow.length - 1 && (
-                <div className="hidden md:flex items-center justify-center w-8 shrink-0 text-[var(--mist)]">→</div>
-              )}
+              <div className="font-mono text-[11px] text-[var(--lime-deep)] mt-3">↑ 42 pts since Week 1</div>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-16 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-8 md:p-12 grid md:grid-cols-[auto_1fr] gap-8 md:gap-16 items-center">
-          <div>
-            <div className="font-mono text-xs text-[var(--charcoal)] uppercase tracking-widest mb-2">Live Employability Index</div>
-            <div className="font-display text-7xl md:text-8xl text-[var(--lime-deep)] leading-none">87<span className="text-3xl text-[var(--mist)]">/100</span></div>
-            <div className="font-mono text-[11px] text-[var(--lime-deep)] mt-2">↑ 34 pts since Week 1</div>
+            <div className="grid sm:grid-cols-2 gap-6 font-mono text-xs text-[var(--ink)]">
+              <div className="border-l-2 border-[var(--line)] pl-4">
+                <div className="text-[var(--ink)] font-display text-2xl mb-1">8/8</div>
+                major projects shipped and mentor reviewed
+              </div>
+              <div className="border-l-2 border-[var(--line)] pl-4">
+                <div className="text-[var(--ink)] font-display text-2xl mb-1">48/48</div>
+                mini builds completed
+              </div>
+              <div className="border-l-2 border-[var(--line)] pl-4">
+                <div className="text-[var(--ink)] font-display text-2xl mb-1">12</div>
+                production tools mastered
+              </div>
+              <div className="border-l-2 border-[var(--line)] pl-4">
+                <div className="text-[var(--ink)] font-display text-2xl mb-1">12</div>
+                hiring partners viewing this profile
+              </div>
+            </div>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 font-mono text-xs text-[var(--charcoal)]">
+
+          <div className="mt-12 pt-10 border-t border-[var(--line)] grid md:grid-cols-3 gap-8">
             <div>
-              <div className="text-[var(--ink)] font-display text-2xl mb-1">8/8</div>
-              major projects shipped
+              <div className="font-display text-lg text-[var(--ink)] mb-2">How it is calculated</div>
+              <p className="text-sm text-[var(--ink)] leading-relaxed">
+                Every mentor reviewed project, mini build, and tool you ship adds points. Watching a
+                lecture does not move the number. Only shipped, working code does.
+              </p>
             </div>
             <div>
-              <div className="text-[var(--ink)] font-display text-2xl mb-1">48/48</div>
-              mini builds completed
+              <div className="font-display text-lg text-[var(--ink)] mb-2">What recruiters see</div>
+              <p className="text-sm text-[var(--ink)] leading-relaxed">
+                A live link to your score and portfolio, not a static PDF. Hiring partners can open it,
+                click into any project, and read the code before they ever call you.
+              </p>
             </div>
             <div>
-              <div className="text-[var(--ink)] font-display text-2xl mb-1">12</div>
-              hiring partners viewing this profile
+              <div className="font-display text-lg text-[var(--ink)] mb-2">Why it moves every week</div>
+              <p className="text-sm text-[var(--ink)] leading-relaxed">
+                The score updates after every mentor review, so by week 8 it reflects exactly what you
+                can build today, not a grade you earned once and forgot.
+              </p>
             </div>
           </div>
         </div>

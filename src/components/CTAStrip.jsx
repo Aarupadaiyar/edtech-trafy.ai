@@ -16,7 +16,7 @@ export default function CTAStrip({
         </div>
         <a
           href="#get-pricing"
-          className="shrink-0 inline-flex items-center gap-2 bg-[var(--lime)] text-[var(--ink)] font-display font-semibold px-6 py-3 rounded-full hover:brightness-95 transition"
+          className="cta-beat shrink-0 inline-flex items-center gap-2 bg-[var(--ink)] text-[var(--paper)] font-display font-semibold px-6 py-3 rounded-full hover:bg-black transition-colors"
         >
           {label} →
         </a>

@@ -1,4 +1,5 @@
 import { cohortInfo } from '../data/cohort';
+import CohortCountdown from '../components/CohortCountdown';
 
 export default function GetPricing() {
   return (
@@ -25,9 +26,11 @@ export default function GetPricing() {
             Get your personalized plan and pricing.
           </p>
           <p className="mt-3 font-mono text-[11px] text-[var(--charcoal)]">
-            {cohortInfo.cohortLabel} starts {cohortInfo.startDate}. Only {cohortInfo.seatsRemaining} of{' '}
-            {cohortInfo.seatsTotal} seats remain.
+            {cohortInfo.cohortLabel} starts {cohortInfo.startDate}.
           </p>
+          <div className="mt-4 flex justify-center">
+            <CohortCountdown />
+          </div>
           <a
             href="#get-pricing"
             className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[var(--lime)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-95 transition"
