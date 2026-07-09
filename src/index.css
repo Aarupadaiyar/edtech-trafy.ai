@@ -1,56 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  /* --- Trafy AI token system (dark, default) --- */
-  --ink: #0a0b0e;          /* base background */
-  --ink-raised: #121419;   /* card / panel surface */
-  --ink-line: #23262e;     /* hairline borders */
-  --bone: #eeeeee;         /* primary text */
-  --mist: #8b909b;         /* secondary text */
-  --amber: #c6ff33;        /* signal lime — build / CTA (primary) */
-  --amber-dim: #c6ff33;    /* dimmed lime — hover / muted state */
-  --circuit: #c6ff33;      /* soft lime — secondary tags / AI accents */
-  --shipped: #c6ff33;      /* lime — shipped / success */
+  /* --- Trafy AI token system --- */
+  --paper: #FFFFFF;
+  --cream: #F6F3EA;
+  --ink: #14140F;
+  --charcoal: #3A3A34;
+  --mist: #55554C;
+  --lime: #B6EB30;
+  --lime-deep: #7FA30E;
+  --navy: #1B2A4A;
+  --navy-soft: #E7EBF2;
+  --terracotta: #C1541F;
+  --terracotta-soft: #F5E1D6;
+  --powder: #DCEFFB;
+  --espresso: #2B2318;
+  --line: #E7E5DA;
 
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Tell the browser this page is intentionally dark by default, so it
-     doesn't apply its own light-mode assumptions to native UI (form
-     controls, scrollbars) ahead of our own theme CSS taking effect. */
-  color-scheme: dark;
-}
-
-[data-theme='light'] {
-  /* When the user has explicitly switched to light, let native UI match it. */
   color-scheme: light;
-  /* --- Trafy AI token system (light) --- */
-  --ink: #ffffff;
-  --ink-raised: #f1f2ec;
-  --ink-line: #dcded4;
-  --bone: #0a0b0e;
-  --mist: #10131a;
-  --amber: #c6ff33;
-  --amber-dim: #c6ff33;
-  --circuit: #c6ff33;
-  --shipped: #c6ff33;
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; background: var(--ink); overflow-x: hidden; }
+html { scroll-behavior: smooth; background: var(--paper); overflow-x: hidden; color-scheme: light; }
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--bone);
+  background: var(--paper);
+  color: var(--charcoal);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-::selection { background: var(--amber); color: var(--ink); }
+::selection { background: var(--lime); color: var(--ink); }
 
 .font-display { font-family: var(--font-display); }
 .font-mono { font-family: var(--font-mono); }
@@ -61,7 +48,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.035;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -83,18 +70,18 @@ a, button { cursor: pointer; }
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--amber);
 }
 
-.rule { height: 1px; width: 100%; background: var(--ink-line); }
+.rule { height: 1px; width: 100%; background: var(--line); }
 
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .caret::after {
   content: "";
   display: inline-block;
   width: 0.5ch;
   height: 1em;
-  background: var(--amber);
+  background: var(--lime);
   margin-left: 0.15em;
   vertical-align: -0.15em;
   animation: blink 1s step-end infinite;

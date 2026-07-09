@@ -1,4 +1,4 @@
-import DomeGallery from '../components/DomeGallery';
+import Marquee from '../components/Marquee';
 
 // 'openai' and 'pinecone' aren't in the simpleicons catalog (404), so those
 // two use local lime-recolored icons instead of the CDN.
@@ -17,21 +17,20 @@ const stack = [
   { name: 'Cloud Deploy', slug: 'googlecloud' }
 ];
 
-const images = stack.map(t => ({ src: t.src || `https://cdn.simpleicons.org/${t.slug}/b6eb30`, alt: t.name }));
+const tools = stack.map(t => ({ name: t.name, src: t.src || `https://cdn.simpleicons.org/${t.slug}/7fa30e` }));
 
 export default function TechStack() {
   return (
-    <section className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section className="py-24 md:py-32 border-b border-[var(--line)] bg-[var(--navy-soft)]">
       <div className="container-x">
-        <div className="eyebrow mb-4">The Toolkit</div>
-        <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
-          The exact stack production teams run.
+        <div className="eyebrow mb-4 text-[var(--navy)]">The Toolkit</div>
+        <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05] text-[var(--ink)]">
+          12 Tools. The Exact Stack Production Teams Run.
         </h2>
-        <p className="mt-5 text-[var(--mist)] max-w-xl">Spins on its own. Drag to take control.</p>
       </div>
 
-      <div className="mt-14 h-[440px] md:h-[560px]">
-        <DomeGallery images={images} fit={0.62} grayscale={false} imageBorderRadius="18px" overlayBlurColor="#0a0b0e" />
+      <div className="mt-14">
+        <Marquee items={tools} tone="brand" speed={28} />
       </div>
     </section>
   );

@@ -11,22 +11,22 @@ const avatarPhotos = [
 
 export default function TestimonialStrip() {
   return (
-    <section className="py-16 md:py-20 border-b border-[var(--ink-line)]">
+    <section className="py-16 md:py-20 border-b border-[var(--line)] bg-[var(--paper)]">
       <div className="container-x mb-10 md:mb-14">
-        <div className="eyebrow mb-4">Where Builders Land</div>
-        <h2 className="font-display font-semibold text-3xl md:text-4xl max-w-2xl leading-[1.1]">
-          Real people. Real offers.
+        <div className="eyebrow mb-4 text-[var(--charcoal)]">Where Builders Land</div>
+        <h2 className="font-display font-semibold text-3xl md:text-4xl max-w-2xl leading-[1.1] text-[var(--ink)]">
+          Graduates Are Landing 22 to 56 LPA Offers.
         </h2>
       </div>
 
-      <div className="container-x flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory md:overflow-visible -mx-6 px-6 md:mx-0 md:px-0">
+      <div className="container-x flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory md:overflow-visible -mx-6 px-6 md:mx-0 md:px-0">
         {testimonials.map((t, i) => (
           <div
             key={t.name}
-            className="shrink-0 w-[85vw] sm:w-[360px] md:w-auto snap-start rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-6 md:p-7 flex flex-col"
+            className="shrink-0 w-[85vw] sm:w-[360px] md:w-auto snap-start rounded-2xl border border-[var(--line)] bg-[var(--cream)] p-6 md:p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-full bg-[var(--amber)] overflow-hidden shrink-0">
+              <div className="w-11 h-11 rounded-full bg-[var(--navy-soft)] overflow-hidden shrink-0">
                 <img
                   src={avatarPhotos[i % avatarPhotos.length]}
                   alt=""
@@ -34,18 +34,18 @@ export default function TestimonialStrip() {
                 />
               </div>
               <div className="min-w-0">
-                <div className="font-display text-base truncate">{t.name}</div>
+                <div className="font-display text-base truncate text-[var(--ink)]">{t.name}</div>
                 <div className="font-mono text-[11px] text-[var(--mist)] truncate">
                   {t.role} @ {t.company}
                 </div>
               </div>
             </div>
 
-            <div className="font-display text-4xl md:text-5xl text-[var(--amber)] leading-none mb-5">
+            <div className="font-display text-4xl md:text-5xl text-[var(--lime-deep)] leading-none mb-5">
               {t.package}
             </div>
 
-            <p className="text-sm text-[var(--bone)] leading-relaxed">"{t.quote}"</p>
+            <p className="text-sm text-[var(--charcoal)] leading-relaxed">"{t.quote}"</p>
           </div>
         ))}
       </div>

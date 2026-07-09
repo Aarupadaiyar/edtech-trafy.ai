@@ -13,9 +13,9 @@ const companies = [
 
 export default function OurLearnersWorkIn() {
   return (
-    <section className="py-20 md:py-24 border-b border-[var(--ink-line)] bg-[var(--ink)]">
+    <section className="py-20 md:py-24 border-b border-[var(--line)] bg-[var(--paper)]">
       <div className="container-x mb-14 text-center">
-        <div className="eyebrow justify-center flex">Our Learners Work In</div>
+        <div className="eyebrow justify-center flex text-[var(--charcoal)]">Our Learners Work In</div>
       </div>
       <Marquee items={companies} />
     </section>

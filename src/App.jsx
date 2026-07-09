@@ -1,4 +1,3 @@
-import { Suspense, lazy } from 'react';
 import CTAStrip from './components/CTAStrip';
 import StickyMobileCTA from './components/StickyMobileCTA';
 import Navbar from './sections/Navbar';
@@ -24,17 +23,15 @@ import About from './sections/About';
 import FinalCTA from './sections/FinalCTA';
 import Footer from './sections/Footer';
 
-const ApplyCohort = lazy(() => import('./sections/ApplyCohort'));
-
 function App() {
   return (
-    <div id="top" className="grain bg-[var(--ink)] text-[var(--bone)]">
+    <div id="top" className="bg-[var(--paper)] text-[var(--charcoal)]">
       <Navbar />
       <main>
         <Hero />
         <UrgencyBar />
         <TestimonialStrip />
-        <CTAStrip sublabel="Want proof it works for someone like you?" />
+        <CTAStrip sublabel="Want proof it works for someone like you?" bg="cream" />
         <Problem />
         <OurLearnersWorkIn />
         <BuildByLearning />
@@ -43,15 +40,12 @@ function App() {
         <Projects />
         <PortfolioBeforeAfter />
         <Curriculum />
-        <CTAStrip label="Get pricing & seats" sublabel="Does the curriculum make sense for where you're at?" />
+        <CTAStrip label="Get pricing & seats" sublabel="Does the curriculum make sense for where you're at?" bg="cream" />
         <TechStack />
         <FounderCredibility />
         <AIMentor />
-        <Suspense fallback={<div className="py-24 md:py-32 border-b border-[var(--ink-line)]" />}>
-          <ApplyCohort />
-        </Suspense>
         <CareerOutcome />
-        <CTAStrip label="Get pricing & seats" sublabel="Ready to build your own Employability Index?" />
+        <CTAStrip label="Get pricing & seats" sublabel="Ready to build your own Employability Index?" bg="paper" />
         <GetPricing />
         <Guarantee />
         <FAQ />

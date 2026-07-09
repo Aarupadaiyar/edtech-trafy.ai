@@ -74,19 +74,19 @@ export default function LeadForm({ source = 'lead-form' }) {
 
   if (status === 'success') {
     return (
-      <div className="rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10 text-center">
-        <div className="w-12 h-12 rounded-full bg-[var(--amber)]/15 border border-[var(--amber)]/40 flex items-center justify-center mx-auto mb-5">
-          <span className="text-[var(--amber)] text-2xl">✓</span>
+      <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10 text-center">
+        <div className="w-12 h-12 rounded-full bg-[var(--lime)]/20 border border-[var(--lime-deep)]/40 flex items-center justify-center mx-auto mb-5">
+          <span className="text-[var(--lime-deep)] text-2xl">✓</span>
         </div>
-        <h3 className="font-display text-2xl md:text-3xl mb-3">You are in.</h3>
-        <p className="text-[var(--mist)] max-w-md mx-auto leading-relaxed">
+        <h3 className="font-display text-2xl md:text-3xl mb-3 text-[var(--ink)]">You are in.</h3>
+        <p className="text-[var(--charcoal)] max-w-md mx-auto leading-relaxed">
           Our team will call you within a few hours with pricing, seat availability, and next steps.
         </p>
         <a
           href={WHATSAPP_GROUP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[var(--amber)] hover:brightness-110 transition"
+          className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[var(--lime-deep)] hover:brightness-95 transition"
         >
           <WhatsAppIcon className="w-4 h-4" />
           Join our WhatsApp group for updates, seat availability, and direct access to the mentor team
@@ -99,7 +99,7 @@ export default function LeadForm({ source = 'lead-form' }) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-2xl border-2 border-[var(--amber)] bg-[var(--ink-raised)] p-8 md:p-10"
+      className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10"
     >
       <div className="grid gap-5">
         <div>
@@ -112,9 +112,9 @@ export default function LeadForm({ source = 'lead-form' }) {
             value={form.name}
             onChange={handleChange}
             placeholder="Your name"
-            className="w-full bg-[var(--ink)] border border-[var(--ink-line)] rounded-xl px-4 py-3 text-[var(--bone)] placeholder:text-[var(--mist)]/60 focus:outline-none focus:border-[var(--amber)] transition"
+            className="w-full bg-[var(--paper)] border border-[var(--line)] rounded-xl px-4 py-3 text-[var(--ink)] placeholder:text-[var(--mist)] focus:outline-none focus:border-[var(--lime-deep)] transition"
           />
-          {errors.name && <p className="mt-1.5 font-mono text-[11px] text-red-400">{errors.name}</p>}
+          {errors.name && <p className="mt-1.5 font-mono text-[11px] text-[var(--terracotta)]">{errors.name}</p>}
         </div>
         <div>
           <label className="block font-mono text-[11px] uppercase tracking-widest text-[var(--mist)] mb-2">
@@ -127,9 +127,9 @@ export default function LeadForm({ source = 'lead-form' }) {
             value={form.email}
             onChange={handleChange}
             placeholder="you@email.com"
-            className="w-full bg-[var(--ink)] border border-[var(--ink-line)] rounded-xl px-4 py-3 text-[var(--bone)] placeholder:text-[var(--mist)]/60 focus:outline-none focus:border-[var(--amber)] transition"
+            className="w-full bg-[var(--paper)] border border-[var(--line)] rounded-xl px-4 py-3 text-[var(--ink)] placeholder:text-[var(--mist)] focus:outline-none focus:border-[var(--lime-deep)] transition"
           />
-          {errors.email && <p className="mt-1.5 font-mono text-[11px] text-red-400">{errors.email}</p>}
+          {errors.email && <p className="mt-1.5 font-mono text-[11px] text-[var(--terracotta)]">{errors.email}</p>}
         </div>
         <div>
           <label className="block font-mono text-[11px] uppercase tracking-widest text-[var(--mist)] mb-2">
@@ -142,23 +142,23 @@ export default function LeadForm({ source = 'lead-form' }) {
             value={form.phone}
             onChange={handleChange}
             placeholder="+91 00000 00000"
-            className="w-full bg-[var(--ink)] border border-[var(--ink-line)] rounded-xl px-4 py-3 text-[var(--bone)] placeholder:text-[var(--mist)]/60 focus:outline-none focus:border-[var(--amber)] transition"
+            className="w-full bg-[var(--paper)] border border-[var(--line)] rounded-xl px-4 py-3 text-[var(--ink)] placeholder:text-[var(--mist)] focus:outline-none focus:border-[var(--lime-deep)] transition"
           />
-          {errors.phone && <p className="mt-1.5 font-mono text-[11px] text-red-400">{errors.phone}</p>}
+          {errors.phone && <p className="mt-1.5 font-mono text-[11px] text-[var(--terracotta)]">{errors.phone}</p>}
         </div>
 
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="mt-2 w-full bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition disabled:opacity-60"
+          className="mt-2 w-full bg-[var(--lime)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-95 transition disabled:opacity-60"
         >
           {status === 'submitting' ? 'Sending…' : 'Get Pricing & Seat Availability'}
         </button>
 
         {status === 'error' && (
-          <p className="font-mono text-xs text-center text-[var(--mist)]">
+          <p className="font-mono text-xs text-center text-[var(--charcoal)]">
             Something went wrong. Join our{' '}
-            <a href={WHATSAPP_GROUP_LINK} target="_blank" rel="noopener noreferrer" className="text-[var(--amber)]">
+            <a href={WHATSAPP_GROUP_LINK} target="_blank" rel="noopener noreferrer" className="text-[var(--lime-deep)]">
               WhatsApp group
             </a>{' '}
             instead.

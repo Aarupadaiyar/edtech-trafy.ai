@@ -29,7 +29,7 @@ export default function CohortCountdown({ className = '' }) {
   }, []);
 
   const badgeClass =
-    'font-display font-bold inline-flex items-center rounded-full bg-[var(--amber)] text-[#0a0b0e] px-4 py-1.5 text-xs md:text-sm tracking-wide';
+    'font-display font-bold inline-flex items-center rounded-full bg-[var(--lime)] text-[var(--ink)] px-4 py-1.5 text-xs md:text-sm tracking-wide';
 
   if (remaining.started) {
     return (

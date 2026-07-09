@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { faqs } from '../data/faq';
+import { cohortInfo } from '../data/cohort';
 
 export default function FAQ() {
   const [open, setOpen] = useState(0);
@@ -24,27 +25,27 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section id="faq" className="py-24 md:py-32 border-b border-[var(--ink-line)]">
+    <section id="faq" className="py-24 md:py-32 border-b border-[var(--line)] bg-[var(--paper)]">
       <div className="container-x">
-        <div className="eyebrow mb-4">FAQ</div>
-        <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05]">
-          Questions builders actually ask.
+        <div className="eyebrow mb-4 text-[var(--charcoal)]">FAQ</div>
+        <h2 className="font-display font-semibold text-4xl md:text-6xl max-w-3xl leading-[1.05] text-[var(--ink)]">
+          Everything You Need to Know Before {cohortInfo.cohortLabel}.
         </h2>
 
         <div className="mt-14 max-w-3xl">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={f.q} className="border-b border-[var(--ink-line)]">
+              <div key={f.q} className="border-b border-[var(--line)]">
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className="w-full flex items-center justify-between gap-4 py-6 text-left"
                 >
-                  <span className="font-display text-lg md:text-xl text-[var(--bone)]">{f.q}</span>
-                  <span className={`font-mono text-lg shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[var(--amber)]' : 'text-[var(--mist)]'}`}>+</span>
+                  <span className="font-display text-lg md:text-xl text-[var(--ink)]">{f.q}</span>
+                  <span className={`font-mono text-lg shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[var(--lime-deep)]' : 'text-[var(--mist)]'}`}>+</span>
                 </button>
                 <div className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'} overflow-hidden`}>
-                  <p className="min-h-0 text-[var(--mist)] leading-relaxed max-w-2xl">{f.a}</p>
+                  <p className="min-h-0 text-[var(--charcoal)] leading-relaxed max-w-2xl">{f.a}</p>
                 </div>
               </div>
             );

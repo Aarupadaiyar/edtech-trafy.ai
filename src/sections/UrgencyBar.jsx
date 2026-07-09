@@ -6,7 +6,7 @@ export default function UrgencyBar() {
   if (dismissed) return null;
 
   return (
-    <div className="relative border-b border-[var(--ink-line)] bg-[var(--ink-raised)]">
+    <div className="relative border-b border-[var(--line)] bg-[var(--cream)]">
       <div className="container-x py-3 flex items-center justify-center text-center font-mono text-[11px] md:text-xs uppercase tracking-widest pr-8 md:pr-0">
         <CohortCountdown />
       </div>
