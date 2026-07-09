@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
       (function () {
+        // Dark is the primary mode. We only ever leave it if the visitor has
+        // explicitly toggled to light before; we never infer from the OS or
+        // browser color scheme preference.
         var stored = localStorage.getItem('theme');
-        var theme = stored === 'light' || stored === 'dark'
-          ? stored
-          : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        var theme = stored === 'light' ? 'light' : 'dark';
         document.documentElement.dataset.theme = theme;
       })();
     </script>

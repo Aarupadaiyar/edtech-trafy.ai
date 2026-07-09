@@ -31,10 +31,10 @@
   --ink-line: #dcded4;
   --bone: #0a0b0e;
   --mist: #5b5f63;
-  --amber: #5a7d1a;        /* darkened lime, kept legible as text on white */
-  --amber-dim: #45610f;
-  --circuit: #3f6b13;
-  --shipped: #5a7d1a;
+  --amber: #c8f84e;
+  --amber-dim: #c8f84e;
+  --circuit: #c8f84e;
+  --shipped: #c8f84e;
 }
 
 * { box-sizing: border-box; }
@@ -69,7 +69,8 @@ a, button { cursor: pointer; }
 
 .container-x {
   max-width: 1280px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
