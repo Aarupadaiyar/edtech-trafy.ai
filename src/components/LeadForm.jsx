@@ -150,7 +150,7 @@ export default function LeadForm({ source = 'lead-form' }) {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="mt-2 w-full bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition disabled:opacity-60"
+          className="mt-2 w-full bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition disabled:opacity-60"
         >
           {status === 'submitting' ? 'Sending…' : 'Get Pricing & Seat Availability'}
         </button>

@@ -102,7 +102,7 @@ export default function ApplyCohort() {
       <div className="container-x text-center relative z-10 -mt-4 md:-mt-10">
         <a
           href="#get-pricing"
-          className="inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition"
+          className="inline-flex items-center gap-2 bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-9 py-5 rounded-full text-lg hover:brightness-110 transition"
         >
           Get Pricing & Seats
         </a>

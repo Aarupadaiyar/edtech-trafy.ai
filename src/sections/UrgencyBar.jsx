@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { cohortInfo } from '../data/cohort';
 import CohortCountdown from '../components/CohortCountdown';
 
 export default function UrgencyBar() {
@@ -8,10 +7,8 @@ export default function UrgencyBar() {
 
   return (
     <div className="relative border-b border-[var(--ink-line)] bg-[var(--ink-raised)]">
-      <div className="container-x py-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center font-mono text-[11px] md:text-xs uppercase tracking-widest pr-8 md:pr-0">
-        <CohortCountdown className="text-[var(--amber)]" />
-        <span className="text-[var(--ink-line)]">•</span>
-        <span className="text-[var(--mist)]">Only {cohortInfo.seatsRemaining} of {cohortInfo.seatsTotal} seats left</span>
+      <div className="container-x py-3 flex items-center justify-center text-center font-mono text-[11px] md:text-xs uppercase tracking-widest pr-8 md:pr-0">
+        <CohortCountdown />
       </div>
       <button
         onClick={() => setDismissed(true)}

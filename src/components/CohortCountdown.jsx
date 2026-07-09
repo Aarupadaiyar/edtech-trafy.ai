@@ -28,16 +28,18 @@ export default function CohortCountdown({ className = '' }) {
     return () => clearInterval(id);
   }, []);
 
+  const badgeClass = 'font-mono inline-flex items-center rounded-full bg-[var(--amber)] text-[#0a0b0e] px-4 py-1.5';
+
   if (remaining.started) {
     return (
-      <span className={`font-mono ${className}`}>{cohortInfo.cohortLabel} has started</span>
+      <span className={`${badgeClass} ${className}`}>{cohortInfo.cohortLabel} has started</span>
     );
   }
 
   const pad = n => String(n).padStart(2, '0');
 
   return (
-    <span className={`font-mono ${className}`}>
+    <span className={`${badgeClass} ${className}`}>
       {pad(remaining.days)}D {pad(remaining.hours)}H {pad(remaining.minutes)}M until {cohortInfo.cohortLabel} starts
     </span>
   );

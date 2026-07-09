@@ -40,7 +40,7 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-5">
-          <a href="#get-pricing" className="inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
+          <a href="#get-pricing" className="inline-flex items-center gap-2 bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition">
             Get Cohort Details
           </a>
           <a href="#curriculum" className="font-mono text-sm text-[var(--mist)] hover:text-[var(--amber)] transition underline underline-offset-4 decoration-[var(--ink-line)] hover:decoration-[var(--amber)]">

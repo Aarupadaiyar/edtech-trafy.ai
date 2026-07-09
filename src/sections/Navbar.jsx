@@ -20,7 +20,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a href="#get-pricing" className="font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[var(--ink)] transition">
+          <a href="#get-pricing" className="font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[#0a0b0e] transition">
             Get Pricing
           </a>
         </div>

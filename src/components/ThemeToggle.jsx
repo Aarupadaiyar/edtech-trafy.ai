@@ -22,7 +22,7 @@ export default function ThemeToggle() {
         aria-label="Switch to light mode"
         aria-pressed={theme === 'light'}
         className={`flex items-center justify-center w-7 h-7 rounded-full transition-colors ${
-          theme === 'light' ? 'bg-[var(--amber)] text-[var(--ink)]' : 'text-[var(--mist)] hover:text-[var(--bone)]'
+          theme === 'light' ? 'bg-[var(--amber)] text-[#0a0b0e]' : 'text-[var(--mist)] hover:text-[var(--bone)]'
         }`}
       >
         <Sun className="w-4 h-4" strokeWidth={2} />
@@ -33,7 +33,7 @@ export default function ThemeToggle() {
         aria-label="Switch to dark mode"
         aria-pressed={theme === 'dark'}
         className={`flex items-center justify-center w-7 h-7 rounded-full transition-colors ${
-          theme === 'dark' ? 'bg-[var(--amber)] text-[var(--ink)]' : 'text-[var(--mist)] hover:text-[var(--bone)]'
+          theme === 'dark' ? 'bg-[var(--amber)] text-[#0a0b0e]' : 'text-[var(--mist)] hover:text-[var(--bone)]'
         }`}
       >
         <Moon className="w-4 h-4" strokeWidth={2} />

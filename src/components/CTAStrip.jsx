@@ -10,7 +10,7 @@ export default function CTAStrip({
         </div>
         <a
           href="#get-pricing"
-          className="shrink-0 inline-flex items-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-6 py-3 rounded-full hover:brightness-110 transition"
+          className="shrink-0 inline-flex items-center gap-2 bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-6 py-3 rounded-full hover:brightness-110 transition"
         >
           {label} →
         </a>

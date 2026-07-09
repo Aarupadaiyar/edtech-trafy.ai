@@ -31,7 +31,7 @@ export default function GetPricing() {
           </p>
           <a
             href="#get-pricing"
-            className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[var(--amber)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition"
+            className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[var(--amber)] text-[#0a0b0e] font-display font-semibold px-7 py-4 rounded-full hover:brightness-110 transition"
           >
             Get Pricing & Seat Availability
           </a>
