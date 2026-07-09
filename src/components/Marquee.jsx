@@ -12,7 +12,6 @@ function MarqueeLogo({ item, tone }) {
     <img
       src={item.src}
       alt={item.name}
-      loading="lazy"
       onError={() => setFailed(true)}
       className={tone === 'muted' ? 'marquee-item-img--muted' : ''}
     />
