@@ -205,7 +205,7 @@ function Band({
     };
 
     if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT, '#0a0b0e');
-    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT, '#b6eb30');
+    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT, '#c6ff33');
 
     const composite = new THREE.CanvasTexture(canvas);
     composite.colorSpace = THREE.SRGBColorSpace;

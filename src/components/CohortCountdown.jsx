@@ -28,7 +28,8 @@ export default function CohortCountdown({ className = '' }) {
     return () => clearInterval(id);
   }, []);
 
-  const badgeClass = 'font-mono inline-flex items-center rounded-full bg-[var(--amber)] text-[#0a0b0e] px-4 py-1.5';
+  const badgeClass =
+    'font-display font-bold inline-flex items-center rounded-full bg-[var(--amber)] text-[#0a0b0e] px-4 py-1.5 text-xs md:text-sm tracking-wide';
 
   if (remaining.started) {
     return (

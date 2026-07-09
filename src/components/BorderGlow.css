@@ -135,5 +135,5 @@
 
 /* Persistent brand-colored border, independent of the hover-driven glow above. */
 .border-glow-card--brand {
-  border: 2px solid rgba(182, 235, 48, 0.6);
+  border: 2px solid rgba(198, 255, 51, 0.6);
 }

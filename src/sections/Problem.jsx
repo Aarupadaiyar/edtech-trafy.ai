@@ -10,11 +10,11 @@ function StepList({ steps, active }) {
       {steps.map((step, i) => (
         <div key={step}>
           <div className="flex items-center gap-4">
-            <span className={`font-mono text-xs w-8 shrink-0 ${active ? 'text-[#85a824]' : 'text-[var(--mist)]'}`}>
+            <span className={`font-mono text-xs w-8 shrink-0 ${active ? 'text-[#90ba25]' : 'text-[var(--mist)]'}`}>
               {String(i + 1).padStart(2, '0')}
             </span>
             <span
-              className={`font-display text-xl md:text-2xl font-semibold ${active ? 'text-[#5a7d1a]' : 'text-[var(--mist)] line-through decoration-1'}`}
+              className={`font-display text-xl md:text-2xl font-semibold ${active ? 'text-[#67851b]' : 'text-[var(--mist)] line-through decoration-1'}`}
             >
               {step}
             </span>
@@ -22,7 +22,7 @@ function StepList({ steps, active }) {
           {i < steps.length - 1 && (
             <div
               className="ml-[15px] my-2 h-8 w-px"
-              style={{ background: active ? 'rgba(90,125,26,0.3)' : 'var(--ink-line)' }}
+              style={{ background: active ? 'rgba(103,133,27,0.3)' : 'var(--ink-line)' }}
             />
           )}
         </div>
@@ -57,7 +57,7 @@ export default function Problem() {
               glowRadius={36}
               glowIntensity={1.3}
               coneSpread={28}
-              colors={['#b6eb30', '#d4ff5c', '#85a824']}
+              colors={['#c6ff33', '#e2ffa0', '#90ba25']}
               className="flex-1 min-h-0 border-glow-card--brand"
             >
               <PixelCard variant="green" className="pixel-card--fill" gap={6} speed={35}>

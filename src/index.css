@@ -7,10 +7,10 @@
   --ink-line: #23262e;     /* hairline borders */
   --bone: #eeeeee;         /* primary text */
   --mist: #8b909b;         /* secondary text */
-  --amber: #b6eb30;        /* signal lime — build / CTA (primary) */
-  --amber-dim: #85a824;    /* dimmed lime — hover / muted state */
-  --circuit: #d4ff5c;      /* soft lime — secondary tags / AI accents */
-  --shipped: #b6eb30;      /* lime — shipped / success */
+  --amber: #c6ff33;        /* signal lime — build / CTA (primary) */
+  --amber-dim: #c6ff33;    /* dimmed lime — hover / muted state */
+  --circuit: #c6ff33;      /* soft lime — secondary tags / AI accents */
+  --shipped: #c6ff33;      /* lime — shipped / success */
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -31,10 +31,10 @@
   --ink-line: #dcded4;
   --bone: #0a0b0e;
   --mist: #10131a;
-  --amber: #c8f84e;
-  --amber-dim: #c8f84e;
-  --circuit: #c8f84e;
-  --shipped: #c8f84e;
+  --amber: #c6ff33;
+  --amber-dim: #c6ff33;
+  --circuit: #c6ff33;
+  --shipped: #c6ff33;
 }
 
 * { box-sizing: border-box; }

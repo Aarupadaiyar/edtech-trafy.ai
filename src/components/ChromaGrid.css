@@ -38,7 +38,7 @@
 
   --mouse-x: 50%;
   --mouse-y: 50%;
-  --spotlight-color: rgba(182, 235, 48, 0.25);
+  --spotlight-color: rgba(198, 255, 51, 0.25);
 }
 
 .chroma-card:hover {
@@ -102,7 +102,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #b6eb30;
+  color: #c6ff33;
   order: -1;
 }
 

@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden border-b border-[var(--ink-line)]">
       <div className="absolute inset-0">
         <LightPillar
-          topColor="#d4ff5c"
-          bottomColor="#b6eb30"
+          topColor="#e2ffa0"
+          bottomColor="#c6ff33"
           intensity={1.05}
           rotationSpeed={0.6}
           glowAmount={0.006}

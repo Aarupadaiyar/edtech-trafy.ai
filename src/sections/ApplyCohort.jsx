@@ -23,7 +23,7 @@ function useFrontCardImage() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const borderWidth = 14;
-    ctx.strokeStyle = '#b6eb30';
+    ctx.strokeStyle = '#c6ff33';
     ctx.lineWidth = borderWidth;
     ctx.strokeRect(borderWidth / 2, borderWidth / 2, canvas.width - borderWidth, canvas.height - borderWidth);
 
@@ -34,18 +34,18 @@ function useFrontCardImage() {
 
     const line2 = 'Future AI Engineer @ FAANG.';
     const size = fitFont(ctx, line2, '700', '"Space Grotesk", sans-serif', canvas.width - 140, 54);
-    ctx.fillStyle = '#b6eb30';
+    ctx.fillStyle = '#c6ff33';
     ctx.font = `700 ${size}px "Space Grotesk", sans-serif`;
     ctx.fillText(line2, canvas.width / 2, 580);
 
-    ctx.strokeStyle = 'rgba(182,235,48,0.35)';
+    ctx.strokeStyle = 'rgba(198,255,51,0.35)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(160, 860);
     ctx.lineTo(canvas.width - 160, 860);
     ctx.stroke();
 
-    ctx.fillStyle = '#b6eb30';
+    ctx.fillStyle = '#c6ff33';
     ctx.font = '600 26px "JetBrains Mono", monospace';
     ctx.fillText('TRAFY AI · COHORT 04', canvas.width / 2, 910);
 

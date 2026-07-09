@@ -29,7 +29,7 @@ function drawIsoBadge(ctx, cx, cy, r, glyph) {
   const bottom = { x: cx, y: cy };
   const left = { x: cx - r, y: cy - r / 2 };
 
-  ctx.fillStyle = '#d4ff5c';
+  ctx.fillStyle = '#e2ffa0';
   ctx.beginPath();
   ctx.moveTo(top.x, top.y);
   ctx.lineTo(right.x, right.y);
@@ -38,7 +38,7 @@ function drawIsoBadge(ctx, cx, cy, r, glyph) {
   ctx.closePath();
   ctx.fill();
 
-  ctx.fillStyle = '#5a7d1a';
+  ctx.fillStyle = '#67851b';
   ctx.beginPath();
   ctx.moveTo(left.x, left.y);
   ctx.lineTo(bottom.x, bottom.y);
@@ -47,7 +47,7 @@ function drawIsoBadge(ctx, cx, cy, r, glyph) {
   ctx.closePath();
   ctx.fill();
 
-  ctx.fillStyle = '#b6eb30';
+  ctx.fillStyle = '#c6ff33';
   ctx.beginPath();
   ctx.moveTo(right.x, right.y);
   ctx.lineTo(bottom.x, bottom.y);
@@ -213,7 +213,7 @@ function createProjectTile(project, index, logoImg) {
   ctx.fillRect(0, 0, W, H);
 
   const borderWidth = 14;
-  ctx.strokeStyle = '#b6eb30';
+  ctx.strokeStyle = '#c6ff33';
   ctx.lineWidth = borderWidth;
   ctx.strokeRect(borderWidth / 2, borderWidth / 2, W - borderWidth, H - borderWidth);
 
@@ -234,7 +234,7 @@ function createProjectTile(project, index, logoImg) {
   }
 
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#5a7d1a';
+  ctx.fillStyle = '#67851b';
   ctx.font = '600 30px "JetBrains Mono", monospace';
   ctx.fillText(project.week.toUpperCase(), W / 2, pad + 330);
 
@@ -250,7 +250,7 @@ function createProjectTile(project, index, logoImg) {
   wrapText(ctx, project.title, W / 2, H / 2 + 60, W - pad * 2 - 40, 56);
 
   ctx.font = '600 22px "JetBrains Mono", monospace';
-  ctx.fillStyle = '#5a7d1a';
+  ctx.fillStyle = '#67851b';
   ctx.fillText(project.difficulty.toUpperCase(), W / 2, H - pad - 36);
 
   return canvas.toDataURL('image/png');
@@ -297,7 +297,7 @@ export default function Projects() {
         <CircularGallery
           items={galleryItems}
           bend={2.4}
-          textColor="#b6eb30"
+          textColor="#c6ff33"
           borderRadius={0.06}
           scrollSpeed={1.6}
           scrollEase={0.065}

@@ -121,10 +121,10 @@ const VARIANTS = {
     noFocus: true
   },
   green: {
-    activeColor: '#b6eb30',
+    activeColor: '#c6ff33',
     gap: 6,
     speed: 45,
-    colors: '#b6eb30,#d4ff5c,#85a824',
+    colors: '#c6ff33,#e2ffa0,#90ba25',
     noFocus: false
   }
 };
