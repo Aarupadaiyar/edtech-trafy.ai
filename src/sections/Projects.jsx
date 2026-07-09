@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { projects } from '../data/projects';
+import './Projects.css';
+
+const track = [...projects, ...projects];
 
 export default function Projects() {
   const [openIdx, setOpenIdx] = useState(null);
@@ -18,13 +21,13 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="mt-14 container-x">
-        <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 md:mx-0 md:px-0">
-          {projects.map((project, i) => (
+      <div className="mt-14 ship-marquee-viewport">
+        <div className="ship-marquee-track" style={{ animationDuration: '48s' }}>
+          {track.map((project, i) => (
             <button
-              key={project.id}
-              onClick={() => setOpenIdx(i)}
-              className="text-left shrink-0 w-[280px] snap-start rounded-2xl border border-[var(--line)] bg-[var(--paper)] overflow-hidden hover:border-[var(--ink)] transition"
+              key={`${project.id}-${i}`}
+              onClick={() => setOpenIdx(i % projects.length)}
+              className="text-left shrink-0 w-[280px] rounded-2xl border border-[var(--line)] bg-[var(--paper)] overflow-hidden hover:border-[var(--ink)] transition"
             >
               <div className="h-36 w-full overflow-hidden bg-[var(--navy-soft)]">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
