@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* --- Trafy AI token system --- */
+  /* --- Trafy AI token system (dark, default) --- */
   --ink: #0a0b0e;          /* base background */
   --ink-raised: #121419;   /* card / panel surface */
   --ink-line: #23262e;     /* hairline borders */
@@ -15,6 +15,19 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme='light'] {
+  /* --- Trafy AI token system (light) --- */
+  --ink: #ffffff;
+  --ink-raised: #f1f2ec;
+  --ink-line: #dcded4;
+  --bone: #0a0b0e;
+  --mist: #5b5f63;
+  --amber: #5a7d1a;        /* darkened lime, kept legible as text on white */
+  --amber-dim: #45610f;
+  --circuit: #3f6b13;
+  --shipped: #5a7d1a;
 }
 
 * { box-sizing: border-box; }

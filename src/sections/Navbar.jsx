@@ -1,4 +1,5 @@
 import GooeyNav from '../components/GooeyNav';
+import ThemeToggle from '../components/ThemeToggle';
 
 const links = [
   { href: '#curriculum', label: 'Curriculum' },
@@ -17,9 +18,12 @@ export default function Navbar() {
         <div className="hidden md:block" style={{ height: '44px' }}>
           <GooeyNav items={links} particleCount={12} particleDistances={[70, 8]} particleR={90} animationTime={500} timeVariance={250} />
         </div>
-        <a href="#get-pricing" className="font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[var(--ink)] transition">
-          Get Pricing
-        </a>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <a href="#get-pricing" className="font-mono text-xs px-4 py-2 rounded-full border border-[var(--amber)] text-[var(--amber)] hover:bg-[var(--amber)] hover:text-[var(--ink)] transition">
+            Get Pricing
+          </a>
+        </div>
       </div>
     </header>
   );
