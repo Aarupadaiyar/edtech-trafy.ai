@@ -4,7 +4,7 @@ const BG_CLASSES = {
 };
 
 export default function CTAStrip({
-  label = 'Get pricing & seats',
+  label = 'Secure your seat',
   sublabel = 'Takes 30 seconds. Admissions calls within 24 hours.',
   bg = 'cream'
 }) {

@@ -35,7 +35,7 @@ export default function GetPricing() {
             href="#get-pricing"
             className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[var(--lime)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-95 transition"
           >
-            Get Pricing & Seat Availability
+            Secure Your Seat Before It's Taken
           </a>
         </div>
       </div>

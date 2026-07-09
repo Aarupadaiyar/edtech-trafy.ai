@@ -152,7 +152,7 @@ export default function LeadForm({ source = 'lead-form' }) {
           disabled={status === 'submitting'}
           className="mt-2 w-full bg-[var(--lime)] text-[var(--ink)] font-display font-semibold px-7 py-4 rounded-full hover:brightness-95 transition disabled:opacity-60"
         >
-          {status === 'submitting' ? 'Sending…' : 'Get Pricing & Seat Availability'}
+          {status === 'submitting' ? 'Sending…' : "Secure Your Seat Before It's Taken"}
         </button>
 
         {status === 'error' && (

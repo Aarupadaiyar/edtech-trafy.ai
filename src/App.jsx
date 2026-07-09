@@ -40,12 +40,12 @@ function App() {
         <Projects />
         <PortfolioBeforeAfter />
         <Curriculum />
-        <CTAStrip label="Get pricing & seats" sublabel="Does the curriculum make sense for where you're at?" bg="cream" />
+        <CTAStrip label="Secure your seat" sublabel="Does the curriculum make sense for where you're at?" bg="cream" />
         <TechStack />
         <FounderCredibility />
         <AIMentor />
         <CareerOutcome />
-        <CTAStrip label="Get pricing & seats" sublabel="Ready to build your own Employability Index?" bg="paper" />
+        <CTAStrip label="Secure your seat" sublabel="Ready to build your own Employability Index?" bg="paper" />
         <GetPricing />
         <Guarantee />
         <FAQ />

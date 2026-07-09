@@ -35,9 +35,9 @@ export default function Problem() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 mt-16">
-          <div>
+          <div className="flex flex-col h-full min-h-[420px]">
             <div className="font-mono text-xs uppercase tracking-widest text-[var(--charcoal)] mb-4">Traditional Courses</div>
-            <div className="relative rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10 h-full">
+            <div className="relative rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10 flex-1 min-h-0 flex flex-col justify-center">
               <StepList steps={traditional} active={false} />
             </div>
           </div>
