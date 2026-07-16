@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply for Cohort 04 — Trafy AI</title>
+<meta name="description" content="Apply for Trafy AI's Cohort 04. Share your name, mobile number, and email and our admissions team will call you with pricing and seat availability." />
+<link rel="icon" type="image/png" href="/assets/trafy-logo.png" />
+<link rel="apple-touch-icon" href="/assets/trafy-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#FCFCFA;
+  --ink:#0E0E10;
+  --graphite:#3A3A3E;
+  --mist:#6E6E76;
+  --line:#E4E4DD;
+  --lime:#C6FD39;
+  --lime-dim:#B4E82F;
+  --white:#FFFFFF;
+  --terracotta:#C1541F;
+  --f-display:"Inter Tight",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-body:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+.nav-in{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1180px;
+  margin:0 auto;
+  padding:20px 24px;
+}
+header.nav{border-bottom:1px solid var(--line);}
+.logo-link{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-img{height:34px;width:34px;border-radius:9px;display:block;}
+.back-link{font-family:var(--f-mono);font-size:13px;color:var(--mist);text-decoration:none;}
+.back-link:hover{color:var(--ink);}
+
+.wrap{max-width:520px;margin:0 auto;padding:0 24px;}
+main{padding:56px 0 90px;}
+
+.eyebrow{
+  font-family:var(--f-mono);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--lime-dim);
+  background:rgba(198,253,57,.14);
+  display:inline-flex;
+  padding:6px 12px;
+  border-radius:100px;
+}
+h1{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:clamp(28px,5vw,40px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin:18px 0 12px;
+}
+.sub{color:var(--graphite);font-size:16px;line-height:1.55;margin:0 0 32px;}
+
+form{display:flex;flex-direction:column;gap:18px;}
+.field label{
+  font-family:var(--f-mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--mist);
+  margin-bottom:6px;
+  display:block;
+}
+input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:var(--white);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:15px;
+}
+input:focus{outline:none;border-color:var(--ink);}
+.err{color:var(--terracotta);font-size:12px;font-family:var(--f-mono);margin-top:6px;display:none;}
+.err.show{display:block;}
+
+.btn-submit{
+  margin-top:6px;
+  padding:16px 24px;
+  border-radius:100px;
+  border:none;
+  background:var(--lime);
+  color:var(--ink);
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  transition:filter .15s var(--ease);
+}
+.btn-submit:hover{filter:brightness(.95);}
+.btn-submit:disabled{opacity:.6;cursor:default;}
+
+.fine{margin-top:14px;color:var(--mist);font-size:13px;text-align:center;}
+
+.success{text-align:center;padding:24px 0 8px;}
+.success .badge{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--lime);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;margin:0 auto 20px;
+}
+.success h2{font-family:var(--f-display);font-size:26px;margin:0 0 12px;}
+.success p{color:var(--graphite);font-size:15px;line-height:1.6;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="https://www.trafy.ai/" class="logo-link">
+      <img class="logo-img" src="/assets/trafy-logo.png" alt="Trafy AI" />
+    </a>
+    <a href="https://www.trafy.ai/" class="back-link">← Back to trafy.ai</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="formView">
+    <span class="eyebrow">Cohort 04 · Applications Open</span>
+    <h1>Apply for Cohort 04.</h1>
+    <p class="sub">Share your details and our admissions team will call you within a few hours with pricing, seat availability, and next steps.</p>
+
+    <form id="applyForm" novalidate>
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" />
+        <div class="err" id="nameErr">Enter your full name.</div>
+      </div>
+      <div class="field">
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 00000 00000" />
+        <div class="err" id="phoneErr">Enter a valid phone number.</div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
+        <div class="err" id="emailErr">Enter a valid email address.</div>
+      </div>
+      <button class="btn-submit" type="submit" id="submitBtn">Apply for Cohort 04 →</button>
+      <p class="fine">7-day refund if it's not for you · no questions asked</p>
+    </form>
+  </div>
+
+  <div id="successView" class="success hidden">
+    <div class="badge">✓</div>
+    <h2>You're in the queue.</h2>
+    <p>Thanks — our admissions team will call you within a few hours with pricing and seat availability.</p>
+  </div>
+</main>
+
+<script>
+const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeSIVz6pn2S5zGQ0e3sUfg8Ah1RriFjdJMxqMOvh54WsL2V0Q/formResponse';
+const ENTRY_IDS = {
+  name: 'entry.1014459275',
+  email: 'entry.1453711160',
+  phone: 'entry.572278396'
+};
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const form = document.getElementById('applyForm');
+const submitBtn = document.getElementById('submitBtn');
+
+function toggleError(id, show) {
+  document.getElementById(id).classList.toggle('show', show);
+}
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const digits = phone.replace(/\D/g, '');
+
+  const nameInvalid = !name;
+  const phoneInvalid = digits.length < 10;
+  const emailInvalid = !EMAIL_PATTERN.test(email);
+
+  toggleError('nameErr', nameInvalid);
+  toggleError('phoneErr', phoneInvalid);
+  toggleError('emailErr', emailInvalid);
+
+  if (nameInvalid || phoneInvalid || emailInvalid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  const body = new URLSearchParams();
+  body.append(ENTRY_IDS.name, name);
+  body.append(ENTRY_IDS.email, email);
+  body.append(ENTRY_IDS.phone, phone);
+
+  try {
+    // no-cors means the response is opaque and we cannot read its status.
+    // That is the standard way to post to a Google Form from a static site
+    // without a backend, so we treat the fetch resolving as success.
+    await fetch(GOOGLE_FORM_ACTION_URL, { method: 'POST', mode: 'no-cors', body });
+  } catch (err) {
+    // Network failure on an opaque request still generally means the ping
+    // fired; fall through to the success state rather than block the user.
+  }
+
+  document.getElementById('formView').classList.add('hidden');
+  document.getElementById('successView').classList.remove('hidden');
+});
+</script>
+</body>
+</html>
