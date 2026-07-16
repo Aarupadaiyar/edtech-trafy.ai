@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "buildCommand": false,
+  "installCommand": false,
+  "outputDirectory": ".",
   "rewrites": [
     {
       "source": "/",
