@@ -302,7 +302,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;line-height:1.04;letter
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .marquee-row{display:flex;gap:60px;width:max-content;animation:scroll 48s linear infinite}
-@keyframes scroll{to{transform:translateX(-50%)}}
+@keyframes scroll{to{transform:translateX(calc(-1 * var(--tst-distance, 50%)))}}
 .brandmark{font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--graphite);
   opacity:.55;letter-spacing:-.02em;transition:.3s;white-space:nowrap}
 .brandmark:hover{opacity:1;color:var(--ink)}
@@ -466,7 +466,8 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;line-height:1.04;letter
   font-family:var(--f-display);font-weight:700;color:var(--white);font-size:15px}
 .tst .who .nm{font-weight:700;font-size:14.5px}
 .tst .who .rl{font-size:13px;color:var(--mist)}
-@media(max-width:560px){.tst{width:300px}}
+@media(max-width:560px){.tst{width:280px;padding:22px}}
+@media(max-width:360px){.tst{width:248px;padding:20px}.tst .q{font-size:14.5px}}
 
 /* ===================== COMPARE ===================== */
 .cmp{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--white)}
@@ -502,6 +503,12 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;line-height:1.04;letter
 .incl li .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--lime);
   color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
 @media(max-width:840px){.price-wrap{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .price-card{padding:28px 22px}
+  .price-card .amt{flex-wrap:wrap;row-gap:4px}
+  .price-card .amt .now{font-size:40px}
+  .incl{padding:28px 22px}
+}
 
 /* ===================== FAQ ===================== */
 .faq-wrap{max-width:800px;margin:0 auto}
@@ -1106,6 +1113,8 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;line-height:1.04;letter
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"Live cohort was the difference. I've quit every self-paced course I ever bought. Here I couldn't — my cohort kept me going to Day 60."</p><div class="who"><div class="av" style="background:#7B48C8">MK</div><div><div class="nm">Meera K.</div><div class="rl">Career switcher, ex-QA</div></div></div></div>
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"Went from 'I know some Python' to shipping a RAG system in production. That project is literally why I got hired."</p><div class="who"><div class="av" style="background:#1F9D55">ST</div><div><div class="nm">Sameer T.</div><div class="rl">AI Engineer, SaaS</div></div></div></div>
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"The mentors have actually built this stuff at scale. You can tell in every session. No fluff, no theory dumps."</p><div class="who"><div class="av" style="background:#0E0E10">FA</div><div><div class="nm">Farah A.</div><div class="rl">Backend → AI Engineer</div></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p class="q">"I built an AI study buddy for my own homework in Week 3. My mentor reviewed my code exactly like everyone else's, no special treatment for being 13. That's what made it feel real."</p><div class="who"><div class="av" style="background:#3E6FF0">AS</div><div><div class="nm">Aarav S., 13</div><div class="rl">Youngest builder, Cohort 03</div></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p class="q">"I wanted to build clinical tools, not just talk about AI at conferences. Trafy is the first place that actually taught me to ship instead of just prompt."</p><div class="who"><div class="av" style="background:#1F9D55">AK</div><div><div class="nm">Dr. Anil K., 47</div><div class="rl">Physician &amp; independent AI builder</div></div></div></div>
     </div>
     <div class="tst-row rev">
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"3.4× salary bump switching into an AI role. The capstone was the centrepiece of every interview I did."</p><div class="who"><div class="av" style="background:#E5744E">VK</div><div><div class="nm">Vikram K.</div><div class="rl">Senior AI Engineer</div></div></div></div>
@@ -1113,6 +1122,8 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;line-height:1.04;letter
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"60 days sounds aggressive but the structure makes it doable. Every week you ship something you're proud of."</p><div class="who"><div class="av" style="background:#7B48C8">IH</div><div><div class="nm">Imran H.</div><div class="rl">Full-stack → AI</div></div></div></div>
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"The referral network is real. My mentor put me in touch with a hiring manager directly. Best money I've spent on my career."</p><div class="who"><div class="av" style="background:#1F9D55">TC</div><div><div class="nm">Tanvi C.</div><div class="rl">AI Engineer, e-commerce</div></div></div></div>
       <div class="tst"><div class="stars">★★★★★</div><p class="q">"Worth every rupee. I tried teaching myself for a year and got further in 8 weeks here than all of that combined."</p><div class="who"><div class="av" style="background:#0E0E10">RB</div><div><div class="nm">Rahul B.</div><div class="rl">Data Analyst → AI Engineer</div></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p class="q">"Thirty-four years in the Army taught me discipline. Trafy gave me somewhere to point it. At 60, I did not expect to be shipping production AI systems, but here I am."</p><div class="who"><div class="av" style="background:#E5744E">VS</div><div><div class="nm">Col. (Retd.) Vikram S., 60</div><div class="rl">AI Engineer, second career</div></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p class="q">"I hadn't written a line of code in nine years. The live sessions meant I couldn't quietly fall behind, my cohort noticed if I went missing. That accountability is the whole reason I finished."</p><div class="who"><div class="av" style="background:#7B48C8">SM</div><div><div class="nm">Sunita M., 42</div><div class="rl">Returned to work after a 9-year break</div></div></div></div>
     </div>
   </div>
 </section>
@@ -1276,6 +1287,33 @@ if(newsForm){
     setTimeout(()=>{submitBtn.textContent='Subscribe'}, 2000);
   });
 }
+
+// testimonial marquee: the CSS -50% loop only stays seamless if one full
+// set of cards is at least as wide as the viewport. With a fixed card count
+// that breaks on wide screens (content runs out before the loop wraps), so
+// duplicate each row as many times as needed and drive the loop off a
+// measured pixel distance instead of a guessed percentage.
+document.querySelectorAll('.tst-row').forEach(row => {
+  const originalCards = Array.from(row.children);
+  const viewport = row.parentElement;
+
+  function layout(){
+    row.innerHTML = '';
+    originalCards.forEach(c => row.appendChild(c.cloneNode(true)));
+    const gap = parseFloat(getComputedStyle(row).gap) || 0;
+    const singleSetSpan = row.scrollWidth + gap;
+    if (!singleSetSpan) return;
+    const viewportWidth = viewport.offsetWidth;
+    const copiesNeeded = Math.max(2, Math.ceil(viewportWidth / singleSetSpan) + 1);
+    for (let i = 1; i < copiesNeeded; i++){
+      originalCards.forEach(c => row.appendChild(c.cloneNode(true)));
+    }
+    row.style.setProperty('--tst-distance', singleSetSpan + 'px');
+  }
+
+  layout();
+  window.addEventListener('resize', layout);
+});
 </script>
 </body>
 </html>
