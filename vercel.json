@@ -10,6 +10,9 @@
     { "source": "/cohort/marketers/", "destination": "/cohort/marketers/index.html" },
     { "source": "/blog", "destination": "https://trafyai.vercel.app/intelligence" },
     { "source": "/blog/:path*", "destination": "https://trafyai.vercel.app/intelligence/:path*" },
+    { "source": "/_next/:path*", "destination": "https://trafyai.vercel.app/_next/:path*" },
+    { "source": "/intelligence", "destination": "https://trafyai.vercel.app/intelligence" },
+    { "source": "/intelligence/:path*", "destination": "https://trafyai.vercel.app/intelligence/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

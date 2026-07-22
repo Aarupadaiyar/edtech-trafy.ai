@@ -59,6 +59,20 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/blog/, "/intelligence"),
       },
+      // Next.js always serves its JS/CSS chunks from this fixed path
+      // regardless of where the page itself is mounted, so it must be
+      // proxied too or the blog renders unstyled with no hydration.
+      "/_next": {
+        target: "https://trafyai.vercel.app",
+        changeOrigin: true,
+      },
+      // The blog's own internal links point at its native /intelligence
+      // path (it isn't aware it's being proxied under /blog), so that
+      // path needs proxying too or in-page navigation breaks.
+      "/intelligence": {
+        target: "https://trafyai.vercel.app",
+        changeOrigin: true,
+      },
     },
   },
 });
