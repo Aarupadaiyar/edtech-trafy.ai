@@ -24,7 +24,7 @@ const sections = [
     links: [
       { label: "About", to: "/about" },
       { label: "Careers", to: "/careers" },
-      { label: "Blog", to: "/blog" },
+      { label: "Blog", href: "/blog" },
       { label: "Press", to: "/press" },
     ],
   },

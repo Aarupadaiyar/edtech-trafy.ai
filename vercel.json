@@ -8,6 +8,8 @@
     { "source": "/cohort/apply", "destination": "/cohort/apply.html" },
     { "source": "/cohort/marketers", "destination": "/cohort/marketers/index.html" },
     { "source": "/cohort/marketers/", "destination": "/cohort/marketers/index.html" },
+    { "source": "/blog", "destination": "https://trafyai.vercel.app/intelligence" },
+    { "source": "/blog/:path*", "destination": "https://trafyai.vercel.app/intelligence/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

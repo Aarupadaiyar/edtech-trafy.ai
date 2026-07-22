@@ -205,7 +205,7 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
         <div className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/8 pt-8">
           <span className="mr-2 text-xs font-semibold uppercase tracking-widest text-white/25">Company</span>
           {companyLinks.map(({ label, href }) =>
-            href.startsWith("mailto") ? (
+            href.startsWith("mailto") || href === "/blog" ? (
               <a
                 key={label}
                 href={href}

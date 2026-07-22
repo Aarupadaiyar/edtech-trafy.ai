@@ -33,6 +33,7 @@ const navLinks = [
       { label: "AI for Marketers Cohort", href: "/cohort/marketers/" },
     ],
   },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
