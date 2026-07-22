@@ -25,6 +25,14 @@ const navLinks = [
   { label: "For Talent", href: "#talent" },
   { label: "How it Works", href: "#how" },
   { label: "For Companies", href: "#companies" },
+  {
+    label: "Cohort",
+    href: "/cohort",
+    children: [
+      { label: "AI Engineering Cohort", href: "/cohort" },
+      { label: "AI for Marketers Cohort", href: "/cohort/marketers" },
+    ],
+  },
   { label: "Contact", href: "#contact" },
 ];
 
