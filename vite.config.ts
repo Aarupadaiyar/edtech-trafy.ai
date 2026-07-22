@@ -49,4 +49,16 @@ function cohortStaticPages(): Plugin {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), cohortStaticPages()],
+  server: {
+    // Mirrors the /blog rewrite in vercel.json (which only applies once
+    // actually deployed to Vercel) so the proxy to the separately-hosted
+    // Next.js blog also works under local `vite dev`.
+    proxy: {
+      "/blog": {
+        target: "https://trafyai.vercel.app",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/blog/, "/intelligence"),
+      },
+    },
+  },
 });
