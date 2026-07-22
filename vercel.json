@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
-  "buildCommand": "echo \"static site, no build needed\"",
-  "installCommand": "echo \"static site, no install needed\"",
-  "outputDirectory": "."
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
