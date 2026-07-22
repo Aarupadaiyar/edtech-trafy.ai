@@ -81,8 +81,8 @@ export default function About() {
           {[
             { name: "Trafy", desc: "AI talent marketplace", href: "https://trafy.ai", color: "bg-green-hard/15" },
             { name: "Trafy Build", desc: "Custom AI product dev", href: "https://build.trafy.ai", color: "bg-blue/10" },
-            { name: "AI Engineering Cohort", desc: "AI learning programme", href: "/cohort", color: "bg-yellow/15" },
-            { name: "AI for Marketers Cohort", desc: "AI marketing programme", href: "/cohort/marketers", color: "bg-yellow/15" },
+            { name: "AI Engineering Cohort", desc: "AI learning programme", href: "/cohort/", color: "bg-yellow/15" },
+            { name: "AI for Marketers Cohort", desc: "AI marketing programme", href: "/cohort/marketers/", color: "bg-yellow/15" },
           ].map((p) => (
             <a
               key={p.name}
