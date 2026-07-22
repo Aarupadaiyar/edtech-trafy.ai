@@ -4,8 +4,10 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/cohort", "destination": "/cohort/index.html" },
+    { "source": "/cohort/", "destination": "/cohort/index.html" },
     { "source": "/cohort/apply", "destination": "/cohort/apply.html" },
     { "source": "/cohort/marketers", "destination": "/cohort/marketers/index.html" },
+    { "source": "/cohort/marketers/", "destination": "/cohort/marketers/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
