@@ -14,7 +14,8 @@ const sections = [
     title: "Ecosystem",
     links: [
       { label: "Trafy Build", href: "https://build.trafy.ai" },
-      { label: "Trafy Cohort", href: "/cohort" },
+      { label: "AI Engineering Cohort", href: "/cohort" },
+      { label: "AI for Marketers Cohort", href: "/cohort/marketers" },
       { label: "Trafy App", href: "https://app.trafy.ai" },
     ],
   },

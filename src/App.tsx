@@ -59,7 +59,8 @@ const footerColumns = [
     title: "Ecosystem",
     links: [
       { label: "Trafy Build", href: "https://build.trafy.ai" },
-      { label: "Trafy Cohort", href: "/cohort" },
+      { label: "AI Engineering Cohort", href: "/cohort" },
+      { label: "AI for Marketers Cohort", href: "/cohort/marketers" },
       { label: "Community", href: "https://www.linkedin.com/company/trafy-ai/" },
       { label: "Follow Us", href: "https://www.instagram.com/trafy.ai" },
     ],

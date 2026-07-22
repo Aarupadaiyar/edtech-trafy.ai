@@ -239,6 +239,9 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.04;letter
 .nav-links{display:flex;align-items:center;gap:34px}
 .nav-links a{font-size:14.5px;font-weight:500;color:var(--graphite);transition:.2s}
 .nav-links a:hover{color:var(--ink)}
+.nav-links a.nav-switcher{color:var(--ink);background:rgba(0,0,0,.07);border-radius:20px;padding:5px 13px;font-size:13px;font-weight:600;letter-spacing:.01em;transition:.2s}
+.nav-links a.nav-switcher:hover{background:var(--ink);color:#fff}
+.mmenu .nav-switcher{display:inline-block;margin-top:8px;background:rgba(0,0,0,.07);border-radius:20px;padding:6px 16px;font-weight:600;font-size:14px}
 .nav-cta{display:flex;align-items:center;gap:14px}
 .nav-cta .login{font-size:14.5px;font-weight:600}
 .burger{display:none;flex-direction:column;gap:5px;width:28px;padding:6px 2px}
@@ -662,6 +665,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.04;letter
       <a href="#outcomes">Outcomes</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="/cohort/marketers" class="nav-switcher" title="Switch to AI for Marketers">For Marketers →</a>
     </nav>
     <div class="nav-cta">
       <a href="#apply" class="btn btn-primary">Apply now</a>
@@ -681,6 +685,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.04;letter
     <a href="#outcomes" class="m-link">Outcomes</a>
     <a href="#pricing" class="m-link">Pricing</a>
     <a href="#faq" class="m-link">FAQ</a>
+    <a href="/cohort/marketers" class="m-link nav-switcher">For Marketers →</a>
   </nav>
   <a href="#apply" class="btn btn-primary btn-lg m-link">Apply for Cohort 04 →</a>
 </div>
