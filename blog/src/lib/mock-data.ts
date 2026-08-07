@@ -47,7 +47,7 @@ export const MOCK_ARTICLES: ArticleCardData[] = [
     id: "4",
     slug: "huggingface-open-weights-benchmark",
     title: "Hugging Face's new open leaderboard puts small models under the microscope",
-    summary: "Sub-10B models are closing the gap on reasoning benchmarks — here's what changed.",
+    summary: "Sub-10B models are closing the gap on reasoning benchmarks. Here's what changed.",
     thumbnailUrl: null,
     category: { slug: "open-source", name: "Open Source" },
     source: { slug: "huggingface", name: "Hugging Face Blog" },
