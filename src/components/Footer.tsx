@@ -120,7 +120,7 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
           </div>
 
           {/* Nav columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
+          <div className="grid grid-cols-2 gap-8 lg:col-span-5">
             {columns.map((col) => (
               <div key={col.title}>
                 <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-widest text-white/30">
@@ -245,16 +245,8 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
             ))}
           </div>
 
-          {/* Right — status + back to top */}
+          {/* Right — back to top */}
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5 text-xs text-white/35">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-hard/60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-hard" />
-              </span>
-              All systems operational
-            </span>
-
             <a
               href="#top"
               className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-200 hover:border-green-hard/50 hover:text-green-hard hover:-translate-y-0.5"

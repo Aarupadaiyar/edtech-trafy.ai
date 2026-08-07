@@ -49,7 +49,7 @@ export default function HowItWorks() {
     <section id="how" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mb-12 max-w-2xl">
         <SectionTag color="blue">How It Works</SectionTag>
-        <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+        <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
           From sign-up to your first remote AI role.
         </h2>
       </div>
@@ -66,14 +66,18 @@ export default function HowItWorks() {
               className={`rounded-2xl border p-5 ${
                 step.active
                   ? "border-green-hard bg-green-mild"
-                  : "border-ink/10 bg-white/60"
+                  : "border-white/10 bg-white/5"
               }`}
             >
-              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-ink text-green-hard text-xs font-bold">
+              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-green-hard text-xs font-bold text-white">
                 {step.active ? <Check size={15} /> : i + 1}
               </div>
-              <h4 className="font-display text-sm font-bold text-ink">{step.title}</h4>
-              <p className="mt-1 text-xs text-ink/60">{step.description}</p>
+              <h4 className={`font-display text-sm font-bold ${step.active ? "text-ink" : "text-white"}`}>
+                {step.title}
+              </h4>
+              <p className={`mt-1 text-xs ${step.active ? "text-ink/60" : "text-white/55"}`}>
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -83,27 +87,27 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="overflow-hidden rounded-2xl border border-ink/10 bg-white"
+          className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
         >
-          <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3.5">
+          <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-green-hard" />
-              <span className="font-display text-sm font-semibold text-ink">
+              <span className="font-display text-sm font-semibold text-white">
                 Trafy Assessment
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <button className="rounded-full bg-ink px-3 py-1.5 text-xs font-semibold text-white">
+              <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-ink">
                 View Report
               </button>
-              <button className="text-xs font-medium text-ink/50">Retake</button>
+              <button className="text-xs font-medium text-white/50">Retake</button>
             </div>
           </div>
 
-          <div className="flex gap-2 border-b border-ink/10 px-5 py-3 text-xs font-medium">
-            <span className="rounded-full bg-ink/5 px-3 py-1.5 text-ink/60">Profile</span>
-            <span className="rounded-full bg-ink px-3 py-1.5 text-white">Assessment</span>
-            <span className="rounded-full px-3 py-1.5 text-ink/60">Matches</span>
+          <div className="flex gap-2 border-b border-white/10 px-5 py-3 text-xs font-medium">
+            <span className="rounded-full bg-white/5 px-3 py-1.5 text-white/60">Profile</span>
+            <span className="rounded-full bg-green-hard px-3 py-1.5 text-white">Assessment</span>
+            <span className="rounded-full px-3 py-1.5 text-white/60">Matches</span>
           </div>
 
           <div className="flex flex-col gap-3 p-5">
@@ -113,13 +117,20 @@ export default function HowItWorks() {
                 className={`flex items-start gap-3 rounded-xl border p-4 ${
                   row.highlight
                     ? "border-green-hard bg-green-mild"
-                    : "border-ink/10 bg-green-light/60"
+                    : "border-white/10 bg-white/5"
                 }`}
               >
-                <row.icon size={18} className="mt-0.5 shrink-0 text-ink/70" />
+                <row.icon
+                  size={18}
+                  className={`mt-0.5 shrink-0 ${row.highlight ? "text-ink/70" : "text-white/60"}`}
+                />
                 <div>
-                  <p className="text-sm font-semibold text-ink">{row.title}</p>
-                  <p className="text-xs text-ink/60">{row.description}</p>
+                  <p className={`text-sm font-semibold ${row.highlight ? "text-ink" : "text-white"}`}>
+                    {row.title}
+                  </p>
+                  <p className={`text-xs ${row.highlight ? "text-ink/60" : "text-white/55"}`}>
+                    {row.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -131,18 +142,18 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white/60 p-5"
+          className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-ink/40">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/40">
             Trafy Copilot
           </p>
-          <div className="rounded-xl border border-ink/10 bg-white p-3 text-sm text-ink/80">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">
             What should I improve next?
           </div>
-          <div className="rounded-xl bg-ink/5 p-3 text-sm text-ink/80">
+          <div className="rounded-xl bg-white/5 p-3 text-sm text-white/80">
             Add a system design project to boost your score.
           </div>
-          <div className="rounded-xl bg-green-hard p-3 text-sm font-semibold text-ink">
+          <div className="rounded-xl bg-green-hard p-3 text-sm font-semibold text-white">
             Updated Score: 96
           </div>
         </motion.div>

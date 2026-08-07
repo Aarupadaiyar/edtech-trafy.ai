@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green-hard: #c6ff33;
-  --color-green-mild: #efffc6;
-  --color-green-light: #fbfff3;
-  --color-rose: #ff20f6;
-  --color-blue: #335aff;
-  --color-yellow: #ffd628;
-  --color-ink: #0c0f0a;
+  --color-green-hard: #4c56e8;
+  --color-green-mild: #e7e9fb;
+  --color-green-light: #14123a;
+  --color-rose: #ff5ec4;
+  --color-blue: #2f39ba;
+  --color-yellow: #ffb13c;
+  --color-ink: #0d0b28;
 
-  --font-display: "Futura", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -18,15 +18,15 @@ html {
 }
 
 body {
-  background-color: var(--color-green-light);
-  color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: #ffffff;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background-color: var(--color-green-hard);
-  color: var(--color-ink);
+  color: #ffffff;
 }
 
 .font-display {
@@ -36,14 +36,14 @@ body {
 .bg-dot-grid {
   background-image: radial-gradient(currentColor 1px, transparent 1px);
   background-size: 28px 28px;
-  color: rgba(12, 15, 10, 0.12);
+  color: rgba(255, 255, 255, 0.08);
 }
 
 .caret {
   display: inline-block;
   width: 3px;
   margin-left: 2px;
-  background: var(--color-ink);
+  background: currentColor;
   animation: caret-blink 1s step-end infinite;
 }
 
@@ -73,9 +73,9 @@ body {
 
 .bg-space {
   background:
-    radial-gradient(120% 90% at 15% -10%, rgba(51, 90, 255, 0.28), transparent 55%),
-    radial-gradient(110% 90% at 105% 110%, rgba(255, 32, 246, 0.2), transparent 55%),
-    linear-gradient(180deg, #0a0e1a 0%, #05060a 100%);
+    radial-gradient(120% 90% at 15% -10%, rgba(47, 57, 186, 0.35), transparent 55%),
+    radial-gradient(110% 90% at 105% 110%, rgba(255, 94, 196, 0.24), transparent 55%),
+    linear-gradient(180deg, #141230 0%, #060419 100%);
 }
 
 .bg-stars {
@@ -147,7 +147,7 @@ body {
   margin-bottom: 1rem;
   font-size: 0.9375rem;
   line-height: 1.75;
-  color: rgba(12, 15, 10, 0.65);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .legal-prose ul {
@@ -160,11 +160,11 @@ body {
   margin-bottom: 0.5rem;
   font-size: 0.9375rem;
   line-height: 1.7;
-  color: rgba(12, 15, 10, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .legal-prose a {
-  color: var(--color-ink);
+  color: #ffffff;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -172,12 +172,12 @@ body {
 }
 
 .legal-prose a:hover {
-  color: #335aff;
+  color: #ff5ec4;
 }
 
 .legal-prose strong {
   font-weight: 600;
-  color: var(--color-ink);
+  color: #ffffff;
 }
 
 .legal-prose table {
@@ -190,18 +190,18 @@ body {
 .legal-prose th {
   text-align: left;
   padding: 0.625rem 0.75rem;
-  background: rgba(12, 15, 10, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(12, 15, 10, 0.5);
-  border-bottom: 1px solid rgba(12, 15, 10, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .legal-prose td {
   padding: 0.5rem 0.75rem;
-  color: rgba(12, 15, 10, 0.6);
-  border-bottom: 1px solid rgba(12, 15, 10, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 

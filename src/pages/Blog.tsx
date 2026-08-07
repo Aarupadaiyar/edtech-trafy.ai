@@ -4,7 +4,7 @@ const posts = [
   {
     date: "Jun 28, 2026",
     category: "Product",
-    title: "Introducing Trafy Cohort — Learn AI by Building Real Products",
+    title: "Introducing Trafy Cohort: Learn AI by Building Real Products",
     excerpt: "Our new mentored programme bridges the gap between learning AI and landing a role at a top company. Here's how it works.",
     readTime: "5 min read",
   },
@@ -12,7 +12,7 @@ const posts = [
     date: "Jun 15, 2026",
     category: "Engineering",
     title: "How We Built Our AI Assessment Engine",
-    excerpt: "A behind-the-scenes look at the technology powering Trafy's skill verification system — from LLM-based evaluation to adaptive difficulty.",
+    excerpt: "A behind-the-scenes look at the technology powering Trafy's skill verification system, from LLM-based evaluation to adaptive difficulty.",
     readTime: "8 min read",
   },
   {
@@ -49,16 +49,16 @@ export default function Blog() {
   return (
     <section className="mx-auto max-w-4xl px-6 pt-32 pb-24">
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center gap-2 text-xs text-ink/40">
-        <Link to="/" className="transition-colors hover:text-ink">Home</Link>
+      <nav className="mb-8 flex items-center gap-2 text-xs text-white/40">
+        <Link to="/" className="transition-colors hover:text-white">Home</Link>
         <span>/</span>
-        <span className="text-ink/70">Blog</span>
+        <span className="text-white/70">Blog</span>
       </nav>
 
       <h1 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
         Blog
       </h1>
-      <p className="mt-4 max-w-xl text-lg text-ink/50">
+      <p className="mt-4 max-w-xl text-lg text-white/50">
         Insights on AI careers, remote hiring, and building products at the frontier.
       </p>
 
@@ -67,31 +67,31 @@ export default function Blog() {
         {posts.map((post) => (
           <article
             key={post.title}
-            className="group cursor-pointer rounded-2xl border border-ink/8 bg-white/60 p-6 transition-all duration-300 hover:border-ink/15 hover:shadow-lg"
+            className="group cursor-pointer rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:shadow-lg"
           >
             <div className="flex items-center gap-3">
-              <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[post.category] || "bg-ink/5 text-ink/50"}`}>
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[post.category] || "bg-white/10 text-white/50"}`}>
                 {post.category}
               </span>
-              <span className="text-xs text-ink/30">{post.date}</span>
-              <span className="text-xs text-ink/30">·</span>
-              <span className="text-xs text-ink/30">{post.readTime}</span>
+              <span className="text-xs text-white/30">{post.date}</span>
+              <span className="text-xs text-white/30">·</span>
+              <span className="text-xs text-white/30">{post.readTime}</span>
             </div>
-            <h2 className="mt-3 font-display text-xl font-bold transition-colors group-hover:text-green-hard">
+            <h2 className="mt-3 font-display text-xl font-bold text-white transition-colors group-hover:text-green-hard">
               {post.title}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink/50">{post.excerpt}</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/50">{post.excerpt}</p>
           </article>
         ))}
       </div>
 
       {/* Newsletter CTA */}
-      <div className="mt-16 rounded-2xl bg-ink p-8 text-center">
+      <div className="mt-16 rounded-2xl border border-white/10 bg-green-light p-8 text-center">
         <h2 className="font-display text-xl font-bold text-white">Stay in the loop</h2>
         <p className="mt-2 text-sm text-white/50">Get articles, product updates, and industry insights delivered to your inbox.</p>
         <a
           href="mailto:blog@trafy.ai?subject=Subscribe to Newsletter"
-          className="mt-5 inline-flex items-center rounded-xl bg-green-hard px-6 py-2.5 text-sm font-semibold text-ink transition-all hover:brightness-110"
+          className="mt-5 inline-flex items-center rounded-xl bg-green-hard px-6 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110"
         >
           Subscribe to Newsletter
         </a>

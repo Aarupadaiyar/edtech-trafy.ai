@@ -3,16 +3,16 @@ import type { ReactNode } from "react";
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: "primary" | "dark" | "outline";
+  variant?: "primary" | "light" | "outline";
   href?: string;
   onClick?: () => void;
   className?: string;
 };
 
 const styles = {
-  primary: "bg-green-hard text-ink hover:bg-ink hover:text-green-hard",
-  dark: "bg-ink text-white hover:bg-black",
-  outline: "border border-ink/15 text-ink hover:border-ink/60 bg-transparent",
+  primary: "bg-green-hard text-white hover:brightness-110",
+  light: "bg-white text-ink hover:bg-white/85",
+  outline: "border border-white/20 text-white hover:border-white/50 bg-transparent",
 };
 
 export default function Button({

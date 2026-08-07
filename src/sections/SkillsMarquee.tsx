@@ -13,8 +13,8 @@ const skills = [
 
 export default function SkillsMarquee() {
   return (
-    <div className="border-y border-ink/10 bg-white/40 py-7">
-      <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-ink/40">
+    <div className="border-y border-white/10 bg-white/[0.03] py-7">
+      <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-white/40">
         Talent assessed and matched across
       </p>
       <div className="overflow-hidden">
@@ -22,7 +22,7 @@ export default function SkillsMarquee() {
           {[...skills, ...skills].map((s, i) => (
             <span
               key={i}
-              className="whitespace-nowrap font-display text-lg font-semibold text-ink/30"
+              className="whitespace-nowrap font-display text-lg font-semibold text-white/30"
             >
               {s}
             </span>

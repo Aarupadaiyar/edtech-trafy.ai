@@ -4,10 +4,17 @@ import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
+import CompanyMarquee from "./sections/CompanyMarquee";
+import StatsBar from "./sections/StatsBar";
 import SkillsMarquee from "./sections/SkillsMarquee";
 import TalentFeatures from "./sections/TalentFeatures";
 import HowItWorks from "./sections/HowItWorks";
+import EmployabilityIndex from "./sections/EmployabilityIndex";
+import PlacementAssurance from "./sections/PlacementAssurance";
 import ForCompanies from "./sections/ForCompanies";
+import CompanyHistory from "./sections/CompanyHistory";
+import PremiumMentorship from "./sections/PremiumMentorship";
+import FAQSection from "./sections/FAQSection";
 import CTASection from "./sections/CTASection";
 
 /* ── Pages ──────────────────────────────────────────────────────── */
@@ -24,6 +31,7 @@ import Press from "./pages/Press";
 const navLinks = [
   { label: "For Talent", href: "#talent" },
   { label: "How it Works", href: "#how" },
+  { label: "Employability Index", href: "#employability" },
   { label: "For Companies", href: "#companies" },
   {
     label: "Cohort",
@@ -43,8 +51,9 @@ const footerColumns = [
     links: [
       { label: "Get Started", href: "https://app.trafy.ai" },
       { label: "AI Assessment", href: "#how" },
-      { label: "Free Portfolio", href: "#talent" },
-      { label: "Skill Badges", href: "#talent" },
+      { label: "Employability Index", href: "#employability" },
+      { label: "AI Engineering Cohort", href: "/cohort/" },
+      { label: "AI for Marketers Cohort", href: "/cohort/marketers/" },
     ],
   },
   {
@@ -54,16 +63,6 @@ const footerColumns = [
       { label: "Private Workspace", href: "#companies" },
       { label: "AI Assistant", href: "#companies" },
       { label: "Enterprise", href: "mailto:enterprise@trafy.ai" },
-    ],
-  },
-  {
-    title: "Ecosystem",
-    links: [
-      { label: "Trafy Build", href: "https://build.trafy.ai" },
-      { label: "AI Engineering Cohort", href: "/cohort/" },
-      { label: "AI for Marketers Cohort", href: "/cohort/marketers/" },
-      { label: "Community", href: "https://www.linkedin.com/company/trafy-ai/" },
-      { label: "Follow Us", href: "https://www.instagram.com/trafy.ai" },
     ],
   },
 ];
@@ -82,10 +81,17 @@ function LandingPage() {
   return (
     <main>
       <Hero />
+      <CompanyMarquee />
+      <StatsBar />
       <SkillsMarquee />
       <TalentFeatures />
       <HowItWorks />
+      <EmployabilityIndex />
+      <PlacementAssurance />
       <ForCompanies />
+      <CompanyHistory />
+      <PremiumMentorship />
+      <FAQSection />
       <CTASection />
     </main>
   );
@@ -96,7 +102,7 @@ function App() {
     <>
       <ScrollToTop />
       <AnnouncementBar
-        message="Trafy is live — remote AI careers without borders."
+        message="Trafy is live. Remote AI careers without borders."
         linkLabel="Explore the platform"
         href="https://app.trafy.ai"
       />

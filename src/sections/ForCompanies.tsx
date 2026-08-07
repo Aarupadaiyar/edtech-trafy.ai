@@ -59,7 +59,7 @@ export default function ForCompanies() {
               className="rounded-2xl border border-white/10 bg-white/5 p-6"
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-green-hard">
-                <f.icon size={20} className="text-ink" />
+                <f.icon size={20} className="text-white" />
               </div>
               <h3 className="mb-2 font-display text-lg font-bold">{f.title}</h3>
               <p className="text-sm leading-relaxed text-white/60">{f.description}</p>

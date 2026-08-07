@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
       <ul>
         <li>Access, correct, or delete your personal data.</li>
         <li>Object to or restrict certain processing activities.</li>
-        <li>Data portability — receive your data in a structured, machine-readable format.</li>
+        <li>Data portability: receive your data in a structured, machine-readable format.</li>
         <li>Withdraw consent where processing is based on consent.</li>
         <li>Lodge a complaint with a supervisory authority.</li>
       </ul>

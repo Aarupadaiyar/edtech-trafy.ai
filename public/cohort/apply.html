@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Apply for Cohort 04 — Trafy AI</title>
+<title>Apply for Cohort 04: Trafy AI</title>
 <meta name="description" content="Apply for Trafy AI's Cohort 04. Share your name, mobile number, and email and our admissions team will call you with pricing and seat availability." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.trafy.ai/cohort/apply" />
@@ -11,19 +11,20 @@
 <link rel="apple-touch-icon" href="/assets/trafy-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --paper:#FCFCFA;
-  --ink:#0E0E10;
-  --graphite:#3A3A3E;
-  --mist:#6E6E76;
-  --line:#E4E4DD;
-  --lime:#C6FD39;
-  --lime-dim:#B4E82F;
+  --paper:#0D0B28;
+  --card:#1c1a44;
+  --ink:#14123A;
+  --graphite:rgba(255,255,255,.72);
+  --mist:rgba(255,255,255,.48);
+  --line:rgba(255,255,255,.14);
+  --lime:#4C56E8;
+  --lime-dim:#6C74EF;
   --white:#FFFFFF;
-  --terracotta:#C1541F;
-  --f-display:"Inter Tight",-apple-system,BlinkMacSystemFont,sans-serif;
+  --terracotta:#ff8a5c;
+  --f-display:"Bricolage Grotesque","Inter Tight",-apple-system,BlinkMacSystemFont,sans-serif;
   --f-body:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,monospace;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -32,7 +33,7 @@
 body{
   margin:0;
   background:var(--paper);
-  color:var(--ink);
+  color:var(--white);
   font-family:var(--f-body);
   -webkit-font-smoothing:antialiased;
 }
@@ -49,7 +50,7 @@ header.nav{border-bottom:1px solid var(--line);}
 .logo-link{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-img{height:34px;width:34px;border-radius:9px;display:block;}
 .back-link{font-family:var(--f-mono);font-size:13px;color:var(--mist);text-decoration:none;}
-.back-link:hover{color:var(--ink);}
+.back-link:hover{color:var(--white);}
 
 .wrap{max-width:520px;margin:0 auto;padding:0 24px;}
 main{padding:56px 0 90px;}
@@ -60,7 +61,7 @@ main{padding:56px 0 90px;}
   letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--lime-dim);
-  background:rgba(198,253,57,.14);
+  background:rgba(76,86,232,.14);
   display:inline-flex;
   padding:6px 12px;
   border-radius:100px;
@@ -90,12 +91,12 @@ input{
   padding:14px 16px;
   border-radius:12px;
   border:1px solid var(--line);
-  background:var(--white);
-  color:var(--ink);
+  background:var(--card);
+  color:var(--white);
   font-family:var(--f-body);
   font-size:15px;
 }
-input:focus{outline:none;border-color:var(--ink);}
+input:focus{outline:none;border-color:var(--lime);}
 .err{color:var(--terracotta);font-size:12px;font-family:var(--f-mono);margin-top:6px;display:none;}
 .err.show{display:block;}
 
@@ -105,7 +106,7 @@ input:focus{outline:none;border-color:var(--ink);}
   border-radius:100px;
   border:none;
   background:var(--lime);
-  color:var(--ink);
+  color:var(--white);
   font-family:var(--f-display);
   font-weight:700;
   font-size:16px;
@@ -121,6 +122,7 @@ input:focus{outline:none;border-color:var(--ink);}
 .success .badge{
   width:56px;height:56px;border-radius:50%;
   background:var(--lime);
+  color:var(--white);
   display:flex;align-items:center;justify-content:center;
   font-size:26px;margin:0 auto 20px;
 }
@@ -134,7 +136,7 @@ input:focus{outline:none;border-color:var(--ink);}
 <header class="nav">
   <div class="nav-in">
     <a href="https://www.trafy.ai/" class="logo-link">
-      <img class="logo-img" src="/assets/trafy-logo.png" alt="Trafy AI" />
+      <img class="logo-img" src="/trafy-logo-light.svg" alt="Trafy AI" />
     </a>
     <a href="https://www.trafy.ai/" class="back-link">← Back to trafy.ai</a>
   </div>
@@ -170,7 +172,7 @@ input:focus{outline:none;border-color:var(--ink);}
   <div id="successView" class="success hidden">
     <div class="badge">✓</div>
     <h2>You're in the queue.</h2>
-    <p>Thanks — our admissions team will call you within a few hours with pricing and seat availability.</p>
+    <p>Thanks! Our admissions team will call you within a few hours with pricing and seat availability.</p>
   </div>
 </main>
 

@@ -33,39 +33,39 @@ export default function Press() {
   return (
     <section className="mx-auto max-w-4xl px-6 pt-32 pb-24">
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center gap-2 text-xs text-ink/40">
-        <Link to="/" className="transition-colors hover:text-ink">Home</Link>
+      <nav className="mb-8 flex items-center gap-2 text-xs text-white/40">
+        <Link to="/" className="transition-colors hover:text-white">Home</Link>
         <span>/</span>
-        <span className="text-ink/70">Press</span>
+        <span className="text-white/70">Press</span>
       </nav>
 
       <h1 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
         Press &amp; Media
       </h1>
-      <p className="mt-4 max-w-xl text-lg text-ink/50">
+      <p className="mt-4 max-w-xl text-lg text-white/50">
         News, press releases, and media resources from Trafy.
       </p>
 
       {/* Press Contact */}
-      <div className="mt-10 rounded-2xl border border-ink/8 bg-green-mild/30 p-6">
-        <h2 className="font-display text-sm font-bold">Media Enquiries</h2>
-        <p className="mt-2 text-sm text-ink/50">
+      <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h2 className="font-display text-sm font-bold text-white">Media Enquiries</h2>
+        <p className="mt-2 text-sm text-white/50">
           For press enquiries, interview requests, or media partnerships, please contact:
         </p>
-        <a href="mailto:press@trafy.ai" className="mt-2 inline-block text-sm font-semibold text-ink hover:underline">
+        <a href="mailto:press@trafy.ai" className="mt-2 inline-block text-sm font-semibold text-white hover:underline">
           press@trafy.ai
         </a>
       </div>
 
       {/* Releases */}
       <div className="mt-16">
-        <h2 className="font-display text-xs font-bold uppercase tracking-widest text-ink/30">Press Releases</h2>
+        <h2 className="font-display text-xs font-bold uppercase tracking-widest text-white/30">Press Releases</h2>
         <div className="mt-8 space-y-4">
           {releases.map((r) => (
-            <article key={r.title} className="rounded-2xl border border-ink/8 bg-white/60 p-6 transition-all duration-300 hover:border-ink/15 hover:shadow-sm">
-              <span className="text-xs font-medium text-ink/30">{r.date}</span>
-              <h3 className="mt-2 font-display text-lg font-bold">{r.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/50">{r.body}</p>
+            <article key={r.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:shadow-sm">
+              <span className="text-xs font-medium text-white/30">{r.date}</span>
+              <h3 className="mt-2 font-display text-lg font-bold text-white">{r.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/50">{r.body}</p>
             </article>
           ))}
         </div>
@@ -73,23 +73,23 @@ export default function Press() {
 
       {/* Media Kit */}
       <div className="mt-16">
-        <h2 className="font-display text-xs font-bold uppercase tracking-widest text-ink/30">Media Kit</h2>
+        <h2 className="font-display text-xs font-bold uppercase tracking-widest text-white/30">Media Kit</h2>
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
           {mediaKit.map((item) => (
             <div
               key={item.label}
-              className="group cursor-pointer rounded-2xl border border-ink/8 bg-white/60 p-5 transition-all duration-300 hover:border-ink/15 hover:shadow-sm"
+              className="group cursor-pointer rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-white/20 hover:shadow-sm"
             >
-              <h3 className="font-display text-sm font-bold">{item.label}</h3>
-              <p className="mt-1 text-xs text-ink/40">{item.desc}</p>
-              <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-ink/5 px-2.5 py-1 text-xs font-semibold text-ink/40">
+              <h3 className="font-display text-sm font-bold text-white">{item.label}</h3>
+              <p className="mt-1 text-xs text-white/40">{item.desc}</p>
+              <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white/50">
                 {item.format}
               </span>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs text-ink/30">
-          Contact <a href="mailto:press@trafy.ai" className="underline hover:text-ink">press@trafy.ai</a> to request media kit downloads.
+        <p className="mt-4 text-xs text-white/30">
+          Contact <a href="mailto:press@trafy.ai" className="underline hover:text-white">press@trafy.ai</a> to request media kit downloads.
         </p>
       </div>
     </section>

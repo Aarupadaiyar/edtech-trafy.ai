@@ -32,7 +32,7 @@ export function useNewsletterSubscribe(source: string) {
         return "already";
       }
       setStatus("error");
-      setErrorMessage("Something went wrong — please try again.");
+      setErrorMessage("Something went wrong. Please try again.");
       return "error";
     }
 
