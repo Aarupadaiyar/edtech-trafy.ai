@@ -1,0 +1,217 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x", "rhel-openssl-3.0.x", "linux-musl", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id               String    @id @default(cuid())
+  email            String    @unique
+  name             String?
+  image            String?
+  role             AdminRole @default(EDITOR)
+  createdAt        DateTime  @default(now())
+  lastLoginAt      DateTime?
+  reviewedArticles Article[] @relation("ReviewedBy")
+
+  @@map("admins")
+}
+
+model Article {
+  id              String           @id @default(cuid())
+  slug            String           @unique
+  title           String
+  summary         String
+  content         String
+  thumbnailUrl    String?
+  heroImageUrl    String?
+  status          ArticleStatus    @default(DRAFT)
+  isFeatured      Boolean          @default(false)
+  isPinned        Boolean          @default(false)
+  importanceScore Float            @default(0)
+  popularityScore Float            @default(0)
+  readingTimeMins Int              @default(1)
+  publishedAt     DateTime?
+  scrapedAt       DateTime         @default(now())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  sourceId        String
+  authorId        String?
+  categoryId      String
+  reviewedById    String?
+  sourceUrl       String           @unique
+  clusterId       String?
+  views           ArticleView[]
+  author          Author?          @relation(fields: [authorId], references: [id])
+  category        Category         @relation(fields: [categoryId], references: [id])
+  reviewedBy      Admin?           @relation("ReviewedBy", fields: [reviewedById], references: [id])
+  source          Source           @relation(fields: [sourceId], references: [id])
+  bookmarks       Bookmark[]
+  tags            TagsOnArticles[]
+
+  @@index([status, publishedAt])
+  @@index([categoryId])
+  @@index([popularityScore])
+  @@index([clusterId])
+  @@map("articles")
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  slug     String    @unique
+  name     String
+  articles Article[]
+
+  @@map("categories")
+}
+
+model Author {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  name      String
+  bio       String?
+  avatarUrl String?
+  twitter   String?
+  articles  Article[]
+
+  @@map("authors")
+}
+
+model Tag {
+  id       String           @id @default(cuid())
+  slug     String           @unique
+  name     String
+  articles TagsOnArticles[]
+
+  @@map("tags")
+}
+
+model TagsOnArticles {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+  @@map("tags_on_articles")
+}
+
+model Source {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  type        SourceType
+  feedUrl     String?
+  homepageUrl String
+  isActive    Boolean     @default(true)
+  logoUrl     String?
+  articles    Article[]
+  scrapeLogs  ScrapeLog[]
+
+  @@map("sources")
+}
+
+model ScrapeLog {
+  id           String       @id @default(cuid())
+  sourceId     String
+  runAt        DateTime     @default(now())
+  status       ScrapeStatus
+  itemsFound   Int          @default(0)
+  itemsNew     Int          @default(0)
+  itemsDuped   Int          @default(0)
+  durationMs   Int          @default(0)
+  errorMessage String?
+  source       Source       @relation(fields: [sourceId], references: [id])
+
+  @@index([sourceId, runAt])
+  @@map("scrape_logs")
+}
+
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+  isActive     Boolean  @default(true)
+  source       String?
+
+  @@map("newsletter_subscribers")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  name      String?
+  image     String?
+  createdAt DateTime   @default(now())
+  bookmarks Bookmark[]
+
+  @@map("users")
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  articleId String
+  createdAt DateTime @default(now())
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, articleId])
+  @@map("bookmarks")
+}
+
+model ArticleView {
+  id           String   @id @default(cuid())
+  articleId    String
+  viewedAt     DateTime @default(now())
+  readTimeSecs Int?
+  referrer     String?
+  country      String?
+  article      Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@index([articleId, viewedAt])
+  @@map("article_views")
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  type      String
+  articleId String?
+  meta      Json?
+  createdAt DateTime @default(now())
+
+  @@index([type, createdAt])
+  @@map("analytics_events")
+}
+
+enum AdminRole {
+  OWNER
+  EDITOR
+}
+
+enum ArticleStatus {
+  PENDING
+  APPROVED
+  DRAFT
+  PUBLISHED
+  REJECTED
+}
+
+enum SourceType {
+  RSS
+  API
+  SCRAPE
+  REDDIT
+  GITHUB
+  ARXIV
+}
+
+enum ScrapeStatus {
+  SUCCESS
+  PARTIAL
+  FAILED
+}

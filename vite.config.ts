@@ -50,12 +50,20 @@ function cohortStaticPages(): Plugin {
 export default defineConfig({
   plugins: [react(), tailwindcss(), cohortStaticPages()],
   server: {
-    // Mirrors the /blog rewrite in vercel.json (which only applies once
-    // actually deployed to Vercel) so the proxy to the separately-hosted
-    // Next.js blog also works under local `vite dev`.
+    // The blog now lives in ./blog as its own Next.js app (run separately
+    // via `npm run dev` inside that folder, default port 3000). This proxy
+    // points local `vite dev` at that local instance instead of the old
+    // externally-hosted deployment, so /blog serves the current blog code
+    // during local development.
+    //
+    // Production still rewrites /blog via vercel.json, which has NOT been
+    // repointed yet — it still targets the old trafyai.vercel.app deployment
+    // until a new Vercel project is created for ./blog (see blog/DEPLOY.md
+    // for what that needs). Update vercel.json's destination once that
+    // project's URL exists.
     proxy: {
       "/blog": {
-        target: "https://trafyai.vercel.app",
+        target: "http://localhost:3000",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/blog/, "/intelligence"),
       },
@@ -63,14 +71,15 @@ export default defineConfig({
       // regardless of where the page itself is mounted, so it must be
       // proxied too or the blog renders unstyled with no hydration.
       "/_next": {
-        target: "https://trafyai.vercel.app",
+        target: "http://localhost:3000",
         changeOrigin: true,
+        ws: true,
       },
       // The blog's own internal links point at its native /intelligence
       // path (it isn't aware it's being proxied under /blog), so that
       // path needs proxying too or in-page navigation breaks.
       "/intelligence": {
-        target: "https://trafyai.vercel.app",
+        target: "http://localhost:3000",
         changeOrigin: true,
       },
     },
