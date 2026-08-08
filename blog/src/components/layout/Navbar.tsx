@@ -16,9 +16,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 // the main site's homepage, not here, so those still need the leading "/".
 const navLinks = [
   { label: "For Talent", href: "/#talent" },
-  { label: "How it Works", href: "/#how" },
   { label: "Employability Index", href: "/#employability" },
-  { label: "For Companies", href: "/#companies" },
   {
     label: "Cohort",
     href: "/cohort/",
@@ -28,7 +26,6 @@ const navLinks = [
     ],
   },
   { label: "Blog", href: "/intelligence" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -76,12 +73,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="/#companies"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50"
-          >
-            For Companies
-          </a>
           <a
             href="https://app.trafy.ai"
             className="inline-flex items-center justify-center rounded-full bg-lime px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-dim"
@@ -137,13 +128,6 @@ export function Navbar() {
                 )
               )}
               <div className="mt-2 flex flex-col gap-3">
-                <a
-                  href="/#companies"
-                  onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
-                >
-                  For Companies
-                </a>
                 <a
                   href="https://app.trafy.ai"
                   onClick={() => setOpen(false)}

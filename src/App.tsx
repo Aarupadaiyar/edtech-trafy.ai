@@ -30,9 +30,7 @@ import Press from "./pages/Press";
 
 const navLinks = [
   { label: "For Talent", href: "#talent" },
-  { label: "How it Works", href: "#how" },
   { label: "Employability Index", href: "#employability" },
-  { label: "For Companies", href: "#companies" },
   {
     label: "Cohort",
     href: "/cohort/",
@@ -42,7 +40,6 @@ const navLinks = [
     ],
   },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const footerColumns = [
@@ -110,7 +107,6 @@ function App() {
         logoLabel="Trafy"
         links={navLinks}
         primaryCta={{ label: "Get Started", href: "https://app.trafy.ai" }}
-        secondaryCta={{ label: "For Companies", href: "#companies" }}
       />
 
       <Routes>

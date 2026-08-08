@@ -10,7 +10,7 @@ type NavbarProps = {
   logoLabel: string;
   links: NavLink[];
   primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
 };
 
 export default function Navbar({ logoLabel, links, primaryCta, secondaryCta }: NavbarProps) {
@@ -62,9 +62,11 @@ export default function Navbar({ logoLabel, links, primaryCta, secondaryCta }: N
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href={secondaryCta.href} variant="outline">
-            {secondaryCta.label}
-          </Button>
+          {secondaryCta && (
+            <Button href={secondaryCta.href} variant="outline">
+              {secondaryCta.label}
+            </Button>
+          )}
           <Button href={primaryCta.href} variant="primary">
             {primaryCta.label}
           </Button>
@@ -117,9 +119,11 @@ export default function Navbar({ logoLabel, links, primaryCta, secondaryCta }: N
                 )
               )}
               <div className="mt-2 flex flex-col gap-3">
-                <Button href={secondaryCta.href} variant="outline" className="w-full">
-                  {secondaryCta.label}
-                </Button>
+                {secondaryCta && (
+                  <Button href={secondaryCta.href} variant="outline" className="w-full">
+                    {secondaryCta.label}
+                  </Button>
+                )}
                 <Button href={primaryCta.href} variant="primary" className="w-full">
                   {primaryCta.label}
                 </Button>
