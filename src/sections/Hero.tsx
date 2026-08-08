@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <SectionTag>For Talent &amp; International Employers</SectionTag>
+              <SectionTag>For AI Talent &amp; Global Employers</SectionTag>
             </motion.div>
 
             <motion.h1
@@ -26,11 +26,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
             >
-              The{" "}
+              Connecting AI Developers to{" "}
               <span className="relative inline-block rounded-lg bg-green-hard px-2 py-0.5 text-white">
-                Global AI Hiring
-              </span>{" "}
-              Platform
+                Global Employers
+              </span>
               <span className="caret h-[0.85em] translate-y-1" />
             </motion.h1>
 
@@ -40,9 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.22 }}
               className="mt-6 max-w-lg text-lg leading-relaxed text-white/65"
             >
-              Connected with international employers. Assessed, scored, and
-              matched. Start working with the world's top AI companies from
-              anywhere.
+              Get assessed, scored, and matched with top international companies. Work remotely from anywhere.
             </motion.p>
 
             <motion.div
