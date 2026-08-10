@@ -124,7 +124,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/press" element={<Press />} />
         <Route path="/press/networking-app" element={<PressReleaseNetworkingApp />} />
-        <Route path="/announcements" element={<AnnouncementAnniversary />} />
+        <Route path="/announcements" element={<Announcements />} />
         <Route path="/announcements/4th-anniversary" element={<AnnouncementAnniversary />} />
       </Routes>
 
