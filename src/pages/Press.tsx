@@ -52,27 +52,27 @@ const mediaKit = [
 
 export default function Press() {
   return (
-    <section className="relative mx-auto max-w-4xl px-6 pt-32 pb-24 text-white">
+    <section className="relative mx-auto max-w-4xl px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24 text-white">
       {/* Decorative Glow */}
       <div className="pointer-events-none absolute -top-20 left-1/2 h-80 w-[600px] -translate-x-1/2 rounded-full bg-green-hard/10 blur-3xl" />
 
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center gap-2 text-xs text-white/40">
+      <nav className="mb-5 sm:mb-8 flex items-center gap-2 text-xs text-white/40">
         <Link to="/" className="transition-colors hover:text-white">Home</Link>
         <span>/</span>
         <span className="text-white/70">Press</span>
       </nav>
 
       {/* Page Title */}
-      <h1 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
+      <h1 className="font-display text-3xl font-extrabold tracking-tight md:text-5xl">
         Press &amp; Media Center
       </h1>
-      <p className="mt-4 max-w-xl text-lg text-white/50">
+      <p className="mt-3 sm:mt-4 max-w-xl text-base sm:text-lg text-white/50">
         Official news releases, company announcements timeline, and media resources.
       </p>
 
       {/* Announcement Callout Banner */}
-      <div className="mt-8 rounded-2xl border border-rose/30 bg-gradient-to-r from-rose/15 via-rose/5 to-white/5 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shadow-lg shadow-rose/5">
+      <div className="mt-6 sm:mt-8 rounded-xl sm:rounded-2xl border border-rose/30 bg-gradient-to-r from-rose/15 via-rose/5 to-white/5 p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shadow-lg shadow-rose/5">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-rose">✦ Special Announcement</span>
           <h2 className="mt-1 font-display text-lg font-bold text-white">Trafy AI 4th Year Anniversary (August 11, 2026)</h2>
@@ -87,7 +87,7 @@ export default function Press() {
       </div>
 
       {/* Press Contact Box */}
-      <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
+      <div className="mt-6 sm:mt-8 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6">
         <h2 className="font-display text-sm font-bold text-white">Media Enquiries</h2>
         <p className="mt-2 text-sm text-white/50">
           For press enquiries, executive interview requests, or media partnerships, please contact:
@@ -98,7 +98,7 @@ export default function Press() {
       </div>
 
       {/* Press Releases Timeline */}
-      <div className="mt-16">
+      <div className="mt-10 sm:mt-16">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-xs font-bold uppercase tracking-widest text-white/40">
             Press Releases Timeline (Newest First)
@@ -107,12 +107,12 @@ export default function Press() {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative mt-8 pl-6 sm:pl-8 border-l-2 border-white/15 space-y-10">
+        <div className="relative mt-6 sm:mt-8 pl-5 sm:pl-8 border-l-2 border-white/15 space-y-6 sm:space-y-10">
           {releases.map((r) => (
             <div key={r.title} className="relative group">
               {/* Timeline Connector Node Circle */}
               <div
-                className={`absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full border-2 bg-ink transition-transform duration-300 group-hover:scale-125 ${
+                className={`absolute -left-[27px] sm:-left-[39px] top-1.5 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full border-2 bg-ink transition-transform duration-300 group-hover:scale-125 ${
                   r.featured
                     ? "border-green-hard bg-green-hard/20 shadow-lg shadow-green-hard/40"
                     : "border-white/30 bg-white/10"
@@ -127,7 +127,7 @@ export default function Press() {
 
               {/* Release Card */}
               <article
-                className={`rounded-2xl border p-6 transition-all duration-300 ${
+                className={`rounded-xl sm:rounded-2xl border p-4 sm:p-6 transition-all duration-300 ${
                   r.featured
                     ? "border-green-hard/40 bg-gradient-to-r from-green-hard/10 via-white/[0.04] to-white/[0.01] shadow-lg shadow-green-hard/5"
                     : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.07]"
@@ -148,7 +148,7 @@ export default function Press() {
                   )}
                 </div>
 
-                <h3 className="mt-2.5 font-display text-lg font-bold text-white group-hover:text-green-hard transition-colors">
+                <h3 className="mt-2 font-display text-base sm:text-lg font-bold text-white group-hover:text-green-hard transition-colors">
                   {r.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">{r.body}</p>

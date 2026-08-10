@@ -81,13 +81,13 @@ const announcements: AnnouncementItem[] = [
 
 export default function Announcements() {
   return (
-    <section className="relative mx-auto max-w-4xl px-6 pt-32 pb-24 text-white">
+    <section className="relative mx-auto max-w-4xl px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24 text-white">
       {/* Decorative Background Glows */}
       <div className="pointer-events-none absolute -top-20 left-1/2 h-80 w-[600px] -translate-x-1/2 rounded-full bg-rose/10 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 left-0 h-64 w-64 rounded-full bg-green-hard/10 blur-3xl" />
 
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center gap-2 text-xs text-white/40">
+      <nav className="mb-5 sm:mb-8 flex items-center gap-2 text-xs text-white/40">
         <Link to="/" className="transition-colors hover:text-white">Home</Link>
         <span>/</span>
         <span className="text-white/70">Announcements</span>
@@ -98,21 +98,21 @@ export default function Announcements() {
         <span className="rounded-full bg-rose/15 px-3.5 py-1 text-xs font-bold text-rose">
           COMPANY TIMELINE &amp; NEWS
         </span>
-        <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+        <h1 className="mt-3 sm:mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-5xl">
           Announcements Timeline
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-white/60">
+        <p className="mt-3 sm:mt-4 max-w-2xl text-base sm:text-lg text-white/60">
           Chronological timeline of company updates, product reveals, and major milestones. New announcements automatically appear at the top.
         </p>
       </div>
 
       {/* Vertical Timeline Container */}
-      <div className="relative mt-16 pl-6 sm:pl-8 border-l-2 border-white/15 space-y-12">
+      <div className="relative mt-10 sm:mt-16 pl-5 sm:pl-8 border-l-2 border-white/15 space-y-8 sm:space-y-12">
         {announcements.map((item) => (
           <div key={item.id} className="relative group">
             {/* Timeline Connector Node Circle */}
             <div
-              className={`absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full border-2 bg-ink transition-transform duration-300 group-hover:scale-125 ${
+              className={`absolute -left-[27px] sm:-left-[39px] top-1.5 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full border-2 bg-ink transition-transform duration-300 group-hover:scale-125 ${
                 item.isLatest
                   ? "border-rose bg-rose/20 shadow-lg shadow-rose/40"
                   : "border-green-hard bg-green-hard/20"
@@ -127,44 +127,44 @@ export default function Announcements() {
 
             {/* Announcement Timeline Card */}
             <div
-              className={`rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${
+              className={`rounded-xl sm:rounded-2xl border p-4 sm:p-8 transition-all duration-300 ${
                 item.isLatest
                   ? "border-rose/40 bg-gradient-to-br from-rose/10 via-white/[0.04] to-white/[0.01] shadow-xl shadow-rose/5"
                   : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.07]"
               }`}
             >
               {/* Header metadata row */}
-              <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs font-bold text-white/50">{item.date}</span>
                 <span
-                  className={`inline-flex items-center rounded-full border px-3 py-0.5 text-[11px] font-bold tracking-wide ${item.badgeColor}`}
+                  className={`inline-flex items-center rounded-full border px-2 sm:px-3 py-0.5 text-[10px] sm:text-[11px] font-bold tracking-wide ${item.badgeColor}`}
                 >
                   {item.badge}
                 </span>
               </div>
 
               {/* Title & Summary */}
-              <h2 className="mt-3 font-display text-xl sm:text-2xl font-bold text-white group-hover:text-green-hard transition-colors">
+              <h2 className="mt-2 sm:mt-3 font-display text-lg sm:text-2xl font-bold text-white group-hover:text-green-hard transition-colors">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/70">
+              <p className="mt-2 sm:mt-3 text-sm leading-relaxed text-white/70">
                 {item.summary}
               </p>
 
               {/* Optional detail stats / quote */}
               {item.details && (
-                <div className="mt-6 border-t border-white/10 pt-6">
+                <div className="mt-4 sm:mt-6 border-t border-white/10 pt-4 sm:pt-6">
                   {item.details.quote && (
                     <p className="italic text-sm text-white/80 border-l-2 border-rose pl-3 mb-4">
                       &ldquo;{item.details.quote}&rdquo;
                     </p>
                   )}
                   {item.details.stats && (
-                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-4">
                       {item.details.stats.map((s) => (
-                        <div key={s.label} className="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-                          <div className="font-display text-lg font-bold text-white">{s.value}</div>
-                          <div className="text-[10px] text-white/40">{s.label}</div>
+                        <div key={s.label} className="rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-2 sm:p-3 text-center">
+                          <div className="font-display text-base sm:text-lg font-bold text-white">{s.value}</div>
+                          <div className="text-[9px] sm:text-[10px] text-white/40">{s.label}</div>
                         </div>
                       ))}
                     </div>
@@ -174,7 +174,7 @@ export default function Announcements() {
 
               {/* Link CTA */}
               {item.link && (
-                <div className="mt-6 pt-4 border-t border-white/10">
+                <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
                   <Link
                     to={item.link}
                     className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${
@@ -193,7 +193,7 @@ export default function Announcements() {
       </div>
 
       {/* Back CTA */}
-      <div className="mt-16 border-t border-white/10 pt-8 flex items-center justify-between">
+      <div className="mt-10 sm:mt-16 border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <Link to="/" className="text-sm text-white/60 hover:text-white transition-colors">
           ← Back to Home
         </Link>
