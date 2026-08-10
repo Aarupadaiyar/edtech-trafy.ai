@@ -28,6 +28,7 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Press from "./pages/Press";
 import PressReleaseNetworkingApp from "./pages/PressReleaseNetworkingApp";
+import Announcements from "./pages/Announcements";
 import AnnouncementAnniversary from "./pages/AnnouncementAnniversary";
 
 const navLinks = [
