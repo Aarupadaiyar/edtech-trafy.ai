@@ -66,6 +66,7 @@ const companyLinks = [
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
   { label: "Press", href: "/press" },
+  { label: "Announcements", href: "/announcements/4th-anniversary" },
   { label: "Contact", href: "mailto:hello@trafy.ai" },
 ];
 
@@ -120,7 +121,7 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
           </div>
 
           {/* Nav columns */}
-          <div className="grid grid-cols-2 gap-8 lg:col-span-5">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-5">
             {columns.map((col) => (
               <div key={col.title}>
                 <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-widest text-white/30">
@@ -202,47 +203,51 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
         </div>
 
         {/* ── Company quick links ───────────────────────────────── */}
-        <div className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/8 pt-8">
-          <span className="mr-2 text-xs font-semibold uppercase tracking-widest text-white/25">Company</span>
-          {companyLinks.map(({ label, href }) =>
-            href.startsWith("mailto") || href === "/blog" ? (
-              <a
-                key={label}
-                href={href}
-                className="text-sm text-white/45 transition-colors duration-200 hover:text-green-hard"
-              >
-                {label}
-              </a>
-            ) : (
-              <Link
-                key={label}
-                to={href}
-                className="text-sm text-white/45 transition-colors duration-200 hover:text-green-hard"
-              >
-                {label}
-              </Link>
-            )
-          )}
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/8 pt-8 sm:flex-row sm:items-center sm:gap-x-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-white/25">Company</span>
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
+            {companyLinks.map(({ label, href }) =>
+              href.startsWith("mailto") || href === "/blog" ? (
+                <a
+                  key={label}
+                  href={href}
+                  className="text-sm text-white/45 transition-colors duration-200 hover:text-green-hard"
+                >
+                  {label}
+                </a>
+              ) : (
+                <Link
+                  key={label}
+                  to={href}
+                  className="text-sm text-white/45 transition-colors duration-200 hover:text-green-hard"
+                >
+                  {label}
+                </Link>
+              )
+            )}
+          </div>
         </div>
 
         {/* ── Bottom bar ────────────────────────────────────────── */}
         <div className="mt-8 flex flex-col items-start justify-between gap-6 border-t border-white/8 pt-8 sm:flex-row sm:items-center">
           {/* Left — copyright + legal links */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-2">
             <p className="text-xs text-white/35">
               &copy; {new Date().getFullYear()} Dmerz Technology Pvt. Ltd. All rights reserved.
             </p>
             <span className="hidden h-3 w-px bg-white/15 sm:inline-block" aria-hidden="true" />
-            {legalLinks.map(({ label, href }, i) => (
-              <span key={label} className="inline-flex items-center gap-4">
-                <Link to={href} className="text-xs text-white/35 transition-colors duration-200 hover:text-white/70">
-                  {label}
-                </Link>
-                {i < legalLinks.length - 1 && (
-                  <span className="h-0.5 w-0.5 rounded-full bg-white/20" aria-hidden="true" />
-                )}
-              </span>
-            ))}
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              {legalLinks.map(({ label, href }, i) => (
+                <span key={label} className="inline-flex items-center gap-4">
+                  <Link to={href} className="text-xs text-white/35 transition-colors duration-200 hover:text-white/70">
+                    {label}
+                  </Link>
+                  {i < legalLinks.length - 1 && (
+                    <span className="hidden h-0.5 w-0.5 rounded-full bg-white/20 sm:inline-block" aria-hidden="true" />
+                  )}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Right — back to top */}

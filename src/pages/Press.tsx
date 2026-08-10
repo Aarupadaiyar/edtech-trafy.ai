@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 
 const releases = [
   {
+    date: "August 10, 2026",
+    title: "Trafy AI Announces Development of Flagship AI-Driven Professional Networking Platform for Global Tech Talent",
+    body: "Dmerz Technology Pvt. Ltd. (operating as Trafy AI) today officially announced that it is building a next-generation AI-powered professional networking platform tailored specifically for AI engineers, developers, and tech enterprises.",
+    href: "/press/networking-app",
+    featured: true,
+  },
+  {
     date: "June 30, 2026",
     title: "Trafy Cohort: Applications Open for Second Intake",
     body: "Trafy today announced that applications for the second cohort of its mentored AI learning programme are now open. The programme focuses on practical, project-based learning and has already placed 90% of its first cohort graduates into AI roles.",
@@ -46,8 +53,23 @@ export default function Press() {
         News, press releases, and media resources from Trafy.
       </p>
 
+      {/* Announcement Callout Banner */}
+      <div className="mt-8 rounded-2xl border border-rose/30 bg-rose/10 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-rose">✦ Special Announcement</span>
+          <h2 className="mt-1 font-display text-lg font-bold text-white">Trafy AI 4th Year Anniversary (August 11, 2026)</h2>
+          <p className="mt-1 text-sm text-white/70">Celebrating 4 years of empowering global AI talent and building borderless careers.</p>
+        </div>
+        <Link
+          to="/announcements/4th-anniversary"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-rose px-4 py-2 text-sm font-semibold text-white transition-all hover:brightness-110"
+        >
+          View Announcement →
+        </Link>
+      </div>
+
       {/* Press Contact */}
-      <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+      <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
         <h2 className="font-display text-sm font-bold text-white">Media Enquiries</h2>
         <p className="mt-2 text-sm text-white/50">
           For press enquiries, interview requests, or media partnerships, please contact:
@@ -62,10 +84,34 @@ export default function Press() {
         <h2 className="font-display text-xs font-bold uppercase tracking-widest text-white/30">Press Releases</h2>
         <div className="mt-8 space-y-4">
           {releases.map((r) => (
-            <article key={r.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:shadow-sm">
-              <span className="text-xs font-medium text-white/30">{r.date}</span>
+            <article
+              key={r.title}
+              className={`rounded-2xl border p-6 transition-all duration-300 ${
+                r.featured
+                  ? "border-green-hard/40 bg-gradient-to-r from-green-hard/10 to-white/5"
+                  : "border-white/10 bg-white/5 hover:border-white/20"
+              }`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs font-medium text-white/40">{r.date}</span>
+                {r.featured && (
+                  <span className="rounded-full bg-green-hard/20 px-2.5 py-0.5 text-[10px] font-bold text-green-hard">
+                    FEATURED RELEASE
+                  </span>
+                )}
+              </div>
               <h3 className="mt-2 font-display text-lg font-bold text-white">{r.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/50">{r.body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-white/60">{r.body}</p>
+              {r.href && (
+                <div className="mt-4">
+                  <Link
+                    to={r.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-hard hover:underline"
+                  >
+                    Read Official Press Release Document →
+                  </Link>
+                </div>
+              )}
             </article>
           ))}
         </div>
