@@ -41,7 +41,9 @@ export default function AnnouncementAnniversary() {
       <nav className="mb-8 flex items-center gap-2 text-xs text-white/40">
         <Link to="/" className="transition-colors hover:text-white">Home</Link>
         <span>/</span>
-        <span className="text-white/70">Announcements</span>
+        <Link to="/announcements" className="transition-colors hover:text-white">Announcements</Link>
+        <span>/</span>
+        <span className="text-white/70">4th Anniversary</span>
       </nav>
 
       {/* Main Hero Header */}
