@@ -25,7 +25,7 @@ export default function CTASection() {
             required.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="https://app.trafy.ai" variant="primary">
+            <Button href="https://trafy-assessment.vercel.app/" variant="primary">
               Get My Employability Index
             </Button>
             <Button href="mailto:hello@trafy.ai" variant="outline">

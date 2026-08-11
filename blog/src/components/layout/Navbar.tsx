@@ -74,7 +74,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="https://app.trafy.ai"
+            href="https://trafy-assessment.vercel.app/"
             className="inline-flex items-center justify-center rounded-full bg-lime px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-dim"
           >
             Get Started
@@ -129,7 +129,7 @@ export function Navbar() {
               )}
               <div className="mt-2 flex flex-col gap-3">
                 <a
-                  href="https://app.trafy.ai"
+                  href="https://trafy-assessment.vercel.app/"
                   onClick={() => setOpen(false)}
                   className="inline-flex w-full items-center justify-center rounded-full bg-lime px-6 py-3 text-sm font-semibold text-white"
                 >

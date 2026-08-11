@@ -49,7 +49,7 @@ const footerColumns = [
   {
     title: "For Talent",
     links: [
-      { label: "Get Started", href: "https://app.trafy.ai" },
+      { label: "Get Started", href: "https://trafy-assessment.vercel.app/" },
       { label: "AI Assessment", href: "#how" },
       { label: "Employability Index", href: "#employability" },
       { label: "AI Engineering Cohort", href: "/cohort/" },
@@ -109,7 +109,7 @@ function App() {
       <Navbar
         logoLabel="Trafy"
         links={navLinks}
-        primaryCta={{ label: "Get Started", href: "https://app.trafy.ai" }}
+        primaryCta={{ label: "Get Started", href: "https://trafy-assessment.vercel.app/" }}
       />
 
       <Routes>

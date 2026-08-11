@@ -37,7 +37,7 @@ export default function PremiumMentorship() {
               <Button href="mailto:aaru@trafy.ai" variant="primary">
                 Talk to a Mentor
               </Button>
-              <Button href="https://app.trafy.ai" variant="outline">
+              <Button href="https://trafy-assessment.vercel.app/" variant="outline">
                 Explore Trafy Premium
               </Button>
             </div>
