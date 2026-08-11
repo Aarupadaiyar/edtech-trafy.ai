@@ -48,7 +48,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.32 }}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <Button href="https://trafy-assessment.vercel.app/" variant="primary">
+              <Button href="https://trafyassessment.vercel.app/" variant="primary">
                 Get Started as Talent
               </Button>
               <Button href="#companies" variant="light">

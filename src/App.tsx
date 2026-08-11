@@ -34,7 +34,7 @@ import AnnouncementAnniversary from "./pages/AnnouncementAnniversary";
 const navLinks = [
   { label: "For Talent", href: "#talent" },
   { label: "Employability Index", href: "#employability" },
-  { label: "Assessment", href: "https://trafy-assessment.vercel.app/" },
+  { label: "Assessment", href: "https://trafyassessment.vercel.app/" },
   {
     label: "Cohort",
     href: "/cohort/",
@@ -50,7 +50,7 @@ const footerColumns = [
   {
     title: "For Talent",
     links: [
-      { label: "Get Started", href: "https://trafy-assessment.vercel.app/" },
+      { label: "Get Started", href: "https://trafyassessment.vercel.app/" },
       { label: "AI Assessment", href: "#how" },
       { label: "Employability Index", href: "#employability" },
       { label: "AI Engineering Cohort", href: "/cohort/" },
@@ -110,7 +110,7 @@ function App() {
       <Navbar
         logoLabel="Trafy"
         links={navLinks}
-        primaryCta={{ label: "Get Started", href: "https://trafy-assessment.vercel.app/" }}
+        primaryCta={{ label: "Get Started", href: "https://trafyassessment.vercel.app/" }}
       />
 
       <Routes>

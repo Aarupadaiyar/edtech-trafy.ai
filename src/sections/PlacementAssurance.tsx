@@ -62,7 +62,7 @@ export default function PlacementAssurance() {
             </p>
 
             <div className="mt-8">
-              <Button href="https://trafy-assessment.vercel.app/" variant="primary">
+              <Button href="https://trafyassessment.vercel.app/" variant="primary">
                 Check My Eligibility
               </Button>
             </div>
