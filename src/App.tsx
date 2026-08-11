@@ -34,6 +34,7 @@ import AnnouncementAnniversary from "./pages/AnnouncementAnniversary";
 const navLinks = [
   { label: "For Talent", href: "#talent" },
   { label: "Employability Index", href: "#employability" },
+  { label: "Assessment", href: "https://trafy-assessment.vercel.app/" },
   {
     label: "Cohort",
     href: "/cohort/",
