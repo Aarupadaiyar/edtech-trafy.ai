@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
 
 type PressReleaseItem = {
   date: string;
@@ -7,6 +8,7 @@ type PressReleaseItem = {
   href?: string;
   featured?: boolean;
   badge?: string;
+  fullContent?: ReactNode;
 };
 
 const releases: PressReleaseItem[] = [
@@ -174,6 +176,8 @@ export default function Press() {
                   {r.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">{r.body}</p>
+
+                {r.fullContent && r.fullContent}
 
                 {r.href && (
                   <div className="mt-4 pt-3 border-t border-white/10">
