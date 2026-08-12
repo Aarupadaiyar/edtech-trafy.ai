@@ -103,7 +103,7 @@ function App() {
       <AnnouncementBar
         message="Trafy AI is celebrating our 4th Year Anniversary on August 11, 2026!"
         linkLabel="Read Announcement"
-        href="/announcements#anniversary-4th"
+        href="/announcements"
       />
       <Navbar
         logoLabel="Trafy"

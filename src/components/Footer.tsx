@@ -66,7 +66,7 @@ const companyLinks = [
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
   { label: "Press", href: "/press" },
-  { label: "Announcements", href: "/announcements/4th-anniversary" },
+  { label: "Announcements", href: "/announcements" },
   { label: "Contact", href: "mailto:hello@trafy.ai" },
 ];
 
