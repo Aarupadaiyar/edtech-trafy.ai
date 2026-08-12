@@ -103,7 +103,7 @@ export default function Press() {
           <p className="mt-1 text-sm text-white/70">Celebrating 4 years of empowering global AI talent and building borderless careers.</p>
         </div>
         <Link
-          to="/announcements/4th-anniversary"
+          to="/announcements"
           className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-rose px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 shadow-md shadow-rose/20"
         >
           View Announcement Timeline →

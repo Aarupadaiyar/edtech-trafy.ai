@@ -26,8 +26,6 @@ const announcements: AnnouncementItem[] = [
     summary:
       "Four years ago on August 11, 2022, Trafy AI was founded to empower global tech talent. Today, we celebrate 10,000+ verified AI engineers, 90%+ placement rates, and representation across 30+ countries.",
     isLatest: true,
-    link: "/announcements/4th-anniversary",
-    linkText: "Explore Full 4th Anniversary Celebration →",
     details: {
       stats: [
         { label: "Years of Excellence", value: "4 Years" },
@@ -47,7 +45,7 @@ const announcements: AnnouncementItem[] = [
     title: "Building the Next-Generation AI-Driven Professional Networking App",
     summary:
       "Trafy AI is officially developing a privacy-first, skill-verified networking platform built specifically for software developers, AI engineers, and tech founders.",
-    link: "/press/networking-app",
+    link: "/press",
     linkText: "Read Official Press Release →",
   },
   {
