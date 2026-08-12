@@ -93,7 +93,7 @@ export default function Footer({ siteLabel, tagline, columns }: FooterProps) {
           {/* Brand block */}
           <div className="lg:col-span-4">
             <Link to="/" onClick={() => window.scrollTo(0, 0)} className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80">
-              <img src="/new-logo.png" alt="Trafy" className="h-12 w-auto" />
+              <img src="/trafy-logo-light.svg" alt="Trafy" className="h-9 w-auto" />
               {suffix && (
                 <span className="font-display text-xl font-bold tracking-tight">{suffix}</span>
               )}
