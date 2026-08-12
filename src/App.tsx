@@ -27,9 +27,7 @@ import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Press from "./pages/Press";
-import PressReleaseNetworkingApp from "./pages/PressReleaseNetworkingApp";
 import Announcements from "./pages/Announcements";
-import AnnouncementAnniversary from "./pages/AnnouncementAnniversary";
 
 const navLinks = [
   { label: "For Talent", href: "#talent" },
@@ -104,7 +102,7 @@ function App() {
       <AnnouncementBar
         message="Trafy AI is celebrating our 4th Year Anniversary on August 11, 2026!"
         linkLabel="Read Announcement"
-        href="/announcements/4th-anniversary"
+        href="/announcements#anniversary-4th"
       />
       <Navbar
         logoLabel="Trafy"
@@ -123,9 +121,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/press" element={<Press />} />
-        <Route path="/press/networking-app" element={<PressReleaseNetworkingApp />} />
         <Route path="/announcements" element={<Announcements />} />
-        <Route path="/announcements/4th-anniversary" element={<AnnouncementAnniversary />} />
       </Routes>
 
       <Footer
