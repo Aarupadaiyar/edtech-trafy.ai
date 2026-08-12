@@ -36,7 +36,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/intelligence" className="flex items-center gap-2">
-          <Image src="/trafy-logo-light.svg" alt="Trafy" width={80} height={49} className="h-8 w-auto" priority />
+          <Image src="/new-logo.png" alt="Trafy" width={80} height={49} className="h-8 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

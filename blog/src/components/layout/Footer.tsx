@@ -92,7 +92,7 @@ export function Footer() {
           {/* Brand block */}
           <div className="lg:col-span-4">
             <a href="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80">
-              <Image src="/trafy-logo-light.svg" alt="Trafy" width={90} height={55} className="h-9 w-auto" />
+              <Image src="/new-logo.png" alt="Trafy" width={90} height={55} className="h-9 w-auto" />
             </a>
 
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/50">

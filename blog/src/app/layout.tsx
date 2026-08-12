@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "The AI industry, tracked daily: model releases, funding, research, and open source, curated for builders.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://trafy.ai"),
   icons: {
-    icon: "/trafy-logo.svg",
+    icon: "/new-logo.png",
   },
 };
 

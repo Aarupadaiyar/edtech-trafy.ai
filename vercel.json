@@ -3,6 +3,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/assessment", "destination": "https://app.trafy.ai/assessment" },
+    { "source": "/assessment/", "destination": "https://app.trafy.ai/assessment" },
     { "source": "/cohort", "destination": "/cohort/index.html" },
     { "source": "/cohort/", "destination": "/cohort/index.html" },
     { "source": "/cohort/apply", "destination": "/cohort/apply.html" },
@@ -13,6 +15,6 @@
     { "source": "/_next/:path*", "destination": "https://trafyai.vercel.app/_next/:path*" },
     { "source": "/intelligence", "destination": "https://trafyai.vercel.app/intelligence" },
     { "source": "/intelligence/:path*", "destination": "https://trafyai.vercel.app/intelligence/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
