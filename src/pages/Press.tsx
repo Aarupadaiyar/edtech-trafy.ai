@@ -15,8 +15,30 @@ const releases: PressReleaseItem[] = [
     badge: "LATEST PRESS RELEASE",
     title: "Trafy AI Announces Development of Flagship AI-Driven Professional Networking Platform for Global Tech Talent",
     body: "Dmerz Technology Pvt. Ltd. (operating as Trafy AI) today officially announced that it is building a next-generation AI-powered professional networking platform tailored specifically for AI engineers, software developers, and tech enterprises.",
-    href: "/press/networking-app",
     featured: true,
+    fullContent: (
+      <div className="mt-4 pt-4 border-t border-white/10 space-y-4 text-sm text-white/70">
+        <p>
+          <strong>BENGALURU &amp; SAN FRANCISCO — August 10, 2026</strong> — Dmerz Technology Pvt. Ltd. (operating as <strong>Trafy AI</strong>), a global pioneer in AI work tech and talent verification, today officially announced that it is building a next-generation AI-powered professional networking platform tailored specifically for AI engineers, software developers, and technology teams worldwide.
+        </p>
+        <p>
+          As demand for specialized artificial intelligence talent accelerates globally, traditional professional social networks have increasingly struggled with resume inflation, unverified skill claims, and inefficient outreach. Trafy AI’s forthcoming networking application directly solves these systemic issues by combining real-world skill proofing with automated semantic matchmaking.
+        </p>
+        <h4 className="font-display font-bold text-white mt-4">Redefining Technical Networking with Verified Intelligence</h4>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Dynamic Skill Graph Engine:</strong> Evaluates verified project outputs, benchmark assessments, and real-world coding capability to generate dynamic, tamper-evident talent portfolios.</li>
+          <li><strong>Context-Aware Peer Matchmaking:</strong> Enables engineers to discover peers, co-founders, and mentors based on mutual technical stack affinities and real project challenges rather than superficial keywords.</li>
+          <li><strong>Direct Enterprise Connect:</strong> Gives hiring leaders and engineering directors direct access to top 1% verified talent with zero recruiter friction and streamlined technical interviews.</li>
+          <li><strong>Privacy-First Verified Credentials:</strong> Employs encrypted credential verification, ensuring professionals retain full ownership of their data while sharing verified proof of expertise.</li>
+        </ul>
+        <div className="my-6 rounded-xl border border-white/15 bg-white/[0.03] p-4 italic text-white/90">
+          <p className="mb-2 font-display text-base not-italic">
+            &ldquo;Traditional networking tools were designed for the last decade of corporate resume exchanges. In the AI era, proof of execution matters far more than job titles. Our new networking platform gives engineers a real space to build together, demonstrate true capability, and connect directly with world-class opportunities.&rdquo;
+          </p>
+          <p className="text-xs font-bold not-italic text-green-hard">— Leadership Team, Trafy AI</p>
+        </div>
+      </div>
+    ),
   },
   {
     date: "June 30, 2026",
