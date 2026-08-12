@@ -21,7 +21,7 @@ export default function Navbar({ logoLabel, links, primaryCta, secondaryCta }: N
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
-          <img src="/new-logo.png" alt="Trafy" className="h-12 w-auto" />
+          <img src="/trafy-logo-light.svg" alt="Trafy" className="h-8 w-auto" />
           {suffix && (
             <span className="font-display text-xl font-bold tracking-tight">{suffix}</span>
           )}
